@@ -1,0 +1,94 @@
+{
+  "main": {
+    "id": "bf21ddf6afa19586",
+    "type": "split",
+    "children": [
+      {
+        "id": "1af5ab0fe77c7ace",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "Application Programming Interface.md",
+            "mode": "source",
+            "source": false
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "edf6247acd363fa1",
+    "type": "split",
+    "children": [
+      {
+        "id": "cd26d117c68c254a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "66e399df7767b8e4",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "e5820f29644f089d",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "def6c6facb977cb7",
+    "type": "split",
+    "children": [
+      {
+        "id": "8f84f981864c2728",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "66d96eb4c4951669",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Application Programming Interface.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": true,
+                "unlinkedCollapsed": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "active": "1af5ab0fe77c7ace",
+  "lastOpenFiles": [
+    "Application Programming Interface.md",
+    "Application Programming Interface.md"
+  ]
+}
