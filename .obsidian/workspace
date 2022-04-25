@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "HTTP.md",
+            "file": "Mathematics/Inverse Functions of a Function is its Reflection Over y=x.md",
             "mode": "source",
             "source": false
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "HTTP.md",
+                "file": "Mathematics/Inverse Functions of a Function is its Reflection Over y=x.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -88,8 +88,14 @@
   },
   "active": "76fc95215b40c97a",
   "lastOpenFiles": [
+    "Mathematics/Inverse Functions of a Function is its Reflection Over y=x.md",
+    "Mathematics/Linear Transformations of Graphs.md",
+    "Mathematics/Domain of Composition Functions.md",
+    "Mathematics/Properties of Even and Odd Functions.md",
     "HTTP.md",
+    "Why do we Sneeze.md",
     "Application Programming Interface.md",
+    "Why Software is not Cross-Platform.md",
     "Application.md",
     "apieconomy.PNG"
   ]

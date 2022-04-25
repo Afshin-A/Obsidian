@@ -1,0 +1,1 @@
+Sternutation, or sneezing, removes irritants and excess mucus from the nose and sinuses. The brain signals the lungs to take a deep brearth; the pressure builds up when the lungs clench, the tounge touches the roof of the mouth, and excess hair is let out.
