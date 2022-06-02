@@ -6,4 +6,4 @@
 </ol>
 
 
-For example, $P(x)=3x^6+4x^5+3x^3-x-3$ has 1 sign variation between $3x^3 \ \text{and} \ -x$. So it must have 1 positive zero. $P(-x)=3x^6-4x^3+x-3$ has 3 sign variations. So it's number of negative zeros is either 3 or 1. In total, $P(x)$ has either 2 or 4 zeros.
+For example, $P(x)=3x^6+4x^5+3x^3-x-3$ has 1 sign variation between $3x^3 \ \text{and} \ -x$. So it must have 1 positive zero. $P(-x)=3x^6-4x^3+x-3$ has 3 sign variations. So it's number of negative zeros is either 3 or 1. In total, $P(x)$ has either 2 or 4 real zeros.

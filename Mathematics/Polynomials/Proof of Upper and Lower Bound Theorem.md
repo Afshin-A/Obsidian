@@ -14,7 +14,7 @@ Now suppose $z>b \to z>0$ and that all coefficients of $Q(x)$ are non-negative $
 $$
 \begin{alignat*}{3}
 P(z)=&(z-b) && Q(z) + &&r \\
-& > 0 && > 0 && >0 \\
+& > 0 && > 0 && \geq0 \\
 \therefore P(z) > 0
 \end{alignat*}
 $$

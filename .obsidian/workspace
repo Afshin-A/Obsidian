@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Untitled.md",
+            "file": "Mathematics/Trivia/Properties of Even and Odd Functions.md",
             "mode": "source",
             "source": false
           }
@@ -41,7 +41,7 @@
               "type": "search",
               "state": {
                 "query": "",
-                "matchingCase": false,
+                "matchingCase": true,
                 "explainSearch": false,
                 "collapseAll": false,
                 "extraContext": false,
@@ -53,7 +53,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 290
   },
   "right": {
     "id": "def6c6facb977cb7",
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Untitled.md",
+                "file": "Mathematics/Trivia/Properties of Even and Odd Functions.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -88,15 +88,15 @@
   },
   "active": "76fc95215b40c97a",
   "lastOpenFiles": [
-    "Untitled.md",
+    "Mathematics/Trivia/Properties of Even and Odd Functions.md",
+    "Mathematics/Domain of f(g(x)) is the Domain of g(x) if g(x) Exists in Domain of f(x).md",
     "Mathematics/Inverse Functions of a Function is its Reflection Over y=x.md",
-    "Application Programming Interface.md",
-    "Mathematics/Linear Transformations of Graphs.md",
-    "Mathematics/Domain of Composition Functions.md",
-    "Mathematics/Properties of Even and Odd Functions.md",
-    "HTTP.md",
-    "Why do we Sneeze.md",
-    "Why Software is not Cross-Platform.md",
-    "Application.md"
+    "Mathematics/Exponential Functions/Linearizing Data.md",
+    "Img/Pasted image 20220531145359.png",
+    "Mathematics/Exponential Functions/Hyperbolic Functions.md",
+    "Mathematics/Exponential Functions/Logarithm Laws.md",
+    "Mathematics/Exponential Functions/Compound Interest.md",
+    "Mathematics/Exponential Functions/Comparing Logarithms.md",
+    "Mathematics/Exponential Functions/Catenary.md"
   ]
 }
