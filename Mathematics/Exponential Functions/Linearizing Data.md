@@ -6,3 +6,9 @@ $ln(y)=kx+ln(c) \implies x$ vs. $ln(y)$ forms a linear graph.
 Thus, if plotting the data gives a linear line for $x$ vs. $ln(y)$, then the graph is exponential for $x$ vs. $y$
 
 $y=ax^n$
+
+
+### Modeling
+
+$f(x)=A(1-e^{-Bx})$
+$f(x)={A \over B-e^{-Cx}}$
