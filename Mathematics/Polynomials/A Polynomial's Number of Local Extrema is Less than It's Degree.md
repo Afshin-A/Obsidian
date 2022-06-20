@@ -1,0 +1,1 @@
+This proof requires calculus, according to the PreCalculus textbook.

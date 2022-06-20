@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Untitled.md",
+            "file": "Mathematics/Trigs (Triangles)/How does Trigonometry in Unit Circle Compare to in Triangles.md",
             "mode": "source",
             "source": false
           }
@@ -53,7 +53,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 404
   },
   "right": {
     "id": "def6c6facb977cb7",
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Untitled.md",
+                "file": "Mathematics/Trigs (Triangles)/How does Trigonometry in Unit Circle Compare to in Triangles.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -88,15 +88,15 @@
   },
   "active": "76fc95215b40c97a",
   "lastOpenFiles": [
-    "Untitled.md",
-    "Mathematics/Inverse Functions of a Function is its Reflection Over y=x.md",
-    "Application Programming Interface.md",
-    "Mathematics/Linear Transformations of Graphs.md",
+    "Mathematics/Trigs (Triangles)/How does Trigonometry in Unit Circle Compare to in Triangles.md",
+    "Mathematics/Trigs (Triangles)/Angular and Linear Speeds of rotating objects.md",
+    "Mathematics/Trigs (Unit Circle)/Trig Reduction Formulas.md",
+    "Mathematics/Trigs (Unit Circle)/What are periodic functions_.md",
+    "Mathematics/Trigs (Unit Circle)/Trig Identities.md",
+    "Mathematics/Trigs (Unit Circle)/Deriving trig values.md",
     "Mathematics/Domain of Composition Functions.md",
-    "Mathematics/Properties of Even and Odd Functions.md",
-    "HTTP.md",
-    "Why do we Sneeze.md",
-    "Why Software is not Cross-Platform.md",
-    "Application.md"
+    "Mathematics/Inverse Functions of a Function is its Reflection Over y=x.md",
+    "Pasted image 20220425233458.png",
+    "Agile Methodology.md"
   ]
 }

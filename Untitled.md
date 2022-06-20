@@ -17,3 +17,6 @@ The dog barked and snarled as I walked by their front lawn.
 You winced earlier
 I had to go to the latrine.
 The salient points of the essay
+
+intrepid
+inhibit
