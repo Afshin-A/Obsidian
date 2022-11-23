@@ -1,4 +1,4 @@
-In order to dwindlea graphical scale (figure 1) and make it more managable, we can transform it into a logarithmic scale (figure 2)
+In order to dwindle a graphical scale (figure 1) and make it more managable, we can transform it into a logarithmic scale (figure 2)
 
 ![[Pasted image 20220531125052.png]]
 Figure 1

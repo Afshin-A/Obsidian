@@ -1,4 +1,4 @@
-This is mostly for polynomials with 3 or higher degree polynomials. Prabolas can easily be factored; quadratic equation can also be used.
+This is mostly for polynomials with 3 or higher degree polynomials. Prabolas can easily be factored; we may also use the quadratic equation.
 
 $P(x)=a_n\ x^n+a_{n-1}x^{n-1}+a_{n-2}\ x^{n-2} + \cdots + a_{1}x^{1}+a_{0}$
 In total, P has n real and complex factors.
@@ -11,7 +11,7 @@ P(x)&=x^3+2x^2+4x+8 \\
 &\therefore x=-2, \pm 2i
 \end{align}
 $$
-Use Descartes' Rule of Signs to guess how many positive and negative zeros there are.
+Use [Descartes' Rule of Signs] to guess how many positive and negative zeros there are.
 
 Use [[Rational Zeros Theorem]] to make a list of possible factors.
 

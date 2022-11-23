@@ -54,4 +54,4 @@ cos^{-1}(x)+-sin^{-1}(x)&={\pi \over 2}
 \end{align}
 $$
 
-$tan^{-1}(x)+tan^{-1}({1 \over x})$
+#### $tan^{-1}(x)+tan^{-1}({1 \over x})$

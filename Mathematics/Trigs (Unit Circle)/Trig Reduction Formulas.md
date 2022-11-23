@@ -5,7 +5,7 @@ $cos(x+\pi)=-cos(x)$
 $tan(x+\pi)=tan(x)$
 
 ![[Pasted image 20220607125058.png]]
-
+![[20220602_170415.jpg]]
 $sin(x+{\pi \over 2})=cos(x)$
 $cos(x+{\pi \over 2})=-sin(x)$
 $tan(x+{\pi \over 2})=-cot(x)$

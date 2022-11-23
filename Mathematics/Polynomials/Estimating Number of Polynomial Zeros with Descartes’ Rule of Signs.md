@@ -2,7 +2,7 @@
 <ol>
 <li> A polynomial's number of positive zeros is either equal to the number of sign variation between its coeficients, or less than that by an even number.
 
-<li> The number of negative zeros is either the number of sign variations in $P(-x)$, or less than that number by an even number.
+<li> The number of negative zeros is either the number of sign variations in P(-x), or less than that number by an even number.
 </ol>
 
 

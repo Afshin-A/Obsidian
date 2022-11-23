@@ -1,0 +1,3 @@
+A polynomial with no real zeros will always be of an even degree. In other words, a polynomial of an odd degree will always have at least one real zero.
+Consider $P(x)=x^3$  $\lim_\limits{x \to \infty}P(x)=\infty$ and $\lim_\limits{x \to - \infty}P(x)=-\infty$
+By the intermediate value theorem, we can deduce that the graph of $P(x)$ must cross the x-axis at some point. And this is true for all odd-ordered polynomials because they share the same end behavior.

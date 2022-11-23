@@ -4,16 +4,47 @@
     "type": "split",
     "children": [
       {
-        "id": "eadfd31c6f5c8460",
-        "type": "leaf",
-        "state": {
-          "type": "markdown",
-          "state": {
-            "file": "Is n Prime? Search for Factors upto Sqrt(n).md",
-            "mode": "preview",
-            "source": false
+        "id": "d3eb12e598b62f9c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "eadfd31c6f5c8460",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Untitled 1.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "45016ae7097c3618",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "CS320 M4 Journal.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "ba4457bc5f6e2d55",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Untitled 2.md",
+                "mode": "preview",
+                "source": false
+              }
+            }
           }
-        }
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -31,7 +62,9 @@
             "type": "leaf",
             "state": {
               "type": "file-explorer",
-              "state": {}
+              "state": {
+                "sortOrder": "alphabetical"
+              }
             }
           },
           {
@@ -49,8 +82,7 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -70,7 +102,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Is n Prime? Search for Factors upto Sqrt(n).md",
+                "file": "CS320 M4 Journal.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -88,17 +120,17 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "e5820f29644f089d",
+  "active": "45016ae7097c3618",
   "lastOpenFiles": [
-    "Is n Prime? Search for Factors upto Sqrt(n).md",
-    "The Sum of the Squares of the First n natural numbers.md",
-    "Untitled.md",
     "Untitled 1.md",
     "Untitled 2.md",
+    "Software Testing.md",
     "telescoping series.md",
-    "Mathematics/Polynomials/Proof of Upper and Lower Bound Theorem.md",
-    "Mathematics/Polynomials/Estimating Number of Polynomial Zeros with Descartes’ Rule of Signs.md",
-    "Mathematics/Polynomials/Odd degree polynomials have at least 1 real zero.md",
-    "Mathematics/Polynomials/Conjugate of a Complex Zero is also a Zero in Polynomials.md"
+    "The Sum of the Squares of the First n natural numbers.md",
+    "How does trigonometry in the unit circle relate to triangles?.md",
+    "Is n Prime? Search for Factors upto Sqrt(n).md",
+    "Why do we Sneeze.md",
+    "Pasted image 20220615192410.png",
+    "Pasted image 20220615193318.png"
   ]
 }
