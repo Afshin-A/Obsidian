@@ -1,0 +1,12 @@
+-   What were the software testing techniques that you employed for each of the milestones? 
+-   What are the other software testing techniques that you did not use for the milestones?
+-   For each of the techniques you discussed, explain the practical uses and implications for different software development projects and situations.
+
+This project has undergone different levels of testing: from unit testing at the lowest level, to integration testing (that ensures related modules like `Contact` and `ContactService` work together as intended), to acceptance testing, which will be performed by my instructor (customer), to ensure the project meets the demands.
+The method used for testing are _white box testing_ and _black box testing_. White box testing is manually inspecting the code for security exploits or memory leaks (`Service` classes manage an `ArrayList` of `ServiceData`), testing loop conditions and ensuring that every logical branch is error free. Since this system does not connect a databases, security may not contribute to risk. However, this testing method is conducive to a well-standing system structure.
+Black box testing focuses on input validation, making sure the system behaves as defined by its requirements. 
+A few such techniques used are equivalence partitioning and boundary analysis. Because we cannot test every possible input, we categorize them in to groups that would yield the same output. For example, any `String` with length 1 to 10 is acceptable for `Contact.firstName` and can therefore be represented in an input group; any `String` longer than 10 characters is invalid and is part of another input group.
+The boundary between valid and invalid input is often where mistakes are made in `Valiatations`. Hence, for a test scenario concerning the length of `Contact.firstName`, we would design cases that test with 9, 10, and 11 character long `String` literals. This technique is referred to as boundary analysis, and is heavily used for testing the `Validations` class in this project.
+The final testing method is regression testing. When any of the testing methods and techniques discover a defect, regression testing ensures the fixes deployed have not broken different parts of the code.
+
+An example of a testing technique not used for this project is penetration testing. This technique is often used in white box testing and it is about purposefully attacking a system to find security threats. Because security is not the main focus of this project, this technique was omitted.

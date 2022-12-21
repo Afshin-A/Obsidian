@@ -1,0 +1,12 @@
+### What is HTTP?
+A client (i.e. a browser) contacts a server through the internet using an address. The **Universal Resource Locator** (**URL**), also referred to as **Universal Resource Identifier** (**URI**), contains a protocol that defines how contact is made between client and server, just like an [[Application Programming Interface|API]] defines how users can access a service. A common protocol is **HTTP**, or **HyperText Transfer Protocol**. The server then processes the request, and *transfers* the information, along with HyperText language (HTML) back to the client. The browser uses the html to display the page to the user.
+The protocol also includes a verb or request method. An example is **GET**: this means the request will not make any changes and only information is returned to the client. Another example is **POST**, which means the user is sending information to be saved on the server. POST is commonly used when filling forums online.
+
+HTTP request and response include additional information in the form of headers. These are key and value pairs that could, for example: 
+- Specify in what language the server response will be. A client isn't always a browser; it could be a program written in C++. So the server will have to send its response (along with headers) in a format that our program can interpret: JSON. All programming languages have native or extended support for JSON via libraries. 
+- Additionally, in our request to the server, we could specify to receive information back only if there've been recent changes (this would eliminate unnecessary processes by server and enable local caching). 
+- The server's response header could inform the client if the request was successful ([200 OK](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/200)) or if the request failed ([400 Bad Request](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400))
+
+<div align="center"><img src="https://www.ionos.com/digitalguide/fileadmin/DigitalGuide/Screenshots_2020/http-response-header.png" height="300" width="450"/><center>HTTP Headers Example</center></div>
+
+HTTP is a Stateless protocol: the server doesn't remember the state (data/fields) of a client once a request-response cycle is complete. Instead, the client will have to send its sate to the server with every request. For example, a user can remain logged-in a website by sending in log-in details with every request.
