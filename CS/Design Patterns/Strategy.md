@@ -1,4 +1,4 @@
-Store behavior as a variable that can be changed during runtime.
+Store behavior as a variable. Change behavior during runtime.
 
 ```plantuml
 @startuml Strategy Design Pattern

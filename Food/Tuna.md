@@ -1,0 +1,10 @@
+- Cut tuna into ½ by ½ inch cubes
+- Place them in boiling water
+- Compress to remove excess blood water
+- Cook the tuna in
+	- Oil
+	- Garlic
+	- Turmeric
+	- Green pepper
+- Add ½ medium tomatoes
+- Add lemon juice

@@ -44,8 +44,8 @@ public static SingletonScrabble getInstance() {
 ```
 
 Solution: use `synchronized`. It means all threads have to wait their turn before accessing this method
-Method 1. add the keyword synchronized to the `getInstance()` method header  
-The problem with this method is that it slows down the program
+Method 1. add the keyword synchronized to the method header for `getInstance()` 
+The problem with this way is that it significantly slows down the program
 
 ```java
 static boolean firstThread = true;  

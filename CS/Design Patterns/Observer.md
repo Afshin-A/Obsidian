@@ -54,7 +54,7 @@ MainProgram -> StockGrabber
 @enduml
 ```
 
-`MainProgram` is responsible for creating a publisher object (`StockGrabber`), managing the subscribers (`StockObserver`) and checking for changes in stock prices. The check price changes, `MainProgram` could connect to another program, a database, etc..
+`MainProgram` is responsible for creating a publisher object (`StockGrabber`), managing the subscribers (`StockObserver`) and checking for changes in stock prices. To check price changes, `MainProgram` could connect to another program, a database, etc..
 
 `StockGrabber` is the publisher. It keeps a list of the subscribers, can add, remove from the list, and  `update` them.
 For example, the only way to make changes to `ibmStockPrice` is by calling the setter `setIbmStockPrice()`. And whenever there is a change, the subscribers should be notified, so `setIbmStockPrice()` also calls `notifyObservers()`. `notifyObservers()` would go through the list its subscribers and update each one.

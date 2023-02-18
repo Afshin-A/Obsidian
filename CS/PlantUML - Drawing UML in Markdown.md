@@ -44,3 +44,5 @@ package services {
 }
 @enduml
 ```
+
+I discovered today, PlantUML needs an internet connection to generate the diagrams. And the diagrams are accessible online by anyone with the link.
