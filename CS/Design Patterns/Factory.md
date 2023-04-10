@@ -1,7 +1,8 @@
 >When a method returns one of several possible classes that share a superclass
 
-choosing classes at runtime without knowing ahead of time the exact type of the object
-create object without specifying the exact class of the object
+Uses: 
+- Choosing classes at runtime without knowing ahead of time the exact type of the object
+- Creating object without specifying the exact class of the object
 
 You make a class that is responsible for returning an object depending on the input
 
