@@ -1,2 +1,0 @@
-How many could a 5<sup>th</sup> degree polynomial like $f(x)=ax^5+bx^4+cx^3+dx^2+ex+f$ have?
-The answer is 5. Let's assume $f(x)$ factors perfectly; it can be represented as $f(x)=(x-m)(x-n)(x-o)(x-p)(x-q)$. Multiplying out these expressions yields a polynomial where $x$ at most can have a power of $5$.
