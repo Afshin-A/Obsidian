@@ -1,1 +1,0 @@
-Consider two triangles $\Delta ABC \sim \Delta DEF$ (meaning $\Delta ABC$ is similar to $\Delta DEF$) Suppose $\Delta DEF$ If we multiply all sides by a constant $k$, the outcome would be a similar triangle with the same angles. (I could not find a simple proof I could understand.)
