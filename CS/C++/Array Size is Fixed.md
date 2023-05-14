@@ -1,0 +1,1 @@
+In C++, array size is determined at compilation time and is fixed. The contents of the array, however, can be changed.

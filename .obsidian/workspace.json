@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CS/C++/constexpr.md",
+                "file": "CS/C++/Trailing Comma.md",
                 "mode": "source",
                 "source": false
               }
@@ -25,14 +25,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CS/C++/Namespaces.md",
+                "file": "CS/C++/Visual Studio IDE tips.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -98,7 +97,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "CS/C++/Namespaces.md",
+                "file": "CS/C++/Trailing Comma.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -125,14 +124,23 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "2da66c72159d91cc",
+  "active": "66e399df7767b8e4",
   "lastOpenFiles": [
+    "CS/C++/Main.cpp",
+    "CS/C++/Strings and String Literals in C++.md",
+    "CS/C++/Trailing Comma.md",
+    "CS/C++/Array Size is Fixed.md",
+    "CS/C++/constexpr.md",
     "CS/C++/Visual Studio IDE tips.md",
+    "CS/C++/Preventing SQL Injection Attacks.md",
+    "CS/C++/Preventing Array Overflows.md",
+    "Food/Tuna.md",
+    "Food/Sauce.md",
+    "CS/Representing Negative Numbers in Binary.md",
     "CS/C++/Namespaces.md",
     "CS/C++/Detecting Underflow and Overflows in C++.md",
-    "CS/C++/constexpr.md",
+    "CS/C++/Conditional Compilation.md",
     "CS/C++/assert, static_assert, and NDEBUG.md",
-    "Conditional Compilation.md",
     "CS/Linux/Bash Tips.md",
     "CS/Software Testing Principles and Strategies.md",
     "CS/Behavior Driven Developement (BDD) with Java Cucumber.md",
@@ -144,12 +152,6 @@
     "CS/HTTP.md",
     "CS/Journal - Testing Techniques.md",
     "CS/Jupyter Notebook.md",
-    "CS/OOO Basics.md",
-    "CS/PlantUML - Drawing UML in Markdown.md",
-    "Mathematics/Exponential Functions/Linearizing Data.md",
-    "Mathematics/Exponential Functions/Comparing Logarithms.md",
-    "Mathematics/Exponential Functions/Catenary.md",
-    "CS/Agile Methodology.md",
     "CS/C++",
     "Shopping List.pdf",
     "Screenshot from 2023-02-01 20-51-48.png",
@@ -157,10 +159,7 @@
     "project 1 read update and remove.png",
     "project 1 instantiate and create.png",
     "Pasted image 20221116004221.png",
-    "Untitled 1.md",
-    "Untitled 2.md",
     "Pasted image 20221116183809.png",
-    "CS320 M4 Journal.md",
     "Pasted image 20220615192410.png",
     "Pasted image 20220615193318.png"
   ]
