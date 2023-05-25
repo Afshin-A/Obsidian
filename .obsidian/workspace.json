@@ -13,7 +13,31 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CS/C++/Trailing Comma.md",
+                "file": "CS/C++/Function Pointers.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "1ee46e92a1cf7903",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "CS/C++/Namespaces.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "d1002a998d6bc7ee",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "CS/C++/Delegates.md",
                 "mode": "source",
                 "source": false
               }
@@ -31,7 +55,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -97,7 +122,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "CS/C++/Trailing Comma.md",
+                "file": "CS/C++/Delegates.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -124,20 +149,24 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "66e399df7767b8e4",
+  "active": "d1002a998d6bc7ee",
   "lastOpenFiles": [
-    "CS/C++/Main.cpp",
+    "CS/C++/Function Pointers.md",
+    "CS/C++/Delegates.md",
+    "Untitled 3.md",
+    "CS/C++/Namespaces.md",
+    "CS/C++/Preventing Array Overflows.md",
+    "CS/C++/Preventing SQL Injection Attacks.md",
     "CS/C++/Strings and String Literals in C++.md",
     "CS/C++/Trailing Comma.md",
+    "CS/C++/Visual Studio IDE tips.md",
+    "Smart Pointers.md",
+    "CS/C++/Main.cpp",
     "CS/C++/Array Size is Fixed.md",
     "CS/C++/constexpr.md",
-    "CS/C++/Visual Studio IDE tips.md",
-    "CS/C++/Preventing SQL Injection Attacks.md",
-    "CS/C++/Preventing Array Overflows.md",
     "Food/Tuna.md",
     "Food/Sauce.md",
     "CS/Representing Negative Numbers in Binary.md",
-    "CS/C++/Namespaces.md",
     "CS/C++/Detecting Underflow and Overflows in C++.md",
     "CS/C++/Conditional Compilation.md",
     "CS/C++/assert, static_assert, and NDEBUG.md",
@@ -149,9 +178,6 @@
     "CS/CS-320 Project 2.md",
     "CS/Dependency Injection.md",
     "CS/Dynamic vs. Static.md",
-    "CS/HTTP.md",
-    "CS/Journal - Testing Techniques.md",
-    "CS/Jupyter Notebook.md",
     "CS/C++",
     "Shopping List.pdf",
     "Screenshot from 2023-02-01 20-51-48.png",
