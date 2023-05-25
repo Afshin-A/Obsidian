@@ -1,4 +1,4 @@
-Used primarily to prevent naming conflicts and organize code in large projects.
+These are primarily used to prevent naming conflicts and organize code in large projects.
 
 ```c
 // defining the namespace
