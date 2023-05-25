@@ -19,7 +19,7 @@ int main() {
 ```
 
 ## Multi-line Macro
-```c
+```c++
 #define ERROR_LOG(message) do { \
 		std::cout << "Error 1" << std::endl; \
 		std::cout << "Error 2" << std::endl; \

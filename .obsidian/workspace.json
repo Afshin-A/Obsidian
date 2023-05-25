@@ -13,19 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CS/C++/Trailing Comma.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "2da66c72159d91cc",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "CS/C++/Visual Studio IDE tips.md",
+                "file": "CS/C++/argc and argv.md",
                 "mode": "source",
                 "source": false
               }
@@ -97,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "CS/C++/Trailing Comma.md",
+                "file": "CS/C++/argc and argv.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -124,34 +112,35 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "66e399df7767b8e4",
+  "active": "95e314f173400669",
   "lastOpenFiles": [
-    "CS/C++/Main.cpp",
-    "CS/C++/Strings and String Literals in C++.md",
     "CS/C++/Trailing Comma.md",
-    "CS/C++/Array Size is Fixed.md",
-    "CS/C++/constexpr.md",
-    "CS/C++/Visual Studio IDE tips.md",
+    "CS/C++/argc and argv.md",
+    "char pointer pointer.jpg",
     "CS/C++/Preventing SQL Injection Attacks.md",
     "CS/C++/Preventing Array Overflows.md",
+    "CS/C++/Operator Overloading.md",
+    "CS/C++/Namespaces.md",
+    "CS/C++/Integrating Python with C++.md",
+    "CS/C++/Detecting Underflow and Overflows in C++.md",
+    "CS/C++/Delegating Constructors and Initializer Lists.md",
+    "CS/C++/Conditional Compilation.md",
+    "CS/C++/assert, static_assert, and NDEBUG.md",
+    "CS/C++/Array Size is Fixed.md",
+    "CS/C++/Regex in C++.md",
+    "CS/C++/Strings and String Literals in C++.md",
+    "CS/C++/Lambda Functions.md",
+    "CS/C++/constexpr.md",
+    "CS/C++/Visual Studio IDE tips.md",
+    "CS/C++/Main.cpp",
     "Food/Tuna.md",
     "Food/Sauce.md",
     "CS/Representing Negative Numbers in Binary.md",
-    "CS/C++/Namespaces.md",
-    "CS/C++/Detecting Underflow and Overflows in C++.md",
-    "CS/C++/Conditional Compilation.md",
-    "CS/C++/assert, static_assert, and NDEBUG.md",
     "CS/Linux/Bash Tips.md",
     "CS/Software Testing Principles and Strategies.md",
     "CS/Behavior Driven Developement (BDD) with Java Cucumber.md",
     "CS/CS-320 M4 Journal.md",
     "CS/Application Programming Interface.md",
-    "CS/CS-320 Project 2.md",
-    "CS/Dependency Injection.md",
-    "CS/Dynamic vs. Static.md",
-    "CS/HTTP.md",
-    "CS/Journal - Testing Techniques.md",
-    "CS/Jupyter Notebook.md",
     "CS/C++",
     "Shopping List.pdf",
     "Screenshot from 2023-02-01 20-51-48.png",
