@@ -1,0 +1,1 @@
+Asynchronous execution of events, meaning the events do not dependent on the flow of the program, which is usually linear and sequential. An event is any action in the program, like the user clicking a button or receiving a request over a network. These events trigger an event handler, which would execute the appropriate function(s) in response.
