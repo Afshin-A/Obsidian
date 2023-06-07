@@ -1,0 +1,3 @@
+`std::cin()` considers all whitespace characters as delimiter. Thus, it stops recording input upon encountering whitespace characters, such as a space. We may consider using the `std::cin.getline()` function which, by default, treats the new line character (`\n`) as a delimiter. In addition to a string variable, `std::cin.getline()` can optionally take the maximum number of input characters and a custom delimiter as arguments.
+
+The number of input characters as set by `std::setw()` also includes the null point terminator (`\0`). Thus, the actual number of readable characters in an array will be its length minus 1.
