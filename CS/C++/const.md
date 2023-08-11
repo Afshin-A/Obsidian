@@ -1,0 +1,2 @@
+Suppose you want to instantiate a constant object of a custom class. You can only call member methods that are marked with the `const` keyword in their method headers.
+`const` when declaring a variable means the variable's internal state will not change. `const` in a method header means the method does not change the internal state of the object. Therefore, a `const` object can only be operated on by `const` methods to ensure the constant object does not get modified.

@@ -128,3 +128,12 @@ int main(int argc, char** argv) {
 }
 ```
 
+## Smart Pointer Methods
+1. `.get()` returns the underlying raw pointer.
+2. `.reset()` releases the memory by deleting the object pointed to, and sets the pointer to null..
+3. `.use_count()` returns the total number of shared pointers to an object.
+4. `.expired()` checks if a weak pointer has expired (if the object it points to has been deallocated).
+5. `.lock()` converts a weak pointer to a shared pointer.
+
+In addition, smart pointers override  `operator bool()` and can be directly used as Boolean statements in `nullptr` checks. Recall that `nullptr` evaluates to `false`.
+Smart pointers also support comparison operators. You can check if they point to the same memory location by using `==` or `!=` operators. 
