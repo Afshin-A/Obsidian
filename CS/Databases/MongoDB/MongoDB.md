@@ -68,7 +68,7 @@ Schema is the organization and structure of a database as whole. For example, in
 
 MongoDB documents can be 16 MB at most to prevent cluttering memory. MongoDB stores BSON objects directly into memory for speed, but this imposes limitations like document size.
 **PyMongo** - Python driver for MongoDB
-We such drivers it to communicate with the database. So the system would be layered as application-driver-database.
+We need such drivers to communicate with the database. So the system would be layered as application-driver-database.
 __mongoengine__ is an ODM for MongoDB. The system is layered as application-odm-driver-database.
 **ODM** - Object Document Mapper, is ORM for NoSQL databases.
 **ORM**, Object Relational Mapping,  is a software that internally uses a driver, but builds more functionality for users in working with databases, and also introduces object oriented programming elements.
@@ -511,7 +511,7 @@ db.collection_name.aggregate([
 This stage works just like the `.find()` operation (the read from CRUD)
 
 ##### `$group`
-This stage is given a group of documents. It will groups those documents based on a given key, called the "group key". Then, for each unique value for the group key, it will produce a document. What these documents contain, is determined by an "accumulator" expression
+This stage is given a group of documents. It will group those documents based on a given key, called the "group key". Then, for each unique value for the group key, it will produce a document. What these documents contain, is determined by an "accumulator" expression
 
 Example: 
 Suppose we're working with a collection `zips` that holds info on all cities in the US, such as:
@@ -531,7 +531,7 @@ db.zips.aggregate([
 	{$match: {state: 'CA'}}, // Stage 1. Retrieve all cities in California
 	{ // Stage 2
 		$group: {
-		// Group key. Group documents based on the unique values for they field city
+		// Group key. Groups documents based on the unique values for the field city
 			_id: "$city", 
 			totalZips: {$count: {}} // accumulator. $count returns the number of documents in a group. Which means, it returns the number of zip codes (or loc, or pop) in each city group.
 		}
@@ -574,9 +574,9 @@ which returns
 ```
 
 In stage 1, we get a list of all documents where `species_common: 'Eastern Bird'`
-In stage 2, we group the documents given by the previous stage by the value of their `location.coordinates`, i.e. the group key. For each group, we create a document that contains the group key and how many duplicates it had.
+In stage 2, we group the documents by the value of their `location.coordinates`, i.e. the group key. For each group, we create a document that contains the group key and how many duplicates it had.
 
-Which means, the coordinate `[ 40, -74 ]` was repeated 3 times: there were 3 instances where this coordinate was repeated
+The results indicate the coordinate `[ 40, -74 ]` was repeated 3 times: there were 3 instances where this coordinate was repeated
 
 ##### `$sort`
 Works just like the [[MongoDB#`.sort()`|.sort()]] with minor difference in syntax:
@@ -617,17 +617,16 @@ $project: {
 }
 ```
 
-We can also add new fields or update values of existing fields to the pipeline (output). Note that these stage operations do not alter the contents of the database.
+We can also add new fields or update values of existing fields to the pipeline (output). **Note that these stage operations do not alter the contents of the database.**
 
 ##### `$set`
-Used add to or modify fields in the pipeline. The [[MongoDB#`$project`|$project]] stage can also add or modify fields in the pipeline. But it cannot exclude fields. In other words, with `$set` you can only add to or modify the existing fields in the documents in the pipeline.
-Suppose you needed to add an extra field to the pipeline. With the `$project` method, you would have to include all other fields, and then add the new field. But with `$set`, we can, plain and simple, just add a new field.
-Example:
+Used add to or modify fields in the pipeline. The [[MongoDB#`$project`|$project]] stage can also add or modify fields in the pipeline. However, `$set` cannot exclude fields. In other words, with `$set` you can only add to or modify the existing fields in the documents in the pipeline.
+Suppose you needed to add an extra field to the pipeline. With the `$project` method, you would have to include all other fields, and then add the new field. But with `$set` we can just add a new field, plain and simple:
 ```
 db.zips.aggregate([
 	{
 		$set: {population_2022: {$round: {$multiply: [1.0031, "$pop"]}}}
-	} // multiply the value of the field pop with 1.0031,  round the results, save it to a field named population_2022 and add it to the pipeline. That is, add it to all documents in the pipeline.
+	} // multiply the value of the field pop with 1.0031,  round the results, save it to a field named population_2022 and add it to (all documents within) the pipeline.
 ])
 ```
 
@@ -656,7 +655,7 @@ This should be the last stage in a pipeline.
 
 
 ### Indexes
-Query for data faster. Normally, a read operation (like `.find()`) would go through an entire collection, checking every single document. But with indexes, we can create an internal, sorted data structure (a B tree (not a binary tree)) that points a key to a value (using pointers).
+Indexes are used to query for data faster. Normally, a read operation (like `.find()`) would go through an entire collection, checking every single document. But with indexes, we can create an internal, sorted data structure (a B tree (not a binary tree)) that points a key to a value (using pointers).
 MongoDB creates an index table using the `_id` field by default. So if we search for a document using its `_id`, MongoDB wouldn't search through the entire collection. It would nearly instantly find the document. 
 We should create indexes on data that is used most commonly
 

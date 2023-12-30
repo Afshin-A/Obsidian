@@ -39,8 +39,7 @@ $$
 T_2\Big(T_1\Big(\begin{bmatrix}x \\ y \end{bmatrix}\Big)\Big)
 =\begin{bmatrix}e & f \\ g & h\end{bmatrix}\begin{bmatrix}a & b\\ c & d \end{bmatrix}\begin{bmatrix}x \\ y \end{bmatrix}
 $$
-where $\begin{bmatrix}e & f \\ g & h\end{bmatrix}$ represents the second transformation. Remember that $\begin{bmatrix} a \\ c \end{bmatrix}$ represents $T_1(\hat i)$ and $\begin{bmatrix} b \\ d \end{bmatrix}$ represents $T_1(\hat j)$. These are the basis vectors to the newly transformed space, and we are going to apply another transformation them, just like we did for $T_1$. We'll first apply $T_2$ to $\begin{bmatrix} a \\ c \end{bmatrix}$, then to $\begin{bmatrix} a \\ c \end{bmatrix}$.
-We just multiplied two 2x2 matrices together.
+where $\begin{bmatrix}e & f \\ g & h\end{bmatrix}$ represents the second transformation. Remember that $\begin{bmatrix} a \\ c \end{bmatrix}$ represents $T_1(\hat i)$ and $\begin{bmatrix} b \\ d \end{bmatrix}$ represents $T_1(\hat j)$. These are the basis vectors to the newly transformed space, and we are going to apply another transformation them, just like we did for $T_1$. We'll first apply $T_2$ to $\begin{bmatrix} a \\ c \end{bmatrix}$, then to $\begin{bmatrix} b \\ d \end{bmatrix}$.
 $$
 \begin{align}
 &\begin{bmatrix}e & f \\ g & h\end{bmatrix}
@@ -58,6 +57,8 @@ ae+cf  & be+df \\ ag+ch & bg+dh
 \end{bmatrix}
 \end{align}
 $$
+We just multiplied two 2x2 matrices together.
+
 Thinking of matrix multiplication as a composition of linear transformation functions (in other words, applying a linear transformation to another linear transformation) also explains why the order in matrix multiplication matters because in general, $f \circ g(x) \neq g \circ f(x)$
 So matrix multiplication is not commutative.
 
