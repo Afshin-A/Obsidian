@@ -202,3 +202,5 @@ Used to create a dir
 
 ## `pr` & `lp`
 
+
+## `zip`
