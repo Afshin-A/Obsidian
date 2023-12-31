@@ -4,41 +4,29 @@
     "type": "split",
     "children": [
       {
-        "id": "d3eb12e598b62f9c",
+        "id": "f0df1dea252110b6",
         "type": "tabs",
         "children": [
           {
-            "id": "eadfd31c6f5c8460",
+            "id": "c169284b8d38114f",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Untitled 1.md",
+                "file": "Food/Meat Sauce.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "45016ae7097c3618",
+            "id": "66cd247226e7acb2",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CS320 M4 Journal.md",
+                "file": "Food/Tiramisu.md",
                 "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "ba4457bc5f6e2d55",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Untitled 2.md",
-                "mode": "preview",
                 "source": false
               }
             }
@@ -73,7 +61,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "roll",
                 "matchingCase": true,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -81,12 +69,20 @@
                 "sortOrder": "alphabetical"
               }
             }
+          },
+          {
+            "id": "0ed04cb9560a4ca1",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 400.5
+    "width": 282.5
   },
   "right": {
     "id": "def6c6facb977cb7",
@@ -102,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "CS320 M4 Journal.md",
+                "file": "Food/Tiramisu.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -120,17 +116,43 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "45016ae7097c3618",
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "command-palette:Open command palette": false,
+      "markdown-importer:Open format converter": false
+    }
+  },
+  "active": "66cd247226e7acb2",
   "lastOpenFiles": [
-    "Untitled 1.md",
-    "Untitled 2.md",
-    "Software Testing.md",
-    "telescoping series.md",
-    "The Sum of the Squares of the First n natural numbers.md",
-    "How does trigonometry in the unit circle relate to triangles?.md",
-    "Is n Prime? Search for Factors upto Sqrt(n).md",
-    "Why do we Sneeze.md",
-    "Pasted image 20220615192410.png",
-    "Pasted image 20220615193318.png"
+    "Food/Meat Sauce.md",
+    "Food/Shrimp Lemo Pasta.md",
+    "Food/Parmesan Eggplant Chicken.md",
+    "Food/Macaron.md",
+    "Food/Chicken Marsala.md",
+    "Food/Chicken Involtini.md",
+    "Food/Tiramisu.md",
+    "Food/Tuna.md",
+    "CS/Linux/Bash Tips.md",
+    "Intersecting Chords Theorem.md",
+    "Steven King's the Boogeyman.md",
+    "CS/Java/Cryptography in Java.md",
+    "CS/Tikz Example.md",
+    "How to Google.md",
+    "CS/Graph Theory.md",
+    "Mathematics/Polynomials/A Polynomial Doesn't Cross X-Axis if the Zero has an Even Degree of Multiplicity.md",
+    "Mathematics/Polynomials/A Polynomial's Number of Local Extrema is Less than It's Degree.md",
+    "Mathematics/Polynomials/Complete Guide to Factoring Polynomials.md",
+    "CS/Linux/Linux CLI (Command Line Interface).md",
+    "CS/Graph Theory (Freecodecamp).md",
+    "CS/Linux/Hard Vs Soft Links.md",
+    "Untitled 3.md",
+    "CS/Security in Java Web Applications.md",
+    "CS/Design Patterns/Factory.md",
+    "CS/Parameterized Query Avoids Injection Attacks.md",
+    "CS/Spring/Spring Expression Language (SpEL).md",
+    "CS/Spring"
   ]
 }
