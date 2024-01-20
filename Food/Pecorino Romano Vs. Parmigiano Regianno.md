@@ -1,0 +1,5 @@
+Parmigiano Reggiano comes from two regions in northern Italy. It is made from cow's milk and ages anywhere from 1 to 3 years. It is more yellow-ish in color than pecorino and has a milder/sweeter taste.
+
+Pecorino Romano ages from 5 to 8 months. It's made from sheep's milk. In fact, "pecora" means sheep in Italian. It comes from Sardinia, an island in the Mediterranean sea that's relatively close to Rome, Italy. This white cheese has a stronger flavor and is saltier than Parmigiano Reggiano. That's why it's better suited for tomato-based dishes, because it doesn't get lost in the acidity of the tomato sauce.
+
+Parmesan and Romano are domesticated versions of these two cheeses. In the US, according to FDA, any hard cheese that's made of cow's milk, is brittle and spreadable can be branded as Parmesan!
