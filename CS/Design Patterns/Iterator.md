@@ -21,7 +21,7 @@ public <T> void iteratorTest(Collection<T> c) {
 
 Suppose you have 3 classes. These classes internally use 3 different data structures. `ArrayList<String>`, `String[]`, and `HashTable<String>`.
 Different data structures offer an `Iterator` in different ways. 
-`ArrayList` has `.iterator()`, `HashTable` has `values().iterator()`, and arrays do not have a dirrect way.
+`ArrayList` has `.iterator()`, `HashTable` has `values().iterator()`, and arrays do not have a direct way.
 So we need to unify our classes by making them implement an interface. This interface will force the classes to implement their own ways of returning an iterator.
 ```java
 import java.util.Iterator;

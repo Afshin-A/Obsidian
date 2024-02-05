@@ -1,20 +1,38 @@
-Can’t think of a term in your search? Replace it with the **_**
+## Placeholders
+Can’t think of a term in your search? Replace it with the **\_** symbol
 
-**before:** 2020-10-05
+## Wildcards
+```
+*
+```
 
-**after:** 2022-10-05
+## Ranges
+This returns results in
+```
+Mazda 2020 … 2022
+```
 
-Mazda 2020 **…** 2022
+### Date Ranges
+```
+before: 2020-10-05
+```
 
-  
+```
+after: 2022-10-05
+```
 
-  
 
-**site:** force google to return results from specific sites. For example, you can search for:
+## Specific Sites
 
+Use the `site:` keyword to force google to return results from specific sites. For example, the following query returns results only from Reddit:
+```
 the passage of time movie review site:reddit.com
+```
 
+Similarly, you can return use wildcards to return results from certain top-level domains:
+```
 universal product code site:*.edu searching in academic sources
+```
 
   
 
@@ -27,15 +45,15 @@ bert AROUND(1) ernie
 wildcard operator: *****
 
   
-
-exclusion operator: **-** used to exclude a term from your search
-
+## Exclusion Operator
+Use `-` to  exclude a term from your search results. For example,
+```
 learn web development -javascript
-
+```
   
 
   
-
+## File Formats
 searching for specific file formats:
 
 **filetype:**pdf

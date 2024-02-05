@@ -19,7 +19,8 @@ For every 100mL of water, we add 145g of flour. Therefore, the following recipe 
 Do not add salt in this step because it would slow down fermentation.
 
 Mix ingredients: water, yeast, and honey, followed by the four in increments. Refrigerate for 16-24 hours.
-# Dough
+# Dough ~70%
+==The total amount of water is approximately 70% of the total amount of flour in the dough.==
 Transfer the poolish to a larger bowl and add an additional 135g of flour in increments. Transfer the dough to a board.
 Knead will take place in two parts. First, we do most of kneading (like 80%) using the slam and fold technique until gluten forms. The dough should be sticky by this point. We then cover the dough and leave it for 15 minutes. This should reduce the stickiness. We then knead for a bit longer (the remaining 20% of progress).
 Cover the dough in a blanket for 30 mins to 1 hour.
