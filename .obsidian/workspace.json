@@ -4,47 +4,34 @@
     "type": "split",
     "children": [
       {
-        "id": "5ad1cbc45deedda9",
+        "id": "cd9b0a0c9522b7f3",
         "type": "tabs",
         "children": [
           {
-            "id": "4bb1886cbb771a5e",
+            "id": "e57436082ec99765",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CS/DSA/Data Structures.md",
+                "file": "Full Stack Web development using MEAN.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "40306a2a85ced156",
+            "id": "4cfc6ddebf01f997",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CS/DSA/Graph Theory.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "d28350dc255fdd1b",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "CS/Security in Java Web Applications.md",
+                "file": "Travl Getaways.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -73,7 +60,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "uml",
+                "query": "mvc",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -94,7 +81,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 200
   },
   "right": {
     "id": "fd7b69146f9a20f8",
@@ -110,7 +97,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "CS/Security in Java Web Applications.md",
+                "file": "Full Stack Web development using MEAN.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -170,47 +157,49 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "d28350dc255fdd1b",
+  "active": "4900dd649d740aaa",
   "lastOpenFiles": [
-    "CS/Representing Negative Numbers in Binary.md",
-    "CS/OOO Basics.md",
-    "CS/System Design/Software Testing Principles and Strategies.md",
-    "CS/System Design/Software Testing.md",
-    "CS/System Design/Tikz Example.md",
-    "CS/System Design/User Interviews and Personas.md",
-    "CS/AWS.md",
-    "CS/Application Programming Interface.md",
-    "CS/Networking/HTTP.md",
-    "CS/System Design/Journal - Testing Techniques.md",
-    "CS/System Design/JUnit 5 Tags.md",
-    "CS/DSA/Graph Theory.md",
-    "CS/Networking",
-    "CS/DSA/Data Structures.md",
-    "CS/Databases/MongoDB/MongoDB.md",
-    "CS/DSA",
-    "CS/Parameterized Query Avoids Injection Attacks.md",
+    "Travl Getaways.md",
+    "Full Stack Web development using MEAN.md",
+    "CS/Engineering/Circuits and Components.md",
+    "CS/Engineering/Magnetism.md",
+    "CS/DSA/Algorithms/Stable vs Unstable Sorting Algorithms.md",
+    "Mathematics/The Sum of Different Powers of the First n Natural Numbers.md",
     "CS340 Project 1.md",
-    "Intersecting Chords Theorem.md",
-    "embedded_image_1java_ba727bd4-e4b9-6ae5-a349-fcfaecdd06be_fkmPeagaJCnOoypdz5tn.png",
-    "CS340M4Assignment2.pdf",
-    "CS/Design Patterns/Adapter.md",
-    "CS/Design Patterns/Abstract Factory.md",
-    "CS/Networking/Networking.md",
-    "CS/Security in Java Web Applications.md",
-    "CS/Swapping Vars without Temp.md",
-    "CS/Untitled.md",
-    "CS/Graph Theory (Freecodecamp).md",
-    "CS/Dynamic vs. Static.md",
-    "CS/Event Driven Programming.md",
-    "Img/Fig07-002.png",
-    "Img/Pasted image 20220531124923.png",
-    "Img/Fig07-022.png",
-    "Img/Fig07-005.png",
-    "Img/Fig07-004.png",
     "char pointer pointer.jpg",
     "authentication.png",
+    "Mathematics/telescoping series.md",
+    "Screenshot from 2023-02-01 20-52-29.png",
     "Screenshot from 2023-02-01 20-51-48.png",
     "project 1 read update and remove.png",
+    "project 1 instantiate and create.png",
+    "Pasted image 20240725002241.png",
+    "Pasted image 20240712201401.png",
+    "Pasted image 20240527231228.png",
+    "Pasted image 20231109134404.png",
+    "CS/Networking/Networking.md",
+    "CS/Engineering/Electric field, potential energy, and potential (khan academy).md",
+    "CS/Engineering",
+    "CS/Application Programming Interface.md",
+    "CS/Git/Git.md",
+    "CS/DSA/Algorithms/Floyd's Tortoise and Hare algorithm - Detecting Cycles.md",
+    "Untitled 1.md",
+    "Untitled.md",
+    "Tikz Circuit Examples.md",
+    "I Will Teach You How to be Rich.md",
+    "Steven King's the Boogeyman.md",
+    "CSS Position.md",
+    "CS/Networking/HTTP.md",
+    "CS/DSA/Algorithms/Euclidean Algorithm.md",
+    "CS/C++/Converting Decimal to Binary.md",
+    "CS/C++/Delegates.md",
+    "CS/C++/constexpr.md",
+    "CS/C++/const.md",
+    "CS/C++/Conditional Compilation.md",
+    "CS/DSA/Datastructures",
+    "CS/Networking",
+    "CS/DSA",
+    "CS340M4Assignment2.pdf",
     "CS/System Design",
     "CS/Spring",
     "Mathematics/Linear Algebra",

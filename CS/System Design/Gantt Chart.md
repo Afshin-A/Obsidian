@@ -1,1 +1,7 @@
-A Gantt chart is a simple and effective way to visualize the schedule for a project. It allows us to organize and track the overall progress of the project until completion. Furthermore, you can assign tasks to team members and set view dependencies between the tasks, which ensures there are no conflicts to slow down the team. The most challenging part of creating my Gantt chart was finding a tool to create it. I dislike using Lucid chart since every major feature is "premium" and locked behind a paywall. Therefore, after researching on the internet, I came across _Instagantt_. Please see the attached files (PDF document and image) to view my Gantt chart.![[Planning SDLC with Gantt Chart.jpg]]
+A Gantt chart is a simple and effective way to visualize the schedule for a project. It allows us to organize and track the overall progress of the project until completion. Furthermore, you can assign tasks to team members and set view dependencies between the tasks, which ensures there are no conflicts to slow down the team. The most challenging part of creating my Gantt chart was finding a tool to create it. I dislike using Lucid chart since every major feature is "premium" and locked behind a paywall. Therefore, after researching on the internet, I came across [_Instagantt_](https://app.instagantt.com/r). It offers a 7 day free trial. Refer to the figure.
+
+![[Planning SDLC with Gantt Chart.jpg]]
+
+
+Microsoft Excel or Google Sheets are another option. It's free, but requires skill to create a chart. Thankfully, there are lots of [tutorials](https://youtu.be/un8j6QqpYa0) on YouTube.
+

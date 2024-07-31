@@ -14,10 +14,10 @@ for each element in the list
 Here's an implementation of selection sort using Python. See [[Tuple Assignments]] for how element swapping works.
 ```python
 def selection_sort(unsorted_list: list):
-    
-    for i in range(len(unsorted_list)):
-        smallest_index = i
-        for j in range(i+1, len(unsorted_list)):
+    list_size = len(unsorted_list)
+    for i in range(list_size):
+	    smallest_index = i
+        for j in range(i+1, list_size):
             if unsorted_list[j] < unsorted_list[smallest_index]:
                 smallest_index = j
         if smallest_index is not i:
@@ -44,34 +44,42 @@ Repeat this process starting from start of the list. But do not include the fina
 ```
 
 ```python
-def swap_list_elements(ls: list, index_a: int, index_b: int):
-    ls[index_a], ls[index_b] = ls[index_b], ls[index_a]
-
-
 def bubble_sort(unsorted_list: list):
-    for i in range(len(unsorted_list)):
-        for j in range(len(unsorted_list)-i-1):
+	list_size = len(unsorted_list)
+    for i in range(list_size):
+        for j in range(list_size-i-1):
             if unsorted_list[j] > unsorted_list[j+1]:
-                swap_list_elements(unsorted_list, j, j+1)
+                unsorted_list[j], unsorted_list[j+1] = unsorted_list[j+1], unsorted_list[j]
     return unsorted_list
 ```
 
-
-# Insertion Sorting
-Insertion sorting, in a way, works the opposite of bubble sort: for each iteration, it goes through the list and moves elements to the left if they're smaller than the previous elements.
-
+The time complexity of the bubble sort algorithm, at the worst case, is $O(n^2)$.
+# Insertion 
+As we work our way from left to right, there will be two partitions formed: one on the left, and one on the right. During each iteration, an element from the right partition is *inserted* in the sorted, left partition. Therefore, The left partition keeps growing while the right partition shrinks.
+Specifically, 
 ```python
 def insertion_sort(unsorted_list: list):
 	# start at second element
     for i in range(1, len(unsorted_list)):
         j = i
         while j > 0 and unsorted_list[j] < unsorted_list[j-1]:
-            swap_list_elements(unsorted_list, j, j-1)
+            unsorted_list[j], unsorted_list[j+1] = unsorted_list[j+1], unsorted_list[j]
             j -= 1
     return unsorted_list
 ```
 
+Similar to bubble sorting, the time complexity of the insertion sorting algorithm, at the worst case, is $O(n^2)$
 
+# Comparing Selection, Bubble, and Insertion Sorting Algorithms 
+The time complexity of all these algorithms is $O(n^2)$ at the worst case. So neither is appropriate for large lists. However, for small lists, lists that are nearly sorted should be sorted with insertion sort because it will take the least number of swaps. 
+```
+|1 | 2 3 5 4 6 |
+| 1 2 3 5 | 4 6 |
+| 1 2 3 4 5| 6 |
+```
+In the example above, once we have 1 sorted partition, there are no more comparisons. Whereas in bubble sort, we would loop back from the start and compare adjacent elements again. There would be so many unnecessary comparisons.
+
+Selection sort works the same way regardless of how organized the list already is.
 # Merge Sorting
 
 

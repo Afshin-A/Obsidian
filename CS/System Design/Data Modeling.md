@@ -5,3 +5,7 @@ Process modeling graphs the flow of data in and out of our system; it shows us h
 Class models are a popular type of data models that take advantage of the many benefits of object-oriented programming (OOP), including encapsulation and polymorphism. An object--an instance of a class--is a collection of sensitive data and methods that operate on the data, access to which should be restricted to authorized entities. Encapsulation allows us to "encapsulate" the state (attributes and behaviors) of an object, giving us full control over what is shared and what is kept private from the rest of the system, adding a measure of security in the object model.
 
 Polymorphism, on the other hand, makes the system flexible and improves its scalability. It allows us to treat objects of different classes as if they are the same. This way, if one class becomes obsolete or is otherwise no longer relevant, we can replace it with another class and the functionality of the system will resume as if nothing has changed.
+
+
+#### References
+Valacich, J. S., George, J. F., & Hoffer, J. A. (2019). Modern Systems Analysis and Design (9th ed.). Pearson Education (US). https://bookshelf.vitalsource.com/books/9780135172827

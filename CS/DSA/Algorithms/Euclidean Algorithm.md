@@ -4,7 +4,7 @@ We are going to show that
 $$
 gcd(a, b)=gcd(b,r)
 $$
-Rearrenging $Equation \ 1$ gives:
+Rearranging $Equation \ 1$ gives:
 $$
 a-bq=r
 $$

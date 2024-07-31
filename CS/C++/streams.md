@@ -1,4 +1,4 @@
-`std::cin()` considers all whitespace characters as delimiter. Thus, it stops recording input upon encountering whitespace characters, such as a space. We may consider using the `std::cin.getline()` function which, by default, treats the new line character (`\n`) as a delimiter. In addition to a character array variable, `std::cin.getline()` can optionally take the maximum number of input characters we want to take in, and a custom delimiter as arguments:
+`std::cin()` considers all whitespace characters as delimiter. Thus, it stops recording input upon encountering whitespace characters, such as a ` , \n, \t`, and etc.. We may consider using the `std::cin.getline()` function which, by default, treats the new line character (`\n`) as a delimiter. In addition to a character array variable, `std::cin.getline()` can optionally take the maximum number of input characters we want to take in, and a custom delimiter as arguments:
 ```C++
 std::cin.getline(char[], int, char);
 ```

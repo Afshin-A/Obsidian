@@ -43,3 +43,18 @@ Add toppings of your choosing
 - Light sprinkle of parmesan cheese, followed by colby and monterey jack cheese
 - Place turkey rolls and muchrooms
 - Generously jack cheese, followed by more parmesan.
+
+
+# Domino's
+## For 3 pizzas
+570g flour 
+1 1/2 tbs sugar 
+1 teaspoon salt (reduced 2 to 1)
+370g water
+2 1/4 spoon yeast
+
+## For 1 pizza
+190g flour
+125g water 
+3/4 spoon yeast
+Some sugar and salt

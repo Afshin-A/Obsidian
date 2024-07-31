@@ -1,8 +1,17 @@
+For $0<x\leq2$, for find:
+$$
+S_x = \sum_{i=1}^{N}{n^x}=\ ?
+$$
+# $n=0$
+
 $$\begin{align}
 S_0&=1^0+2^0+3^0+\dots+(N-1)^0+N^0 \\
 &= 1 + 1 + 1 + \dots+1 + 1 = N
 \end{align}
 $$
+
+# $n=1$
+
 $$\begin{align}
 S_1&=1^1+2^2 \  \qquad + 3^1 \qquad \ \ +\dots+(N-1)^1+N^1 \\
 S_1&=N+(N-1)+(N-2)+\dots+2 \qquad \quad \ +1 \\ \\
@@ -11,10 +20,13 @@ S_1&=N+(N-1)+(N-2)+\dots+2 \qquad \quad \ +1 \\ \\
 \therefore S_1&={{N(N+1)}\over{2}}
 \end{align}
 $$
+
+# $n=2$
 $$\begin{align}
-S_2=\sum_{n=1}^{N}{n^2}=1^2+2^2+3^2+ \dots + (N-1)^2 + N^2 \\
+S_2=\sum_{n=1}^{N}{n^2}=1^2+2^2+3^2+ \dots + (N-1)^2 + N^2 = \ ?\\
 \end{align}
 $$
+
 We begin by considering the following [[telescoping series]]:
 $$
 \begin{align}

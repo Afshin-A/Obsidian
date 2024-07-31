@@ -1,0 +1,5 @@
+- `static`: Default positioning on a webpage. Does not support `left`, `right`, `top`, or `bottom`.
+- `relative`: just like static
+- `fixed`: relative to viewport. Does not move when scrolling
+- `absolute`: used for positioning nesting elements. positions are based on the most recent ancestor.
+- 

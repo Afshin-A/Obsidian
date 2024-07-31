@@ -252,5 +252,12 @@ It's possible to fork a public repository, make changes, and submit a pull reque
   
   
 
-
-
+# Cloning
+When cloning a repo, files from the main branch will be downloaded into the git directory. Attempting to view the repo branches locally will only show the main branch:
+```bash
+git branch
+```
+To view all hidden/remote branches, we use,
+```bash
+git branch -a
+```
