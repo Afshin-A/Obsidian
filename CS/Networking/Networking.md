@@ -3,7 +3,7 @@ The internet is the network of networks. It's a collection of all
 ## IPv4 
 This is a 32 bit number unique to each device that can access the internet (run the internet protocol). This number is divided into 4 octets (groups of 8 bits). Each octet can have a decimal value from 0 to 255 (because 8 bits can at most represent is 255). There can be $255^4\approx4.2\times10^9$ unique IP addresses, which isn't enough to account for all devices. That's why **IPv6** was introduced.
 
-The format of an IP address depends on [[Networking#What is Subnet Mask?|subnet mask]] (click to more info on IP addresses). For example, $255.255.255.0$ means that the last block of the IP address is used for internal networking, while the first 3 blocks are used for public internet.
+The format of an IP address depends on [[Networking#What is Subnet Mask?|subnet mask]] (click to view more info on IP addresses). For example, $255.255.255.0$ means that the last block of the IP address is used for internal networking, while the first 3 blocks are used for public internet.
 ## IPv6
 Enter **IPv6**. It uses 128 bits, 4 parts with 32 bits each. The numbers are hexadecimal (in base 16). IPv4 offers $2^{128} \approx 3.40 \times 10^{38}$ unique  addresses.
 
@@ -33,8 +33,8 @@ Suppose you want to connect to the Google server. You need to traverse the inter
 
 # Managing Computer Networks
 ## Subnet
-A **subnet** (sub-network) is created by a router. The router physically divide a network into smaller sub-networks for enhanced security and performance.
-We have a few computers connected together via a network switch. When computers within the network want to communicate with each other, they broadcast a signal. The broadcast domain consists of all computers connected to the router. If there are many computers in the network, the data traffic causes a slow down. So we create smaller networks (computers connected together by a switch) and place routers that connect these subnetworks. Broadcasts do not go bast routers. 
+A **subnet** (sub-network) is created by a router. The router physically divides a network into smaller sub-networks for enhanced security and performance.
+We have a few computers connected together via a network switch. When computers within the network want to communicate with each other, they broadcast a signal. The broadcast domain consists of all computers connected to the router. If there are many computers in the network, the data traffic causes a slow down. So we create smaller networks (computers connected together by a switch) and place routers that connect these subnetworks. Broadcasts do not go past routers. 
 In addition, this adds modularity to the network: because the computers in one subnet do not have access to the data flow of the other subnets. 
 
 ## VLAN 
@@ -71,7 +71,7 @@ Like your home network. It was limited range
 	- **Firewall** is a security layer associated with the router. It's a set of rules that specify how a LAN device can communicate with a device outside of the network, and wise versa. For example, a connection can form only through a certain port would be one such rule.
 		- **DMZ** (DeMilitarized zone) is a zone within the local network, such that the firewall allows external connections through to any devices in that zone. 
 		- **Port Forwarding**. Applications on a host in a network can communicate through ports. Each port is associated with a port, which is set up in the port forwarding configuration of your router (accessed by entering the IP address of the router in a browser). This is how the router knows where to forward certain requests. For example, the default port for connecting to a webserver via HTTP and HTTPS is 80 and 443 respectively.
-A port is a logical connection used by programs to exchange information.
+A **port** is a logical connection used by programs to exchange information.
 
 A modem is responsible for modulating and demodulating signals. Computers only understand digital signals (1s and 0s). Demodulating is converting analog signals to digital signals. Modulating is the opposite process.
 ## Default Gateway
@@ -232,7 +232,7 @@ Adding more resources like processing power, memory RAM, and storage to the same
 By state, we mean the data and configuration of a system at a particular point. As an analogy, state can be compared to the frames of a video. Frame after frame, the video changes. Similarly, the state of a system (including applications) constantly changes because the data keeps being worked on.
 
 **Stateful** is a design architecture where the state of an application (for example, the data pertaining to web requests by one user) is stored in one web server. In such an architecture, user requests are handled by a [[Networking#Forward and Backward Proxies|reverse proxy]] and sticky sessions (which are responsible for remembering which server is handling a user's requests) to be sent to the same server throughout the entire session (of a customer is shopping on Walmart.com, for example). The problem with this architecture is that it's not **fault tolerant**, meaning that the server handling the client goes down and a new server has to take over, the state of that user will also be lost because no data is being shared between the servers. Another issue with the stateful architecture is that it's not [[Networking#Scalability|scalable]]: other servers cannot join in to process requests. So for example, a customer with a big order may experience delays.
-In a **stateless** design, the data is stored separately from the servers in databases (so the servers are stateless, not the system). **Redis**, the in-memory data store, is typically used to cache the state. It's fast because it uses RAM, not storage. ==This design solves the problems of scalability and fault tolerance of a stateful architecture.== Now, the state is not stored in just one server, and multiple servers can process requests, resulting in the load being more evenly distributed. 
+In a **stateless** design, the data is stored separately from the servers and in databases (so the servers are stateless, not the system). **Redis**, the in-memory data store, is typically used to cache the state. It's fast because it uses RAM, not storage. ==This design solves the problems of scalability and fault tolerance of a stateful architecture.== Now, the state is not stored in just one server, and multiple servers can process requests, resulting in the load being more evenly distributed. 
 
 Stateful and Stateless isn't exclusive to servers. It's also applicable to design patterns (RESTful services), programs (like firewalls), and functions. For example, the [[HTTP|HTTP]] protocol is stateless because each request is independent and has no knowledge of the previous requests. TCP, however, is stateful. It establishes and maintains a connection between client and server until that connection is ended.
 

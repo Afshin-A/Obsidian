@@ -1,0 +1,12 @@
+- [x] Itinerary
+- [x] CruiseInfo
+- [x] TravellerInfo
+- [x] FlightInfo
+- [x] HotelInfo
+- [x] TripInfo
+- [ ] Membership_Admin
+- [x] HotelBooking
+- [x] CruiseBooking
+- [x] FlightBooking
+- [ ] Travel_Agent
+- [ ] MemberAccount

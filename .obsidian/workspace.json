@@ -4,34 +4,35 @@
     "type": "split",
     "children": [
       {
-        "id": "cd9b0a0c9522b7f3",
+        "id": "78a2d1b8c70b14a4",
         "type": "tabs",
         "children": [
           {
-            "id": "e57436082ec99765",
+            "id": "5f021dbe91c92681",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Full Stack Web development using MEAN.md",
+                "file": "Docker.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "4cfc6ddebf01f997",
+            "id": "70d20063b1523383",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Travl Getaways.md",
+                "file": "CS/Databases/MongoDB/MongoDB.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -60,7 +61,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "mvc",
+                "query": "mean stack",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -97,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Full Stack Web development using MEAN.md",
+                "file": "CS/Databases/MongoDB/MongoDB.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -157,18 +158,40 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "4900dd649d740aaa",
+  "active": "70d20063b1523383",
   "lastOpenFiles": [
-    "Travl Getaways.md",
-    "Full Stack Web development using MEAN.md",
-    "CS/Engineering/Circuits and Components.md",
-    "CS/Engineering/Magnetism.md",
-    "CS/DSA/Algorithms/Stable vs Unstable Sorting Algorithms.md",
+    "Docker.md",
+    "CS/Java Script/MEAN/Full Stack Web development using MEAN.md",
+    "Austin Travel Plan.md",
+    "CS/Networking/Networking.md",
+    "Untitled 5.md",
+    "Sales.md",
+    "CS/Networking/HTTP.md",
+    "CS/Application Programming Interface.md",
+    "wireframe.md",
+    "CS/Engineering/UART.md",
+    "CS/Java Script/typeof.md",
+    "Untitled 4.md",
+    "CS/Java Script/Promise.md",
+    "CS/Java Script/JavaScript Methods.md",
+    "Untitled 3.md",
+    "CS/Java Script/MEAN",
+    "CS/Java Script",
+    "CS/Databases/MongoDB/MongoDB.md",
+    "Food/Pizza.md",
+    "CS/AWS.md",
+    "CS/Asm.md",
+    "CS/lvalue and rvalue.md",
+    "CS/CharSequence in Java.md",
+    "CS/Git/Git.md",
     "Mathematics/The Sum of Different Powers of the First n Natural Numbers.md",
-    "CS340 Project 1.md",
+    "Mathematics/Polynomials/Odd degree polynomials have at least 1 real zero.md",
+    "Mathematics/Polynomials/Multiplicity of Vertical Asymptotes and Zeros in Polynomial Fractions.md",
+    "Mathematics/Polynomials/How Many Real Zeros can a Polynomial Have at Most_.md",
+    "Untitled 1.canvas",
+    "Untitled.canvas",
     "char pointer pointer.jpg",
     "authentication.png",
-    "Mathematics/telescoping series.md",
     "Screenshot from 2023-02-01 20-52-29.png",
     "Screenshot from 2023-02-01 20-51-48.png",
     "project 1 read update and remove.png",
@@ -177,32 +200,13 @@
     "Pasted image 20240712201401.png",
     "Pasted image 20240527231228.png",
     "Pasted image 20231109134404.png",
-    "CS/Networking/Networking.md",
-    "CS/Engineering/Electric field, potential energy, and potential (khan academy).md",
     "CS/Engineering",
-    "CS/Application Programming Interface.md",
-    "CS/Git/Git.md",
-    "CS/DSA/Algorithms/Floyd's Tortoise and Hare algorithm - Detecting Cycles.md",
-    "Untitled 1.md",
-    "Untitled.md",
-    "Tikz Circuit Examples.md",
-    "I Will Teach You How to be Rich.md",
-    "Steven King's the Boogeyman.md",
-    "CSS Position.md",
-    "CS/Networking/HTTP.md",
-    "CS/DSA/Algorithms/Euclidean Algorithm.md",
-    "CS/C++/Converting Decimal to Binary.md",
-    "CS/C++/Delegates.md",
-    "CS/C++/constexpr.md",
-    "CS/C++/const.md",
-    "CS/C++/Conditional Compilation.md",
     "CS/DSA/Datastructures",
     "CS/Networking",
     "CS/DSA",
     "CS340M4Assignment2.pdf",
     "CS/System Design",
     "CS/Spring",
-    "Mathematics/Linear Algebra",
-    "Shopping List.pdf"
+    "Mathematics/Linear Algebra"
   ]
 }

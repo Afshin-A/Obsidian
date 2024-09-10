@@ -17,21 +17,30 @@ Rate at which work is done, measured in Watts (W)
 $$
 P={\text{Work} \over t}
 $$
-$$\begin{align}
-V={W\over Q} \\
-W=E=QV\\
-P={W \over t} = {QV \over t} = {IV} \\
+Recall that,
+$$
+V={E\over Q}
+$$
+Work is energy. You do work on an object by transferring energy to it. For example, you do work by lifting an object by transferring energy to it. So we have:
+$$
+\begin{align}
+W&=E=QV && \text{} \\
+P&={W \over t} = {QV \over t} = {IV} \\
 P&=IV=({V \over R})V={V^2\over R}\\
 P&=IV=I(IR)=I^2R\\
 \end{align}
 $$
+In summary, we can calculate power using the following formulas:
 $$
 \begin{align}
-P&=IV\\
-&={V^2 \over R}\\
-&=I^2R
+&\boxed{P={IV}}\\
+&\boxed{P={V^2 \over R}}\\
+&\boxed{P=I^2R}
 \end{align}
 $$
+
+The above formulas hold for constant variables. To find the total energy of a system, we can add the energy of its components. So for example, if we confine gas molecules in a box under pressure, the total energy of the system is the sum of the energies of all the gas molecules. Each molecule contributes to the total energy. 
+This means we can use integration if a variable (like volage, for example) is not constant to find the total power. 
 # Direct Current (DC)
 The current that flows in a linear fashion through a circuit
 # Alternating Current
@@ -209,9 +218,9 @@ $$
 # Voltmeters and ammeters
 Yes, it's ammeter, not ampmeter.
 **Never connect an ammeter in parallel to a circle.** Ammeters have very little resistance so they don't interfere with the current. When connected in parallel, all the current would flow through the ammeter and blow it up. More current goes through the branch with less resistance. 
-In contrast, voltmeters should be connected in parallel, because we are trying to measure the difference in electric potential across a component, like a resistor. If you connect a voltmeter to a wire, it will read a voltage of 0 because there is no change in the electric potential. Remember that 
+In contrast, voltmeters should be connected in parallel, because we are trying to measure the difference in electric potential across a component, like a resistor. If you connect a voltmeter to a wire, it will read a voltage of 0 because there is no change in the electric potential. Remember that
 $$
-\text{Voltage} = \Delta U_e
+\text{Voltage} = \Delta U_e / \text{unit of charge}
 $$
 Voltmeters have a very large resistance so no current diverts from the component that we want to measure the voltage for. Remember that $V=IR$. $R$ is constant, so a change in current would change the voltage as well.
 
@@ -473,3 +482,35 @@ $$
 $$
 \therefore \boxed{C_{e} = C_1 + C_2}
 $$
+
+
+# Solving Circuit 
+```tikz
+\usepackage{circuitikz}
+\usepackage{pgfmath}
+\begin{document}
+
+\begin{circuitikz}[american, voltage shift=0.5]
+    % Define coordinates for better readability
+    \coordinate (A) at (0,0);
+    \coordinate (B) at (0,4);
+    \coordinate (C) at (4,4);
+    \coordinate (D) at (4,0);
+    \coordinate (E) at (8,0);
+    \coordinate (F) at (8,4);
+
+    % Draw the main circuit
+    \draw (A)
+        to[battery, l=$3V$] (B)
+        to[R,l=$R_1$, -*] (C)
+        to[R, l=$R_3$, -*] (D)
+        to[short, l=$$] (A);
+    \draw (D)
+	    to[short, l=$$] (E)
+	    to[battery, l=$4V$] (F)
+	    to[R, l=$R_2$] (C);
+
+\end{circuitikz}
+
+\end{document}
+```
