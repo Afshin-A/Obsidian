@@ -1,13 +1,13 @@
 Docker solves the infamous problem of "Well, it runs on my machine". Imagine that you are a new developer on a team working on a complex problem. Before anything, you have to setup your environment, download software, and install dependencies. With containers, you just download and run the image the company has created. 
 
-A **container** is a running instance of a docker **image**. An image is like a blueprint. A container is a process.
+==A **container** is a running instance of a docker **image**==. An image is like a blueprint. A container is a process.
 Containers are isolated (although not entirely as virtual machines are). Each container contains all the necessary dependencies and software that is necessary to run a software. Let's say you want to run the MEAN stack. These components might have conflicting requirements. For example, one may need this version of a dependency, while the other needs a different version of the same dependency. So solve this problem, also referred to as **matrix of hell**, we would run each component of the stack from its own container to ensure no compatibility issues arise in the future.
 
-An operating system is consisted of a kernel, which directly communicates with the underlying hardware, and software (such as drivers) that run on top of the kernel. Different operating systems have different kernels (so different architectures, compilation process, etc) and are not cross compatible. When you run a docker image that was made for a Linux system, for example, we need to run it on a Linux host. We can run Linux images that use different distributions (such as ubuntu, fedora, etc.) on the same Linux machine because they use the same kernel. But to run a Windows image on a Linux system, we would have to use a virtual machine.
+An operating system is consisted of a kernel, which directly communicates with the underlying hardware, and software (such as drivers) that run on top of the kernel. Different operating systems have different kernels (so different architectures, compilation process, etc) and are not cross compatible. When you run ==a docker image that was made for a Linux system, for example, we need to run it on a Linux host.== We can run Linux images that use different distributions (such as ubuntu, fedora, etc.) on the same Linux machine because they use the same kernel. But to run a Windows image on a Linux system, we would have to use a virtual machine.
 
 A virtual machine is layered. First you have the hardware, then the hypervisor, and then virtual machines placed horizontally on top. Each virtual machine runs its own operating system. Each VM will then run docker and as many containers as needed. One advantage of this method is that each virtual OS is completely isolated. But this method is resource intensive. OS images are gigabytes big.
 
-Docker containers are stateless. So when they're stopped, all data is lost.
+==Docker containers are stateless. So when they're stopped, all data is lost.==
 
 You can containerize just about anything. It makes installation very easy. Uninstalling a container is as easy as removing it. This makes cleaning up so easy.
 
@@ -37,10 +37,17 @@ Before anything, make sure the docker desktop application (we're using Windows) 
 | stop container-name or id                     | Stops a container from running                                                |                                                   |
 | inspect container-id                          | Returns low level details about a container                                   |                                                   |
 | history image-name                            | Reveals information about                                                     |                                                   |
+| network create --driver bridge imagename      | Creates a virtual network within Docker                                       |                                                   |
+| network list                                  | List networks                                                                 |                                                   |
+|                                               |                                                                               |                                                   |
 `docker run ubuntu sleep 5`
 
 Containers stop when there is no running process within them
 
+To stop all running contaienrs:
+```
+docker stop $(docker ps -a -q)
+```
 ## Tags
 You can specify the image version you want to pull or run using tags. By default, the `latest` tag is used to pull the latest version
 ```

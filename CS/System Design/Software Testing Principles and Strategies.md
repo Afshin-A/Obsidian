@@ -18,7 +18,7 @@ Waterfall method withholds testing until the Testing phase. This is bad practice
 ![[Pasted image 20221116004221.png]]
 
 Requirement analysis - gathering requirements
-Functional specification - architecture, database, environemtal design
+Functional specification - architecture, database, environmental design
 High level design - breaking down the application into modules
 Detail design - pseudocode
 Coding - the actual coding
@@ -59,7 +59,7 @@ Developement is held in stages, and each stage has a life cycle.
 A **test scenario** is like a high level category that describes what main functionality of the system needs to be tested in generic terms. An example would be logging into the system.
 We can break down testing scenarios into low-leveled, managable **testing cases** that are more specific and detailed. Examples include, "test for user entering valid username and password", "test for user entering invalid username and password", "test for user leaving the fields empty", and so on. 
 A test scenario categorizes multiple test cases.
-All this information is stored in a **test case specification chart**. In addition to the test scenario and test case columns, we could have pre-conditions for the system before we begin performing a test case, the data used for the test, the expected results from the test, the actual results from the test, the steps taken to conduct the test (so that the tests are reproducable), wether the test has passed or failed.
+All this information is stored in a **test case specification chart**. In addition to the test scenario and test case columns, we could have pre-conditions for the system before we begin performing a test case, the data used for the test, the expected results from the test, the actual results from the test, the steps taken to conduct the test (so that the tests are reproducable), whether the test has passed or failed.
 ![[Pasted image 20221116001339.png]]
 
 Traceability: It is good practice to label our test cases as a way of connecting them to a specific functional requirement and to a business requirement, so that in case there are changes to the requirements, we can we can track down and add to/change the test cases. 
@@ -104,7 +104,7 @@ Static testing is analyzing a system/program without executing it. An example is
 It could by anything produced during developement, including documentation (like design documents and system requirement specifications), code, test plans.
 
 General Review process in a team: 
-1. Planning: author hands the work product to the manager, who whould overview and suggest any quick fixes needed, then sets up a meeting (time and place) for the  team to get together and review the work product.
+1. Planning: author hands the work product to the manager, who would overview and suggest any quick fixes needed, then sets up a meeting (time and place) for the  team to get together and review the work product.
 2. Kick-off: The reviewers study the material and prepare for the meeting.
 3. Review meeting: The reviewers gather together and discuss/make suggestions.
 4. Rework: The author incorporates the agreed upon changes into his/her work.
@@ -114,12 +114,12 @@ General Review process in a team:
 
 
 
-### Test Driven Developement
-In this type of developement, we first create test cases from user stories. The user story would indicate what exactly is expected from the program when given some input data.
+### Test Driven Development
+In this type of development, we first create test cases from user stories. The user story would indicate what exactly is expected from the program when given some input data.
 Then, we would iteratively create and edit code until it passes the test.
 
 
-### CI CD (Continous Integration / Continous Development) pipeline
+### CI CD (Continuous Integration / Continuous Development) pipeline
 From CS-320 M8 weekly post:
 Software testing automation techniques, such as CD/CI, improve efficiency by providing swift feedback to the developers. The process roughly works as follows: developers submit their work to an online server that runs a framework (like CircleCI). The new build is then bombarded with a variety of pre-written tests, including unit tests, integration tests, and end-to-end system tests. Finally, feedback: changes are either integrated into the system upon successful test results, or are rejected and the developers are provided with feedback (error logs).
 This method eliminates many redundant tests, allowing the QA team to focus on the more important and subtle tasks concerning the non-functional requirements of the system, like performing security tests, integration and end-to-end system testing. As a result, the production cycle shortens and software with higher quality is delivered faster.

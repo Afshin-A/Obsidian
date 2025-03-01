@@ -746,7 +746,7 @@ db.accounts.find({transfers_complete: 'TR617907396'})
 ```
 db.collection_name.createIndex({field1: 1, field2: -1, field3: 1})
 ```
-Only queries that contnain or sort by the the prefix in the index can use the index. By prefix, I mean the first argument in the `.createIndex()` method.
+Only queries that contain or sort by the the prefix in the index can use the index. By prefix, I mean the first argument in the `.createIndex()` method.
 
 Argument positions matter. Place fields tested for equality first. Less processing time as fewer documents are returned 
 
