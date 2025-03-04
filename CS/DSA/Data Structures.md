@@ -6,6 +6,8 @@ Used by git to store commits.
 
 
 # Binary Heap
+A heap is a complete binary tree (the tree is filled from left to right in order) and that follows the heap invariant (for a max heap, the parent node is larger than or equal to the child nodes). There are two types of heaps: max heap, and a min heap. 
+
 Total number of nodes in a full binary tree
 $$
 n = 2^{H+1}-1
@@ -114,6 +116,54 @@ Immutable objects. Objects that cannot be changed in memory, like strings, sets,
 # Trees
 - A tree is an undirected graph, meaning we can travel up or down the tree. 
 - There are no cycles in a tree, which also means that there is only one unique path that connects two nodes. If there were more than one path, that means there is a cycle in the data structure and it would not be a tree. 
-- A connected graph with N nodes has N-1 edges.
+- A connected graph with N nodes has N-1 edges
+
+A tree where every node only has 1 node is called a **degenerate tree**.
 # Binary Search tree
-For each node, all nodes on the left subtree are less than or equal to (we can choose to not allow duplicate values in the tree) the parent node, and all nodes on the right child tree are larger.
+For each node, all nodes on the left subtree are less than or equal to (we can choose to not allow duplicate values in the tree) the parent node, and all nodes on the right child tree are larger. 
+Note that a binary tree doesn't have to be complete. That means internal nodes far up may just have 1 node instead of 2, or they could be leaf nodes. They're not necessarily filled from left to right like they are in heaps. 
+
+
+Unlike in a heap, we can't guarantee the shape of a binary search tree. Which is why the worst case time complexity of its operations is `O(n)`. In theory, the tree could just be a linked list. However, on average, the time complexity is `O(log(n))`.
+
+## Node removal
+First we need to find the disposable node.
+```python
+
+class Node:
+	def __init__(self, val, left=None, right=None):
+		self._val = val
+		self._left = left
+		self._right = right
+
+class BST:
+	def __init__(self, root):
+		self._root = root
+
+	def insert(self, n):
+		current = self._node
+		
+
+```
+
+
+There are 4 possible cases we need to account for.
+### Leaf node
+If `node.right is None and node.left is None`
+
+The disposable node is a leaf node (it has no children), so we simply set it to `None`. This is the easiest of the cases.
+
+### No left subtree
+If `node.right is None` 
+The disposable node only has a left child subtree with no right subtree.
+The successor for that node is the left child.
+
+```python
+if node.left is None:
+	
+
+```
+## Tree Traversal
+
+# Balanced Binary Search Tree
+
