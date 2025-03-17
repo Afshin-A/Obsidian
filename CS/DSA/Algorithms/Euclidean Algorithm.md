@@ -1,4 +1,4 @@
-Suppose there exist two integers $a, \ b$ where $a>b$ and  $a=bq+r \ (Equation \ 1)$. So dividing $a$ by $b$ gives a quotient $q$ and a remainder of $r$.
+Suppose there exist two integers $a, \ b$ where $a>b$ and  $a=bq+r \ (\text{Equation} \ 1)$. So dividing $a$ by $b$ gives a quotient $q$ and a remainder of $r$.
 The greatest common divisor of $a$ and $b \quad gcd(a, \ b) \quad$ is the greatest integer that evenly divides both $a$ and $b$.
 We are going to show that
 $$

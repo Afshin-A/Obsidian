@@ -97,8 +97,41 @@ A good hashing function should minimize collisions.
 
 A **collision** happens when the hashing function links multiple objects to the same index. In such a case, i.e. when there's a collision, we can append the element to a linked list at that index. We can also do what's called **linear probing**, which means we keep looking at the next index (`i += 1`) until we find an empty spot. 
 
-# What's hashable?
+## What's hashable?
 Immutable objects. Objects that cannot be changed in memory, like strings, sets, tuples, etc.. are hashable. An object should only be hashed to 1 number, just like how in a dictionary a key can only point to 1 value. That is the definition of a function after all. If the object is mutable, then we can change it and it would be hashed to a different value. 
+
+Python has a built in function `hash()` 
+
+## Probing function
+In the linear probing method, If a collision occurs in our table, we need to find another slot. This can be calculated using a linear function in the form of $P(x)=ax+b$. 
+
+First, we have:
+$$
+h(k)\mod{N} 
+$$
+where 
+- $k$ is the object we want to insert/hash, 
+- $h$ is the hashing function
+- and $N$ is the size of the table. 
+This gives us the index where we first attempt to insert an element. If this index is occupied, we add to it a number given to us by the linear proving function, and take the modulo again to find a new index. 
+$$\begin{align}
+H(k,x)=\big(h(k)+ax\big) \mod{N}  \\
+x \in \{ 0,1,2, \dots \}
+\end{align}
+$$
+
+For each $x$, the we're moving  $a \mod{N}$ indices ahead in the table. 
+$$
+\begin{align}
+H(k,x)-H(k,x+1) \\
+=
+\end{align}
+$$
+
+However, there is a chance we get stuck in an infinite loop if $H(k,x)$ yields the same indices over and over in a cycle (loop). In other words, we need to make sure that $H(k,x)$ can produce every possible number in range $[0,N)$.
+This is only possible if a and N are relatively prime. That is, if their [[Euclidean Algorithm|greatest common divisor]] is 1.
+
+
 
 
 # Union Find Data structure

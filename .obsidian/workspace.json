@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CS/DSA/Data Structures.md",
+                "file": "CS/DSA/Algorithms/Next Prime Number.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Data Structures"
+              "title": "Next Prime Number"
             }
           }
         ]
@@ -162,13 +162,26 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "4900dd649d740aaa",
+  "active": "7164975c82993b25",
   "lastOpenFiles": [
+    "CS/DSA/Algorithms/Euclidean Algorithm.md",
+    "CS/DSA/Algorithms/Next Prime Number.md",
+    "CS/DSA/Algorithms/Floyd's Tortoise and Hare algorithm - Detecting Cycles.md",
+    "Mathematics/Discrete Math/Modular Arithmetic.md",
+    "Mathematics/Trivia/Linear Transformations of Graphs.md",
+    "Mathematics/Series/Direct Comparison Test.md",
+    "Mathematics/Series/Differentiating and Integrating Power Series.md",
+    "Mathematics/Series/Alternating Series.md",
+    "Mathematics/Linear Algebra/Linear Transformation.md",
+    "Mathematics/Exponential Functions/The Number of Digits of Any Positive Integer.md",
+    "CS/DSA/Data Structures.md",
+    "Mathematics/Trivia/Domain of f(g(x)) is the Domain of g(x) if g(x) Exists in Domain of f(x).md",
+    "Mathematics/Discrete Math",
+    "CS/C++/Converting Decimal to Binary.md",
+    "Two's Complement.md",
     "Mathematics/Series/Geometric Series.md",
     "Mathematics/Series/Maclaurin Series.md",
-    "CS/DSA/Data Structures.md",
     "CS/DSA/Graph Theory.md",
-    "Mathematics/Series/Alternating Series.md",
     "Mathematics/Series/Ratio Test.md",
     "DotProductBetweenPAndU.svg",
     "Linear Algebra.md",
@@ -179,19 +192,7 @@
     "Cloud Hosting on Google Cloud Run.md",
     "CS/Git/How to Ignore Files from being Committed.md",
     "CS/Git/GitHub Actions.md",
-    "CS/Networking/Networking.md",
-    "CS/Python/Regex in python.md",
-    "CS/C++/Regex in C++.md",
-    "Docker.md",
-    "Untitled 2.md",
-    "CS/Networking/HTTP.md",
     "authentication.png",
-    "CS/System Design/Software Testing Principles and Strategies.md",
-    "Using Anaconda and Jupyter Notebook.md",
-    "CS/System Design/Software Testing.md",
-    "CS/C++/Continuous Integration and Development (CI-CD) Pipeline.md",
-    "CI-CD.md",
-    "Untitled 7.md",
     "ParallelepipedVJK.light.svg",
     "Pasted image 20240926102940.png",
     "Mathematics/Applications of Integral Calculus",
@@ -210,7 +211,6 @@
     "CS/DSA/Datastructures",
     "CS/Networking",
     "CS/DSA",
-    "CS340M4Assignment2.pdf",
-    "CS/System Design"
+    "CS340M4Assignment2.pdf"
   ]
 }
