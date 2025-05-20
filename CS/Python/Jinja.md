@@ -1,3 +1,4 @@
+Used in Flask to dynamically generate 
 
 ```
 {% with messages = get_flashed_messages(with_categories=true) %}  

@@ -26,3 +26,8 @@ Therefore, when $a$ and $b$ are mod n congruent, that means the remainders of bo
  that no two different values of x can produce the same result when multiplied by a and taken modulo n
 
 we have x_1 and x_2. suppose x_2=ax_1. in other words, x_2 is the next index we get to if x_1 is occupied.
+
+
+$$
+a+b \mod{N} = \Big(a \mod{N} + b \mod{N}\Big) \mod{N}
+$$

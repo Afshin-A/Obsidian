@@ -4,21 +4,35 @@
     "type": "split",
     "children": [
       {
-        "id": "51404d39aa0226d4",
+        "id": "da471ce0fc971180",
         "type": "tabs",
         "children": [
           {
-            "id": "7164975c82993b25",
+            "id": "97879ed400609b90",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CS/DSA/Algorithms/Next Prime Number.md",
+                "file": "CS/DSA/Datastructures/Suffix Arrays.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Next Prime Number"
+              "title": "Suffix Arrays"
+            }
+          },
+          {
+            "id": "932a3740b201ee81",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "CS/Python/Tuple Assignments.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Tuple Assignments"
             }
           }
         ]
@@ -53,7 +67,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "table ",
                 "matchingCase": true,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -78,7 +92,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 394.5
+    "width": 381.5
   },
   "right": {
     "id": "fd7b69146f9a20f8",
@@ -94,7 +108,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Untitled 7.md",
+                "file": "CS/DSA/Datastructures/Fenwick Tree (Binary Indexed Tree).md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +118,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Untitled 7"
+              "title": "Backlinks for Fenwick Tree (Binary Indexed Tree)"
             }
           },
           {
@@ -162,36 +176,39 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "7164975c82993b25",
+  "active": "4900dd649d740aaa",
   "lastOpenFiles": [
-    "CS/DSA/Algorithms/Euclidean Algorithm.md",
-    "CS/DSA/Algorithms/Next Prime Number.md",
-    "CS/DSA/Algorithms/Floyd's Tortoise and Hare algorithm - Detecting Cycles.md",
-    "Mathematics/Discrete Math/Modular Arithmetic.md",
-    "Mathematics/Trivia/Linear Transformations of Graphs.md",
-    "Mathematics/Series/Direct Comparison Test.md",
-    "Mathematics/Series/Differentiating and Integrating Power Series.md",
-    "Mathematics/Series/Alternating Series.md",
-    "Mathematics/Linear Algebra/Linear Transformation.md",
-    "Mathematics/Exponential Functions/The Number of Digits of Any Positive Integer.md",
-    "CS/DSA/Data Structures.md",
-    "Mathematics/Trivia/Domain of f(g(x)) is the Domain of g(x) if g(x) Exists in Domain of f(x).md",
-    "Mathematics/Discrete Math",
-    "CS/C++/Converting Decimal to Binary.md",
-    "Two's Complement.md",
-    "Mathematics/Series/Geometric Series.md",
-    "Mathematics/Series/Maclaurin Series.md",
-    "CS/DSA/Graph Theory.md",
-    "Mathematics/Series/Ratio Test.md",
-    "DotProductBetweenPAndU.svg",
-    "Linear Algebra.md",
-    "Software Security.md",
-    "Mathematics/Applications of Integral Calculus/Average value of a function.md",
+    "CS/DSA/Datastructures/Fenwick Tree (Binary Indexed Tree).md",
+    "CS/DSA/Datastructures/Suffix Arrays.md",
+    "Pasted image 20250516110230.png",
+    "CS/DSA/Datastructures/Segment Tree.md",
+    "Mathematics/Discrete Math/Logic of Euclidean Algorithm.md",
+    "CS/Python/Tuple Assignments.md",
+    "CS/DSA/All Even Binary Numbers End with 0.md",
     "Mathematics/Applications of Integral Calculus/Arc Length.md",
-    "CS/DSA/Algorithms/Sorting Algorithms.md",
-    "Cloud Hosting on Google Cloud Run.md",
-    "CS/Git/How to Ignore Files from being Committed.md",
-    "CS/Git/GitHub Actions.md",
+    "Mathematics/Applications of Integral Calculus/Mean Value Theorem.md",
+    "Mathematics/Applications of Integral Calculus/Average value of a function.md",
+    "Mathematics/Polynomials/Proof of Upper and Lower Bound Theorem.md",
+    "Mathematics/Polynomials/Rational Zeros Theorem.md",
+    "Mathematics/Polynomials/Synthetic Division.md",
+    "Mathematics/Polynomials/Complete Guide to Factoring Polynomials.md",
+    "Mathematics/Polynomials/Conjugate of a Complex Zero is also a Zero in Polynomials.md",
+    "Mathematics/Polynomials/Cubic Depressing.md",
+    "Mathematics/Multiplying factors yielded by quadratic equation doesn't always produce the original polynomial.md",
+    "Mathematics/Discrete Math/Modular Inverse.md",
+    "Mathematics/Discrete Math/Prime factorization.md",
+    "Mathematics/Discrete Math/Extended Euclidean Algorithm.md",
+    "CS/Spring/Spring Expression Language (SpEL).md",
+    "Mathematics/Discrete Math/Modular Arithmetic.md",
+    "Mathematics/Discrete Math/Integer Linear combination of two integers is the set of multiples of its gcd.md",
+    "CS/DSA/Leetcode/Inverting a binary tree.md",
+    "Mathematics/Injective, Surjective, Bijective.md",
+    "CS/DSA/Untitled.md",
+    "CS/DSA/Leetcode",
+    "Linear Algebra.md",
+    "function-mapping.svg",
+    "Mathematics/Discrete Math",
+    "DotProductBetweenPAndU.svg",
     "authentication.png",
     "ParallelepipedVJK.light.svg",
     "Pasted image 20240926102940.png",
@@ -205,12 +222,9 @@
     "Screenshot from 2023-02-01 20-52-29.png",
     "Screenshot from 2023-02-01 20-51-48.png",
     "project 1 read update and remove.png",
-    "project 1 instantiate and create.png",
-    "Pasted image 20240725002241.png",
     "CS/Engineering",
     "CS/DSA/Datastructures",
     "CS/Networking",
-    "CS/DSA",
-    "CS340M4Assignment2.pdf"
+    "CS/DSA"
   ]
 }

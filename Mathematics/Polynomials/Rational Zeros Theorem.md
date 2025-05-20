@@ -1,6 +1,6 @@
 $$ \begin{align}
 \text{Consider} \ P(x)=a_nx^n+a_{n-1}x^{n-1}+ \dots + a_1x+a_0= \\
-\text{where} \ a_n, a_{n-1}, a_{n-2}, \dots a_1, a_0 \in z \ \text{and} \ a_n \neq 0 \\ \\
+\text{where} \ a_n, a_{n-1}, a_{n-2}, \dots a_1, a_0 \in \symbb{Z} \ \text{and} \ a_n \neq 0 \\ \\
 \text{suppose } {p\over q} \ \text{is a zero of } P(x) \text{ and rational and irreducible} \implies (p, q \in z)\\
 P({p\over q})=a_n({p\over q})^n+a_{n-1}({p\over q})^{n-1}+ \dots + a_1({p\over q})+a_0=0 \\
 a_n({p\over q})^n+a_{n-1}({p\over q})^{n-1}+ \dots + a_1({p\over q})=-a_0 \\

@@ -103,7 +103,7 @@ Immutable objects. Objects that cannot be changed in memory, like strings, sets,
 Python has a built in function `hash()` 
 
 ## Probing function
-In the linear probing method, If a collision occurs in our table, we need to find another slot. This can be calculated using a linear function in the form of $P(x)=ax+b$. 
+In the **linear probing** method, If a collision occurs in our table, we need to find another slot. This can be calculated using a linear function in the form of $P(x)=ax+b$.  
 
 First, we have:
 $$
@@ -119,18 +119,18 @@ H(k,x)=\big(h(k)+ax\big) \mod{N}  \\
 x \in \{ 0,1,2, \dots \}
 \end{align}
 $$
+Notice that the constant $b$ is obsolete because we're only shifting everything around our imaginary clock by that constant. 
 
-For each $x$, the we're moving  $a \mod{N}$ indices ahead in the table. 
-$$
-\begin{align}
-H(k,x)-H(k,x+1) \\
-=
-\end{align}
-$$
+For each $x$, the we're moving  $a \mod{N}$ indices ahead in the table. Think about it like moving around a clock. You start at $h(k) \mod{N}$. If that room is occupied, you go around the clock $a$ units, which is the equivalent of  adding $a \mod{N}$.
 
 However, there is a chance we get stuck in an infinite loop if $H(k,x)$ yields the same indices over and over in a cycle (loop). In other words, we need to make sure that $H(k,x)$ can produce every possible number in range $[0,N)$.
 This is only possible if a and N are relatively prime. That is, if their [[Euclidean Algorithm|greatest common divisor]] is 1.
 
+
+## Hash table vs. Hash map
+A hash map is a kind of a hash table. It takes in a key, hashes it, and then forms a bijection to a value. A bijection is a one-to-one relationship. 
+
+A hash table does a similar thing. It takes in a value, hashes it to find an index, then places that value at the index. Only a hash table would be a hashable object to index bijection, whereas a hash map is a key to value bijection, as long as the key is hashable. 
 
 
 
@@ -198,5 +198,43 @@ if node.left is None:
 ```
 ## Tree Traversal
 
+### pre-order
+```python
+def preorder(node):
+	if node == None:
+		return
+	print(node)
+	preorder(node.left)
+	preorder(node.right)
+```
+### In-order
+```python
+def inorder(node):
+	if node == None:
+		return
+	preorder(node.left)
+	print(node)
+	preorder(node.right)
+```
+The result is that we move to the left most node, print it, then print its parent, before printing the right sibling. In a binary search tree, the parent node is larger than the left child, and the right child is larger than the parent:
+```
+left < parent < right
+```
+So the in-order traversal method prints all elements in the binary search tree in order from the smallest to the largest
+### Post order
+```python
+def postorder(node):
+	if node == None:
+		return
+	preorder(node.left)
+	preorder(node.right)
+	print(node)
+```
+In post order, you first explore the left subtree, then the right subtree, and then finally print the node.
+
 # Balanced Binary Search Tree
 
+
+
+# Deque vs Queue 
+Deque stands for double ended queue. In a normal queue, elements are added to the end of the line and removed from the front. 

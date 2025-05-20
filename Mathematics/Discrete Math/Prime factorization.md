@@ -1,0 +1,1 @@
+all integers can be written as a factor of prime numbers, because prime numbers cannot be factored anymore. so prime numbers are the building blocks of all other integers.
