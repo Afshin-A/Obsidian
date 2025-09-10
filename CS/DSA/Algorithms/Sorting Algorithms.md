@@ -53,7 +53,7 @@ def bubble_sort(unsorted_list: list):
     return unsorted_list
 ```
 
-The time complexity of the bubble sort algorithm, at the worst case, is $O(n^2)$.
+The time complexity of the bubble sort algorithm is always $O(n^2)$.
 # Insertion 
 As we work our way from left to right, there will be two partitions formed: one on the left, and one on the right. During each iteration, an element from the right partition is *inserted* in the sorted, left partition. Therefore, The left partition keeps growing while the right partition shrinks.
 Specifically, 

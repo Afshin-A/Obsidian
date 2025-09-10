@@ -261,3 +261,7 @@ To view all hidden/remote branches, we use,
 ```bash
 git branch -a
 ```
+
+
+
+# https://marklodato.github.io/visual-git-guide/index-en.html

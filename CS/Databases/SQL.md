@@ -1,8 +1,6 @@
 These notes are based on *[Select One Star](https://selectstarsql.com/)* book, which uses a database that keeps track of 
 
-SQL is a specification. Every DBMS that adopts SQL works differently under the hood and may use different names for functions and keywords.
-
-
+SQL is a specification. Every DBMS (database management system) that adopts SQL works differently under the hood and may use different names for functions and keywords. One such example is `PostgreSQL`, a relational DBMS that builds more features on top of SQL. In addition, we use a tool named `PgAdmin` that provides us with a GUI to interact with our databases.
 
 These are three different ways of how many inmates had a last statement
 ```sql
@@ -27,11 +25,17 @@ WHERE last_statement IS NULL
 SELECT AVG(length(last_statement)) from executions
 ```
 
+The `count` function does not *count* `null` values. It only counts non-null values.  So in the following, instead of 1, we could have any non-null value and it will be counted once:
+```sql
+SELECT COUNT(CASE WHEN last_statement IS NULL THEN 1 ELSE NULL END)
+```
+We could also achieve the same results if we rewrite this query using the `sum` aggregate function as follows:
+```sql
+SELECT SUM(CASE WHEN last_statement IS NULL THEN 1 ELSE 0 END)
+```
+
 Aggregate functions are called last
-
-
-
-
+ 
 
 
 
@@ -229,4 +233,32 @@ FROM teacher
 UNION
 SELECT age
 FROM student
+```
+
+
+# Postgress
+## Types
+### `VARCHAR`
+Defines a string with varying length. You can define the max length. Ideal for usernames, passwords, etc..
+```SQL
+email VARCHAR(255) UNIQUE NOT NULL
+```
+
+### `ENUM`
+
+```sql
+CREATE TYPE roles AS ENUM('employee', 'admin', 'owner');
+role roles NOT NULL DEFAULT 'employee'; 
+```
+
+```sql
+CREATE TABLE users (
+	role ENUM('employee', 'manager', 'admin') NOT NULL DEFAULT 'employee'
+);
+```
+
+### `TEXT`
+Variable length character string (no limit?)
+```sql
+
 ```

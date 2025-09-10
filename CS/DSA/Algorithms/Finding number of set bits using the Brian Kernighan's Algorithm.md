@@ -1,0 +1,1 @@
+In a binary number, set bits are the bits with the value 1

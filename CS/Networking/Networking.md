@@ -177,6 +177,8 @@ It's also free and opensource.
 ## Vulnerabilities
 ### CSRF
 Cross site request forgery
+In this type of attack, attackers take advantage of the fact that a client (browser) is authenticated. Therefore, the backend server would consider any request sent as authenticated. 
+This is countered by using anti-CSRF tokens and a strict content security policy (CSP)
 
 ### Injection Attacks
 #### SSRF
