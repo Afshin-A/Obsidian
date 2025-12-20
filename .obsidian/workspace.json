@@ -4,11 +4,67 @@
     "type": "split",
     "children": [
       {
-        "id": "cb3a82405395aaae",
+        "id": "19ef2092752ccedb",
         "type": "tabs",
         "children": [
           {
-            "id": "6c636016eaf35324",
+            "id": "e1e8edf232771dfc",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "CS/Design Patterns/Visitor.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Visitor"
+            }
+          },
+          {
+            "id": "50256d000798fe4d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "CS/DSA/Algorithms/Stable vs Unstable Sorting Algorithms.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Stable vs Unstable Sorting Algorithms"
+            }
+          },
+          {
+            "id": "f288b22292a2e9b4",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "CS/DotNET/DOT NET Generic Host.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "DOT NET Generic Host"
+            }
+          },
+          {
+            "id": "fcf8c56dd7b4d210",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "CS/Type Script/Angular.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Angular"
+            }
+          },
+          {
+            "id": "d4d87787133ad92a",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -22,71 +78,35 @@
             }
           },
           {
-            "id": "8bd234b66cfc2446",
+            "id": "6b921a2bfda22646",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CS/Databases/SQL.md",
+                "file": "CS/Type Script/Angular.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "SQL"
+              "title": "Angular"
             }
           },
           {
-            "id": "80395a18ec2e24f5",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Img/Screenshot from 2023-02-01 20-51-48.png"
-              },
-              "icon": "lucide-image",
-              "title": "Screenshot from 2023-02-01 20-51-48"
-            }
-          },
-          {
-            "id": "2f03512eb4491bcb",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Img/Screenshot from 2023-02-01 20-52-29.png"
-              },
-              "icon": "lucide-image",
-              "title": "Screenshot from 2023-02-01 20-52-29"
-            }
-          },
-          {
-            "id": "a7cf006b069170ec",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Img/embedded_image_1java_ba727bd4-e4b9-6ae5-a349-fcfaecdd06be_fkmPeagaJCnOoypdz5tn.png"
-              },
-              "icon": "lucide-image",
-              "title": "embedded_image_1java_ba727bd4-e4b9-6ae5-a349-fcfaecdd06be_fkmPeagaJCnOoypdz5tn"
-            }
-          },
-          {
-            "id": "226758ee5dd7c70b",
+            "id": "eaef14929809eabd",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CS/portal-woh journal.md",
+                "file": "CS/Type Script/Interface Vs. Type.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "portal-woh journal"
+              "title": "Interface Vs. Type"
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -118,7 +138,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "username",
+                "query": "zod",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -159,7 +179,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "CS/DSA/Datastructures/Fenwick Tree (Binary Indexed Tree).md",
+                "file": "CS/portal-woh journal.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -169,21 +189,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Fenwick Tree (Binary Indexed Tree)"
-            }
-          },
-          {
-            "id": "020b49f30c51bb10",
-            "type": "leaf",
-            "state": {
-              "type": "outgoing-link",
-              "state": {
-                "file": "Computer Networking.md",
-                "linksCollapsed": false,
-                "unlinkedCollapsed": false
-              },
-              "icon": "lucide-ghost",
-              "title": "outgoing-link"
+              "title": "Backlinks for portal-woh journal"
             }
           },
           {
@@ -205,17 +211,34 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Computer Networking.md"
+                "file": "CS/portal-woh journal.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
               },
-              "icon": "lucide-ghost",
-              "title": "outline"
+              "icon": "lucide-list",
+              "title": "Outline of portal-woh journal"
+            }
+          },
+          {
+            "id": "28118ffc38acf781",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline"
             }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 300,
+    "width": 292.5,
     "collapsed": true
   },
   "left-ribbon": {
@@ -230,53 +253,53 @@
   },
   "active": "4900dd649d740aaa",
   "lastOpenFiles": [
-    "CS/Parameterized Query Avoids Injection Attacks.md",
-    "CS/Databases/MongoDB/MongoDB.md",
-    "CS340 Project 1.md",
-    "About me - github.md",
-    "Tikz Circuit Examples.md",
-    "Travl Getaways.md",
-    "Conference Presentation Cloud Development.md",
-    "Misc",
-    "CS/Cloud Hosting on Google Cloud Run.md",
-    "Interview Prep.md",
-    "Notes on Containerization and Orchestration.md",
-    "Misc/Spanish.md",
-    "Misc/Sales.md",
-    "Pac man functional requirements.md",
-    "CI-CD.md",
-    "Img/authentication.png",
-    "Img/char pointer pointer.jpg",
-    "CS/CSS Position.md",
+    "CS/Type Script/Interface Vs. Type.md",
+    "CS/Type Script/Angular.md",
+    "CS/portal-woh journal.md",
+    "CS/Leetcode/2D Arrays/Battleship pattern.md",
+    "CS/Leetcode/2D Arrays",
+    "CS/DotNET/Events in CSharp.md",
+    "CS/Leetcode",
+    "CS/Design Patterns/Strategy.md",
+    "CS/Design Patterns/Template.md",
+    "CS/Design Patterns/Visitor.md",
+    "CS/DotNET/DOT NET Generic Host.md",
+    "CS/DSA/Algorithms/Stable vs Unstable Sorting Algorithms.md",
+    "Food/Pecorino Romano Vs. Parmigiano Regianno.md",
+    "CS/Design Patterns/Observer.md",
+    "CS/DotNET/Struct Vs Record Vs Class.md",
+    "CS/Stack Vs Heap in System Memory.md",
+    "CS/Virtual Memory.md",
+    "CS/Design Patterns/Factory.md",
+    "CS/Design Patterns/Factory method design pattern.md",
+    "CS/DotNET/Progress Reporting.md",
+    "CS/DotNET/POCO Class.md",
+    "CS/DotNET/NET Microsoft.Extensions.Hosting.md",
+    "CS/Cores vs Threads.md",
+    "CS/DotNET/Understanding the .NET Terminology.md",
+    "CS/DotNET/Channels.md",
+    "CS/Design Patterns/Builder.md",
+    "CS/DSA/Algorithms/Cache Replacement Policies.md",
+    "Mathematics/Permutations Vs Computations.md",
+    "PXL_20250919_044955247~2.jpg",
+    "Untitled.base",
+    "Untitled 6.base",
+    "Untitled 5.base",
+    "Untitled 4.base",
+    "Untitled 3.base",
+    "Untitled 2.base",
+    "Untitled 1.base",
+    "CS/Operating Systems",
     "CS/Hardware Engineering/Embedded Systems Hardware.canvas",
-    "CS/Next Prime Number.md",
-    "Logarithm.md",
-    "CS/Using Anaconda and Jupyter Notebook.md",
-    "Misc/Vocab.md",
-    "Img/Screenshot from 2023-02-01 20-51-48.png",
-    "Img/embedded_image_1java_ba727bd4-e4b9-6ae5-a349-fcfaecdd06be_fkmPeagaJCnOoypdz5tn.png",
-    "Img/function-mapping.svg",
-    "Img/DotProductBetweenPAndU.svg",
-    "CS/Event Driven Programming.md",
-    "CS/Framework vs Libraries.md",
-    "CS/Dffie-Hellman Key Exchange.md",
-    "CS/Asm.md",
-    "CS/Java Script/MEAN/Full Stack Web development using MEAN.md",
-    "Img/MVC summary.png",
-    "Img/map of internet.png",
-    "Img/mongoimport.png",
-    "Img/Screenshot from 2023-02-01 20-52-29.png",
-    "CS/DSA/Two's Complement.md",
-    "CS/Software Security.md",
-    "CS340M4Assignment2.pdf",
-    "Untitled 1.canvas",
-    "CS/DSA/Graphs",
-    "CS/DSA/Leetcode",
-    "Mathematics/Discrete Math",
-    "Mathematics/Applications of Integral Calculus",
-    "Mathematics/Series",
-    "CS/Java Script/MEAN",
-    "CS/Java Script",
-    "CS/Hardware Engineering"
+    "contour_plot_1.png",
+    "contour_plot_white_bg.png",
+    "partial_derivatives_1.png",
+    "Pasted image 20251012233316.png",
+    "Pasted image 20251012233353.png",
+    "Pasted image 20251012233416.png",
+    "Pasted image 20251009154759.png",
+    "Pasted image 20251015121322.png",
+    "Pasted image 20251015120926.png",
+    "Untitled 1.canvas"
   ]
 }

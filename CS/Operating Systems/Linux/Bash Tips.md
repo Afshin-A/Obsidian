@@ -92,7 +92,7 @@ find ./ -perm 760 -size -10k -type f -iname "*.md" -exec grep -i "hello" {} \;
 Find all files in the current directory and subdirectories that have their permissions as read, write, and execute for owner, read and write for the primary user group, and no permissions for others, file size of less than 10 kilobytes, type is file (not directory), and with any name that ends with the extension .md (case insensitive). Then, execute the grep command **for each file** to find the word "hello" (case insensitive). 
 `{}` is a placeholder. Remember that the `grep` command needs a directory to work with. The curly braces represent each file that is returned by the `find` command.
 `\;` represent the end of the `-exec` option.
-Replace `\;` with **`+`** to mitigate the number of calls `grep` will make. Instead of `grep` executing for each time, `+` overrides this default behavior to call `grep` on multiple files at once and reduce the number of calls, therefore improving performance.
+Replace `\;` with **`+`** to reduce the number of calls `grep` will make. Instead of `grep` executing for each time, `+` overrides this default behavior to call `grep` on multiple files at once and reduce the number of calls, therefore improving performance.
 ```bash
 find ./ -perm 760 -size -10k -type f -iname "*.md" -exec grep -i "hello" {} +
 ```

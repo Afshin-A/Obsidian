@@ -1,13 +1,15 @@
 
-| Nibble     | 4 bits                                                                                                                                 |
-| ---------- | -------------------------------------------------------------------------------------------------------------------------------------- |
-| Byte       | 8 bits                                                                                                                                 |
-| RIMS       | Riverside-Irvine Microcontroller Simulator. 1 byte input, 1 byte output. Software we use to simulate embedded system input and output. |
-| Hex Syntax | `char c = xAF;`<br>`char c = 0xAF;`  are correct                                                                                       |
-| `inline`   |                                                                                                                                        |
+| Nibble           | 4 bits                                                                                                                                                                                                                                                   |
+| ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Byte             | 8 bits                                                                                                                                                                                                                                                   |
+| RIMS             | Riverside-Irvine Microcontroller Simulator. 1 byte input, 1 byte output. Software we use to simulate embedded system input and output.                                                                                                                   |
+| Hex Syntax       | `char c = xAF;`<br>`char c = 0xAF;`  are correct                                                                                                                                                                                                         |
+| `inline` keyword | A hint to the compiler to just replace the function name with the function code, instead of jumping creating a stack and heap for the function, which increases overhead. It's not guaranteed, but it is useful for efficiently running simple functions |
+| `extern` keyword | Tells the compiler the function is defined elsewhere (in another file), so it won't re-create a definition                                                                                                                                               |
 
 # Bit Access Functions
 ```c
+// set the kth bit of x to b
 inline unsigned char SetBit(unsigned char x,unsigned char k, unsigned char b) {
    return (b ?  (x | (0x01 << k))  :  (x & ~(0x01 << k)) );
 }
@@ -95,3 +97,7 @@ Peripherals can connect to an embedded system via several different hardware int
 - USB.
 
 
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/sTHckUyxwp8?si=BtUZr8pNUbK3Cf61" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/CAvawEcxoPU?si=iS0UqWumWD5VX6No" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>

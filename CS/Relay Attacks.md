@@ -1,0 +1,2 @@
+Relay attacks happen when attackers intercept a request, capture it, and resend it at a later time. Or they capture it and send it multiple times.
+They don't necessarily don't need to decrypt the request. But, if, for example, they know it's a bank request through social engineering or phishing attacks, they could send a money transfer request to an unsuspecting bank server multiple times and drain a customer's bank account. 

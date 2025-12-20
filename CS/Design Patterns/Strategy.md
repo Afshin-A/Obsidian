@@ -108,3 +108,11 @@ class CannotFly implements Flying {
 We can create many different flying behaviors by creating classes that implement the `Flying` interface, like `CanFly` and `CannotFly` in the diagram above. Then, by having a field of type `Flying` in `Animal`, we use give any `Flying` behaviors to the animals without having to implement or override any methods--without having to make any changes to the subclasses. This idea connects to the avoid-coupling principle discussed above.
 
 Using this pattern also allows us to change class behavior at run-time. That is, if at somepoint in run time we decide that a `Dog` object _can_ fly, we can change the flying behavior of that `Dog` using the `setFlyingBehavior()` method.
+
+
+# 
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/rFLKD7LFPpg?si=-tAk8zBgkLY2WXOk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+## [[Strategy]] vs [[Template]] Design Patterns
+

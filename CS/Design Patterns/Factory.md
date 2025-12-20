@@ -1,3 +1,6 @@
+The factory design pattern allows us to dynamically create objects. It abstracts away the logic of object creation and provides us with a simple API.
+
+
 >When a method returns one of several possible classes that share a superclass
 
 Uses: 
@@ -133,4 +136,6 @@ public class Client2 {
     }  
 }
 ```
+
+
 

@@ -3,7 +3,7 @@ Attempting to traverse a cyclic linked list will result in an infinite loop. It 
 This is a cycle detection algorithm in a singly linked lists with a time complexity of $O(n)$ and space complexity of $O(1)$ (because two only use 2 pointers). It's constant regardless of the size of the linked list. 
 
 # How it works
-We start by setting two pointers, slow and fast, to the head. Slow moves 1 node at a time, while fast moves by 2 nodes. If there's not a cycle, then fast will eventually reach `null`. But if there is a cycle, then, by the pigeonhole principle, both slow and fast will enter the cycle and will eventually meet at node. But rest assured the hare and the tortoise will not race forever in the loop, and at most will need $n$ (length of list) steps to reach each other.
+We start by setting two pointers, slow and fast, to the head. Slow moves 1 node at a time, while fast moves by 2 nodes. If there's not a cycle, then fast will eventually reach `null`. But if there is a cycle, then, by the pigeonhole principle, both slow and fast will enter the cycle and will eventually meet at a  node. But rest assured the hare and t*he tortoise will not race forever in the loop, and at most will need $n$ (length of list) steps to reach each other*.
 We also want to know the last node leading to the cycle. It turns out, if we take the same number of steps that takes to get from the meeting point to the cycle starting point ($z$) from the head, we reach the entry point of the cycle.
 # Why it works
 ![[Pasted image 20240527231228.png]]
@@ -14,7 +14,7 @@ Definitions:
 - $x$ is the distance from head to where the cycle begins.
 - $y$ is the distance from cycle start point to meeting point.
 - $z$ is the distance from meeting point to cycle start point.
-- $l$ is the distance for the loop, such that $l=y+z$
+- $l$ is the loop length, such that $l=y+z$
 - $f$ is the distance traveled by fast (hare).
 - $s$ is the distance traveled by slow (tortoise).
 - $c_1$, $c_2$, and $c_3$ are constants that represent number of rotations around the cycle.

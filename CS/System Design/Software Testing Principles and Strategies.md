@@ -28,7 +28,7 @@ Coding - the actual coding
 Testing a standalone module (this could be a function, class, or group of classes) to ensure it works.
 
 ##### Integration testing
-Testing to ensure two or more related modules work well together. Sometimes one of these modules is ready to test before the other necessary modules. Instead of waiting for other developers to finish, we can create a basic mock-up made for the purpose of testing, to mimic the other module. These are called "stub" or "driver". If the module we're testing needs to send data to another module that is not ready yet, we can create a stub. Likewise, a driver is a mock-up module that sends data to the module we're testing.
+Testing to ensure two or more related modules work well together. Sometimes one of these modules is ready to test before the other necessary modules. Instead of waiting for other developers to finish, we can create a basic mock-up made for the purpose of testing, to mimic the other module. These are called *"stub"* or *"driver"*. If the module we're testing needs to send data to another module that is not ready yet, we can create a stub. Likewise, a driver is a mock-up module that sends data to the module we're testing.
 
 ##### System testing
 Testing end-to-end scenarios to ensure the system works as a whole. An end-to-end situation is a real world example where a user interacts with the system normally: Login -> Check balance -> Transfer dosh -> Logout
@@ -55,21 +55,21 @@ Developement is held in stages, and each stage has a life cycle.
 
 
 
-### Testing Case vs. Testing Scenario
+### Testing Scenario vs. Testing Case 
 A **test scenario** is like a high level category that describes what main functionality of the system needs to be tested in generic terms. An example would be logging into the system.
-We can break down testing scenarios into low-leveled, managable **testing cases** that are more specific and detailed. Examples include, "test for user entering valid username and password", "test for user entering invalid username and password", "test for user leaving the fields empty", and so on. 
+We can break down testing scenarios into low-leveled, manageable **testing cases** that are more specific and detailed. Examples include, "test for user entering valid username and password", "test for user entering invalid username and password", "test for user leaving the fields empty", and so on. 
 A test scenario categorizes multiple test cases.
-All this information is stored in a **test case specification chart**. In addition to the test scenario and test case columns, we could have pre-conditions for the system before we begin performing a test case, the data used for the test, the expected results from the test, the actual results from the test, the steps taken to conduct the test (so that the tests are reproducable), whether the test has passed or failed.
+All this information is stored in a **test case specification chart**. In addition to the test scenario and test case columns, we could have pre-conditions for the system before we begin performing a test case, the data used for the test, the expected results from the test, the actual results from the test, the steps taken to conduct the test (so that the tests are reproducible), whether the test has passed or failed.
 ![[Pasted image 20221116001339.png]]
 
-Traceability: It is good practice to label our test cases as a way of connecting them to a specific functional requirement and to a business requirement, so that in case there are changes to the requirements, we can we can track down and add to/change the test cases. 
+Traceability: ==It is good practice to label our test cases as a way of connecting them to a specific functional requirement and to a business requirement, so that in case there are changes to the requirements, we can we can track down and add to/change the test cases. 
 
 Test Basis
 How do we come up with tests? Obviously we need to have something to test. This could be the actual Application Under Test (AUT), from our experience, or, most commonly, from documentation. Documentaion is produced during each step of SDLC. We can come up with tests before the program is even written using those documents (such as functional specification documentation)
 
 ### Business Requirements vs. Functional Requirements vs. Non-functional Requirements
 
-Functional requirements are about what the system should do.  These come directly from the customers. "The program should do this, and that, etc.."
+Functional requirements are about what the system should do. These come directly from the customers. "The program should do this, and that, etc.."
 
 Non-functional requirements are about how the system should behave. They're usually the byproduct of implementing the functional requirements. For example, "the program should do this in X number of seconds."
 
@@ -98,10 +98,10 @@ A use case diagram summarizes a system by providing a high level overview of its
 Use case diagrams could show us examples of how the users interact with our system, and what we have to test.
 
 #### Static Testing
-Static testing is analyzing a system/program without executing it. An example is reviewing documentation to make sure there are no errors that could result in disaster in the later stages of developement.
+Static testing is analyzing a system/program without executing it. An example is reviewing documentation to make sure there are no errors that could result in disaster in the later stages of development.
 
 #### Work product
-It could by anything produced during developement, including documentation (like design documents and system requirement specifications), code, test plans.
+It could by anything produced during development, including documentation (like design documents and system requirement specifications), code, test plans.
 
 General Review process in a team: 
 1. Planning: author hands the work product to the manager, who would overview and suggest any quick fixes needed, then sets up a meeting (time and place) for the  team to get together and review the work product.

@@ -1,5 +1,10 @@
-This design pattern is used to update many objects.
-A _Subject_ (publisher) sends updates to the _Observers_ (subscribers).
+This design pattern is used to update many objects without tight coupling.
+
+In short, it stores a list of observer objects. When a condition becomes true, it updates some field in all of those objects
+
+A **Subject** (publisher/observable) sends updates to the **Observers** (subscribers/receivers).
+It's called the subject because the observers are observing it.
+*Observers observe the subject for changes.*
 One advantage of this pattern is loose coupling between the Subject and Observer, meaning the Subject does not need to know anything about the Observers. And, making changes in one class does not affect the other classes.
 
 ```plantuml
@@ -53,7 +58,7 @@ MainProgram -> StockGrabber
 
 @enduml
 ```
-
+[Click here if the diagram does not load.](https://www.plantuml.com/plantuml/png/jLJ1QeD043rNy1_cQ6XowRc41091Q6be-WFhEjbiTNTbTWs4ad_lAj6irlJK7lNDp7lFDsCShQnZv6fLmjuHSoZEi44hXOOTSmv9nr4SsKBgYX5J8CZKLQgFID8npH6UukWeSmHKbJk3GfKXsQP7QjzzOBvaNsUVo1rynT738voCp85GIElnv2spI2SaCBCRMklVSMsSF9mxo2OUkZIKl6JMUX-65rjYcLS2KbKbAjJE3cGiO4t4pY-UvBcRimHRPvQJz7qDq9RbfivA19cfTkoE9CSGO9MVFmq9OyG8-o_t7MJHfQ7Iv2Q_VHwMheVQay3IHFLsP2VfROg-_38ClfSV95zNkT-oiR0vZCddS6z-a79F4CGy80q3dCnk8ZKHlFJ7uIG7RobOZdJpGOmNI6t966jVThjM-PdI-cjvnmCIwkiM3CGdzujdV__TNfdKEpAYEUOW5dv4NgJNgU5AjS2wc_u3sNOi_H5sRXRBFeeu2baz49veqxD2dVjVq3S0)
 `MainProgram` is responsible for creating a publisher object (`StockGrabber`), managing the subscribers (`StockObserver`) and checking for changes in stock prices. To check price changes, `MainProgram` could connect to another program, a database, etc..
 
 `StockGrabber` is the publisher. It keeps a list of the subscribers, can add, remove from the list, and  `update` them.
@@ -66,15 +71,13 @@ There is a new feature in `StockObserver`: The constructor takes a reference of 
 
 ```java
 public interface Subject {  
-    // interface methods are public and abstract by default  
-    void register(Observer observer);  
-  
+    // In java, interface methods are public and abstract by default  
+    void register(Observer observer); 
     void unregister(Observer observer);  
-  
     void notifyObservers();  
 }
 
-
+// Updates stock prices. Sends updates to observers 
 public class StockGrabber implements Subject {  
 	private ArrayList<Observer> subscriberList;  
 	private double ibmPrice;  
@@ -120,7 +123,7 @@ public interface Observer {
 }
 
 
-ublic class StockObserver implements Observer {  
+public class StockObserver implements Observer {  
     private double imbPrice;  
     private double applePrice;  
     private double googlePrice;  
@@ -165,3 +168,6 @@ public class MainProgram {
 }
 ```
 
+
+# Here's a video explanation
+<iframe width="560" height="315" src="https://www.youtube.com/embed/7B1DFe0VBxI?si=b5FDvc9pyYxkSS2e" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>

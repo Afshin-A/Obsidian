@@ -23,6 +23,7 @@ We can also store JWT in cookies. We can mark a cookie with the `HttpOnly` flag,
 - So don't accept raw input from user. Always sanitize and escape.
 - Don't store JWT in `localStorage`, that makes application vulnerable to XSS attacks that would steal the JWT[^1]. 
 - Store JWT in cookies flagged with `HttpOnly`, `Secure`, and `SameSite=Strict`. With `HttpOnly`, cookies cannot be accessed by JavaScript code run on the client's side, so this secures the application against XSS attacks. `Secure` means the cookie is only sent via HTTPS. And, `SameSite=Strict` means the cookie is only sent to the same sites.[^2]
+- The modern hybrid way is to store JWT in a variable in memory and refresh them every 5-15 minutes.
 - Don't use the same JWT forever. Refresh them often using refresh tokens
 - Implement a strict [Content Security Policy (CSP)](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CSP)  This is basically a HTTP response header that instructs the browser what javascript to execute and what to ignore to prevent XSS (cross-site scripting) and other similar attacks.
 
@@ -30,6 +31,23 @@ We can also store JWT in cookies. We can mark a cookie with the `HttpOnly` flag,
 [^2]: For two sites to be considered to be the same, they must have the same high level domain name and use the same protocol. For example, `https://example.com` and `https://api.example.com` are considered the same site. 
 
 Cookies are automatically sent with each request. 
-Even if XSS attacks can't directly read `HttpOnly` cookies, they can use it in sending legitimate requests (within the same site scope).
+Even if XSS attacks can't directly read `HttpOnly` cookies, they can use it in sending legitimate requests (within the same site scope). That's why we need to use CSRF tokens.
+CSRF tokens are embedded in HTML files. Attackers can't access it because of CORS (cross origin resource sharing) prevents other domains from accessing it. 
 
-This is why most web applications adopt a hybrid approach. When the user logs in, the server sends a short-lived (5-15 minutes) JWT in response body and sets a long-lived refresh token (1 month or so) in a cookie. JWT is stored in memory (e.g. a JavaScript variable). The client application will manually attach the JWT to legit requests, preventing CSRF attacks. We will still be wary of XSS attacks. However, if attackers manage to steal the access token (i.e. JWT), they don't have long to use it as it will automatically refresh. As the JWT expires, the client must request a new access token using the refresh token. This token is stored in a `HttpOnly`, `Secure`, and `SameSite=Strict` cookie and is used for authorization/authentication before a new JWT is issued.
+## Conclusion
+Most web applications adopt a hybrid approach. When the user logs in, the server sends a short-lived (5-15 minutes) JWT in response body and sets a long-lived refresh token (1 month or so) in a cookie. JWT is stored in memory (e.g. a JavaScript variable). The client application will manually attach the JWT to legit requests, preventing CSRF attacks. We will still be wary of XSS attacks. However, if attackers manage to steal the access token (i.e. JWT), they don't have long to use it as it will automatically refresh. As the JWT expires, the client must request a new access token using the refresh token. This token is stored in a `HttpOnly`, `Secure`, and `SameSite=Strict` cookie and is used for authorization/authentication before a new JWT is issued.
+
+
+
+### JWT structure
+A JWT is typically consisted of 3 parts: 
+- Header contains information like the algorithm used to sign it
+- Payload is the actual value
+- Signature is used by server to verify the JWT sent from client to server
+
+See [[portal-woh journal#JWT Reserved claims]] for more information
+
+JWT is base64 encoded, so the client needs to decode it. 
+Encoded doesn't mean encrypted. 
+
+
