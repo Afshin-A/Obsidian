@@ -954,3 +954,29 @@ SQS Consumer lambda
 
 # AWS Fargate
 Serverless service that runs docker containers
+
+
+
+# Using Kafka for our log management system
+the application crashes before the log is sent:
+	we have to store the log locally 
+
+
+exactly-once delivery is not achievable here
+SQS provides built in at-least-once delivery
+The consumer needs to enforce idempotency
+
+First we store the data locally in safe memory. A few options are:
+WAL file
+SQLite
+Kafka
+
+Once the log is saved, it is accepted.
+
+Now a background, async process can process the logs (send them to SQS). Once successfully sent, we mark the logs as sent and eventually delete them from the local disk
+
+
+Kafka is disk-presistent. 
+It enacts the consumer-producer pattern (as we saw in .NET, but) in a distributed system, decoupling different components. 
+Kafka also gives us backpressure control
+replayability

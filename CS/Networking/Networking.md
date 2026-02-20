@@ -1,7 +1,12 @@
 The internet is the network of networks. It's a collection of all 
+
+
+
+# [What is a network protocol?](https://www.cloudflare.com/learning/network-layer/what-is-a-protocol/) 
+Just a set of rules for processing and formatting data, standardized across the world so computers running entirely different software can communicate with each other. 
 # IP Addresses
 ## IPv4 
-This is a 32 bit number unique to each device that can access the internet (run the internet protocol). This number is divided into 4 octets (groups of 8 bits). Each octet can have a decimal value from 0 to 255 (because 8 bits can at most represent is 255). There can be $255^4\approx4.2\times10^9$ unique IP addresses, which isn't enough to account for all devices. That's why **IPv6** was introduced.
+This is a 32 bit number unique to each device that can access the internet (i.e. run the internet protocol). This number is divided into 4 octets (groups of 8 bits). Each octet can have a decimal value from 0 to 255 (because 8 bits can at most represent 255). There can be $255^4\approx4.2\times10^9$ unique IP addresses, which isn't enough to account for all devices. That's why **[[Networking#IPv6|IPv6]]** was introduced.
 
 The format of an IP address depends on [[Networking#What is Subnet Mask?|subnet mask]] (click to view more info on IP addresses). For example, $255.255.255.0$ means that the last block of the IP address is used for internal networking, while the first 3 blocks are used for public internet.
 ## IPv6
@@ -9,18 +14,26 @@ Enter **IPv6**. It uses 128 bits, 4 parts with 32 bits each. The numbers are hex
 
 
 ### Dynamic IP Addresses
-The fact that IPv4 addresses are limited means that it is more cost effective for internet service providers to give their users temporary IPs from a pool of available IP addresses. This means that the average home user's public IP address is constantly changing. This is one of the reasons [[Networking#MAC Addresses|MAC addresses]] exist. It's possible to pay extra to obtain a **static IP address** from your ISP, one that does not change. Static addresses must be manually assigned to each computer, which will be difficult for a large network (because there are simply many computers to configure). Therefore, dynamic IP addresses are automatically assigned by a [[Networking#DHCP|DHCP]] server. 
+The fact that IPv4 addresses are limited means that it is more cost effective for internet service providers to give their users temporary IPs from a pool of available IP addresses. This means that the average home user's public IP address is constantly changing. This is one of the reasons [[Networking#MAC Addresses|MAC addresses]] exist. It's possible to pay extra to obtain a **static IP address** from your ISP, which does not change. Static addresses must be manually assigned to each computer, which will be difficult to do on a large network (because there are simply many computers to configure). Therefore, dynamic IP addresses are automatically assigned by a [[Networking#DHCP (Dynamic Host Configuration Protocol)|DHCP]] server. 
 ### MAC Addresses
-Every network device (like network or Bluetooth cards) has a unique, 6 byte (32 bit) **MAC** (Media Access Control) address, aka **physical** or **hardware address**. It follows a format like
+Every network device (like network or Bluetooth cards) has a unique, 6 byte (32 bit) **MAC** (Media Access Control) address, aka **physical** or **hardware address**. It follows a format like the following on Windows, where each number is in base 16 (hexadecimal):
 $$
 \#\#-\#\#-\#\#-\#\#-\#\#-\#\#
 $$
-on Windows, where each number is in base 16 (hexadecimal).
-The first half of the number represents the manufacturer of the network interface card (**NIC**).
-Devices in a network use MAC and IP addresses in combination to communicate with each other. 
-- IP address is used to locate a device in a network ~ Mailing address of a house
-- MAC address is used to identify a device in a network ~ Name of the owner of the house
-For TCP/IP to work, we really need the MAC address of the device (server) we're trying to connect to. So computer A sends an **ARP** (**Address Resolution Protoco**l) broadcast to get the MAC address of computer B. This signal is routed to the correct server using its IP address. Once we locate it, the server will send back its MAC address and communication can start.
+Linux displays the MAC address in the same way, but with colons instead of hyphens.
+
+The first half of the number represents the manufacturer of the _network interface card_ (**NIC**).
+Devices in a network use both MAC and IP addresses to communicate with each other. 
+- IP address is used to locate a device in a network: Think of it as the mailing address of a house
+- MAC address is used to identify the device in a network: The name of the recipient at the house
+For TCP/IP to work, we would also need the MAC address of the device (or server) we're trying to connect to. Computer *A* sends an **ARP** (**Address Resolution Protocol**) broadcast to get the MAC address of computer *B*. This signal is routed to the correct server using its IP address. Once we locate it, the server will send back its MAC address and communication can start.
+
+### Address Resolution Protocol (ARP)
+switches are considered layer 2 devices in the OSI model. They need MAC addresses to communicate
+Resolve IP address to MAC address. 
+
+ARP cache `arp -a`
+<center><iframe width="560" height="315" src="https://www.youtube.com/embed/cn8Zxh9bPio?si=PkUE-uPrq_mkXdTp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></center>
 
 ### DHCP (Dynamic Host Configuration Protocol)
 It's a protocol (hosted on a ISP server or routers) that automatically *leases* IP addresses from its pool of available addresses. By lease, we mean that IP addresses are assigned temporarily for a limited amount of time. This way, when a computer goes out of commission, its IP address becomes available again.
@@ -39,7 +52,8 @@ In addition, this adds modularity to the network: because the computers in one s
 
 ## VLAN 
 **VLAN** Does the same thing as subnet. But it divides the networks virtually. We replace the central switch with a VLAN-enabled switch. This eliminates the need for routers or physically moving computers around.
-But how does it work? 
+==But how does it work? 
+
 
 # What is Subnet Mask?
 In a network, each device must have an IP address. IPv4 addresses can be divided into two parts. These are the **network address** and the **host address**
@@ -60,14 +74,16 @@ $$\begin{align}
 \end{align}$$
 In this example, we have the ability to add 4 subnets to our network. However, now we can construct host addresses using 6 bits instead 8, effectively reducing the possible number of hosts by a factor of 4. With borrowing each bit, we increase the number of subnetworks by 2 while lowering the hosts by 2.
 
-# LAN (Local Area Network)
+In order to determine if an IP address belongs to the current network, the computer does a binary AND operation between the IP address and the subnet mask. The result replaces the host address and just gives us the network address part of the IP address. Then, we can simply use an equality to check if the IP address has the same network address as our network:
+`(my_ip AND subnet_mask) == (destination_ip AND subnet_mask) ?`
+# LAN (Local Area **Network**)
 Like your home network. It was limited range
 - **Switch** routes signals (i.e. requests) to the right host using IPs. Only works with cables.
 - WiFi access point. Allows devices to connect to a wired network wirelessly.
 - **Router** is a device that sits between LAN and [[#WAN (Wide Area Network)|WAN]]. It's a "gateway" device.
 - Two hosts would know they're part of the same network by comparing their network addresses, which is defined by the subnet mask.
 - The term **gateway** typically refers to the IP address of the router. If you enter this address into a browser, you can access the router settings to view the port forwarding configuration.
-	- **NAT** (Network Address Translation) is the process the router uses to translate the IP addresses in the local network for the purpose of communication with the outside.
+	- **1NAT** (Network Address Translation) is the process the router uses to translate the IP addresses in the local network for the purpose of communication with the outside.
 	- **Firewall** is a security layer associated with the router. It's a set of rules that specify how a LAN device can communicate with a device outside of the network, and wise versa. For example, a connection can form only through a certain port would be one such rule.
 		- **DMZ** (DeMilitarized zone) is a zone within the local network, such that the firewall allows external connections through to any devices in that zone. 
 		- **Port Forwarding**. Applications on a host in a network can communicate through ports. Each port is associated with a port, which is set up in the port forwarding configuration of your router (accessed by entering the IP address of the router in a browser). This is how the router knows where to forward certain requests. For example, the default port for connecting to a webserver via HTTP and HTTPS is 80 and 443 respectively.
@@ -139,7 +155,7 @@ DNS is the internet address book. Responsible for converting human readable name
 - **TLD** **server**. There are different servers for each **Top Level Domain**, like `.com, .net, .io, etc.`. The TLD server will redirect the resolver to the correct name server.
 - **Authoritative name server**. This is where IP addresses of, along side other information, the domain we'd like to reach are actually stored.
 
-There are only 13 root servers, and they're owned by 12 different organizations and distributed worldwide. Why 13? To make the request as fast as possible, ideally we want to transfer the IP address of those 13 servers in one packet. Each IPv4 is 32 bits, and a packet can hold on to 512 bits. $13 \times 32=416$ bits, which leaves $96$ bits for other meta data for the packet. 
+There are only 13 root servers, and they're owned by 12 different organizations and distributed worldwide. Why 13? To make the request as fast as possible, ideally we want to transfer the IP address of those 13 servers in one packet. Each IPv4 address is 32 bits long, and a packet can hold on to 512 bits. $13 \times 32=416$ bits, which leaves $96$ bits for other meta data for the packet. 
 
 
 ## OWASP
@@ -285,3 +301,105 @@ SSH uses **symmetrical encryption** to encrypt the entire connection. That is, o
 - 3DES
 - CAST128
 - Arcfour
+
+
+# OSI (Open Systems Interconnection) model
+https://www.cloudflare.com/learning/ddos/glossary/open-systems-interconnection-model-osi/
+
+
+Switches use a CAM table that maps MAC addresses to ports and VLANs for efficient 
+
+Seven abstract, distinct (non-overlapping) layers that define the standard for how different computer systems should communicate together (networking).
+Sending messages across the web is a complicated process and often riddled with errors. These layers divide the process up, so we can easily discuss the process and troubleshoot issues by narrowing things down to a specific layer.
+
+This is not a concrete protocol. It's more of a model that describes how data moves in a network. It was developed by the IOS (international organization for standardization) and is widely adapted in the IT sector. 
+**A**ll **P**eople **S**eem **T**o **N**eed **D**ata **P**rocessing 
+
+Layers 1 to 3 can generally be combined into 1 layer: application protocols.
+
+
+
+1. Application - includes protocols like HTTP and SMTP
+2. Presentation - prepares data by encoding/decoding, encrypting/unencrypting, and compressing/decompressing for the next step
+3. Session - this layer concerned with managing (opening and closing) a communication session between the communicating layers. 
+<hr>
+4. Transport - This layer includes protocols like TCP and UDP. It's responsible for dividing the data into segments. Each segment contains a sequence number, port number, and data. The receiver uses this information to re-assemble the data in the order. setting the data transfer speed so the slower device is not overwhelmed, and also checking for errors to ensure the data received is complete and what to do if it isn't.
+5. Network - Routing, finding the best path through the internet to the destination (via the TCP/IP protocol). This is not necessary for two devices on the same local network.
+6. Data Link (the Mac address layer). Similar to the network layer, but for devices on the same network. It organizes raw bits into frames. Each frame contains things like the Mac address, IP address, TCP header info, HTTP header info, the actual data
+7. Physical - Network cards and cables, switches, 0s and 1s
+
+
+
+<center>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/0y6FtKsg6J4?si=Z1HhOeCAl7l_N8vW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/LANW3m7UgWs?si=3c1pwJ_ii_yf2Qfe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</center>
+
+# NAT - Network Address Translation
+<iframe width="560" height="315" src="https://www.youtube.com/embed/FTUV0t6JaDA?si=6eKyCcawdDjKJkjH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+It is possible to *temporarily* change the MAC address of a NIC (network interface card) on the software level. 
+![[Pasted image 20260210170159.png|500]]
+
+
+# Types of network devices
+
+- **Hub** - outdated - layer 1 device (it doesn't know addresses) - sends data to all devices. The indented device processes the data, while the rest discard it. It can either  send or receive data at a time. 
+- **Bridge** - outdated - 
+
+
+# Network Topology
+It is the arrangement of network nodes, the geographical layout of the network--physical or logical-- (routers and interfaces) that define the flow of data. 
+
+
+
+**Network prefix** is the refers to the prefix portion of an IP address that represents the network address.
+$$
+\underbrace{192.168.1}_{\text{network address }}.\underbrace{10}_{\text{host address}}
+$$
+IP addresses today are classless, short for classless inter domain routing (CIDR). 
+Before, however, you had to purchase a class of IP address from the provider. Each class (A, B, and C) included a *fixed* number of bits in the network prefix: 8, 16, and 24 respectively.
+Hence the invention of subnet masks allowed for IP addresses that have network addresses with varying lengths. 
+The CIDR notation for IP addresses is as follows:
+$$
+192.0.2.0/24
+$$
+This means the first 24 bits of the 32 bits in this IP address are used for the the network prefix.
+
+
+
+
+
+There are two types *dynamic routing protocols* that are used for pathfinding in networking:
+- Interior gateway protocols - used to exchange routing information between routers within an autonomous system, including an ISP's network or the internal network of an organization, for example. It facilitates efficient communication by continuously updating IGPs are divided into two categories:
+	- Distance vector - basic and outdated; each router only has information about its own neighbors. 
+		- Router information protocol. This is an older protocol that, when finding the most efficient path, only considers the shortest path (i.e. the path with the fewest number of nodes). But this is not efficient because it does not consider costs or traffic. Perhaps one of the nodes is inundated with traffic; It could be faster to take an alternate route, even if the number of nodes go up.
+<iframe width="560" height="315" src="https://www.youtube.com/embed/rIU2dKnPd0E?si=qE5xTwd31w9hELSt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+	- Link state - sophisticated; routers have information about the topology of the entire network via [[Networking#Link Statement Advertisement - LSA|LSA's]], not just their neighbors. 
+		- [[Networking#The **OSPF** protocol|OSPF]]
+		- [[Networking#IS-IS]]
+- Exterior gateway protocols
+
+[Autonomous system](https://www.cloudflare.com/learning/network-layer/what-is-an-autonomous-system/) - the internet is a giant network of networks. Think of each of these smaller networks as a group of interfaces/nodes and routers that are grouped together under the same routing policy. For example, all the routers and nodes owned by an ISP would be an autonomous system. 
+**Routing policy** - the list of IP addresses owned/controlled by an autonomous system (in other words,  the *IP address space* of the autonomous system, which is a range of numbers assigned/owned to that system) as well as other autonomous systems it connects to.
+
+
+OSPF is falls under the 
+
+
+## Link Statement Advertisement - LSA
+routers exchange LSAs in order to build their LSDB
+It is a fundamental building block used for sharing routing and topology information. Think of it like a packet that contains things like links, network segments, neighbors, and external routes
+ The contents of the packets are different depending on the type of the LSA, and there are 11 different types.
+ There are also different versions of the OSPF protocol, e.g. OSPFv2 and v3. LSA's may also be processed differently depending on the version of of the OSPF protocol
+
+
+## The **OSPF** protocol
+Open Shortest Path First is a routing protocol that shares network information as well as network topology between routers. Each router can then build a map (**Link state database** - **LSDB**) of the OSPF area. All routers will create the same identical map
+
+Every router has a table that stores paths to other interfaces and routers. This table is constantly updated to keep up with network changes so that the most efficient path can always be found.
+
+It uses Dijkstra's algorithm, also known as the shortest path first algorithm.
+
+## The **IS-IS** Protocol
+Just like OSPF, the Intermediate system to intermediate system protocol is another link state routing protocol used within autonomous systems.

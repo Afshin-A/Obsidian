@@ -6,7 +6,7 @@ A request is idempotent if you make it multiple times and it has the same effect
 For example, 
 - *HTTP GET is idempotent* because a read request returns the same data each time without having any other effect.
 - *HTTP PUT is idempotent* because the same PUT request (used for updating a resource on a server) just updates the same resource.
-- *POST is **not** idempotent*. A POST request (used for sending data to the server and/or creating a resource) can potentially cause different effects—at least, not without some logic to prevent duplicate requests. Back to the payment example, how do we make sure that a request is not a duplicate so we don't charge the customer multiple times? Similarly, what if the customer really did mean to buy the same thing twice?
+- *POST is **not** idempotent*. A POST request (used for sending data to the server and/or creating a resource) can potentially cause different effects—at least, not without some logic to prevent duplicate requests. Back to the payment example, how do we make sure that a request is not a duplicate so we don't charge the customer multiple times? Furthermore, what if the customer really did mean to buy the same thing twice?
 
 We need a clear way to distinguish from requests. This is referred to as **idempotency key**, and it can really be anything, as long as it's unique for each request. A *request id* immediately comes to mind. The key is typically consisted of three parts as a measure to ensure it is globally unique across all server URLs and other users:
 - `user-id`

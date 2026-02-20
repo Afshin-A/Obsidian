@@ -6,7 +6,7 @@ An associative function is defined as follows:
 $$
 a \ast b \ast c = a \ast (b \ast c) = (a \ast b) \ast c
 $$
-How we group the elements doesn't change the outcome. That's called associativity.
+How we group the elements doesn't change the outcome. That's called [[Making sense of associative and commutative]].
 Commutativity is changing the order of elements and still getting the same results.
 
 **We don't care about commutativity because the order of elements in the array is fixed**. There's no swapping in segment trees.
