@@ -9,44 +9,44 @@ This fact has many applications in number theory and computer science. One such 
 
 ```java
 public static List<Integer> primes(int max) {  
-        // LinkedList and ArrayList implement the List interface, which is why they share many methods such as add, get, iterator, etc.        
-        List<Integer> numbers = new LinkedList<>();  
-        List<Integer> primes = new LinkedList<>();  
+    // LinkedList and ArrayList implement the List interface, which is why they share many methods such as add, get, iterator, etc.        
+    List<Integer> numbers = new LinkedList<>();  
+     List<Integer> primes = new LinkedList<>();  
   
-        // Filling the numbers list with 2 and subsequent odd integers, because no even integer other than 2 can be prime  
-        numbers.add(2);
-        for (int i = 3; i <= max; i += 2) {
-            numbers.add(i);
-        }
+     // Filling the numbers list with 2 and subsequent odd integers, because no even integer other than 2 can be prime  
+     numbers.add(2);
+    for (int i = 3; i <= max; i += 2) {
+        numbers.add(i);
+    }
   
-        int primeNum;  
-        int nextNum;  
-        while (!numbers.isEmpty()) {  
-            Iterator<Integer> itr = numbers.iterator();  
-            // Get the next number
-            primeNum = itr.next();  
+    int primeNum;  
+    int nextNum;  
+    while (!numbers.isEmpty()) {  
+        Iterator<Integer> itr = numbers.iterator();  
+        // Get the next number
+        primeNum = itr.next();  
   
-            // Upon reaching sqrt(max) the remaining factors do not have a factor smaller or equal to sqrt(max) , and thus cannot have a factor greater or equal to sqrt(max) either (other than 1 or themselves). So they are all prime numbers. We can stop the algorithm earlier for more efficiency.
-            if (primeNum >= Math.sqrt(max)) {  
-                primes.addAll(numbers);  
-                return primes;  
-            }  
-			// Add number to list of primes
-            primes.add(primeNum);  
-            // Remove number from the list of numbers
-            itr.remove();  
+        // Upon reaching sqrt(max) the remaining factors do not have a factor smaller or equal to sqrt(max) , and thus cannot have a factor greater or equal to sqrt(max) either (other than 1 or themselves). So they are all prime numbers. We can stop the algorithm earlier for more efficiency.
+        if (primeNum >= Math.sqrt(max)) {  
+             primes.addAll(numbers);  
+             return primes;  
+        }  
+		// Add number to list of primes
+        primes.add(primeNum);  
+        // Remove number from the list of numbers
+        itr.remove();  
   
   
-            // Remove all remaining elements in numbers that are factor of primeNum  
-            while (itr.hasNext()) {  
-                nextNum = itr.next();  
-                if (nextNum % primeNum == 0) {  
-                    itr.remove();  
-                }  
+        // Remove all remaining elements in numbers that are factor of primeNum  
+        while (itr.hasNext()) {  
+            nextNum = itr.next();  
+            if (nextNum % primeNum == 0) {  
+                itr.remove();  
             }  
         }  
-        return primes;  
-    }
+    }  
+    return primes;  
+}
 ```
 
 

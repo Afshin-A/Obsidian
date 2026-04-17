@@ -1,5 +1,5 @@
-Struct is a value type. It's passed by value. It is stored in the [[Stack Vs Heap in System Memory#Stack|stack]]
-Class is a reference type. It's passed by reference. It's stored in the [[Stack Vs Heap in System Memory#Heap|heap]].
+Struct is a value type. It's passed by value. It is stored in the [[Stack vs. Heap in System Memory#Stack|stack]]
+Class is a reference type. It's passed by reference. It's stored in the [[Stack vs. Heap in System Memory#Heap|heap]].
 
 Record is basically a class but with a few twists:
 - Equality comparison is based on the fields, just like a Struct

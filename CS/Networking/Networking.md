@@ -158,6 +158,17 @@ DNS is the internet address book. Responsible for converting human readable name
 There are only 13 root servers, and they're owned by 12 different organizations and distributed worldwide. Why 13? To make the request as fast as possible, ideally we want to transfer the IP address of those 13 servers in one packet. Each IPv4 address is 32 bits long, and a packet can hold on to 512 bits. $13 \times 32=416$ bits, which leaves $96$ bits for other meta data for the packet. 
 
 
+```cardlink
+url: https://www.youtube.com/shorts/5ZCvW1XSX_E?feature=share
+title: "How DNS Works?"
+description: "Have you ever wondered how typing \"youtube.com\" in your browser and hitting Enter quickly turns into an IP address? In this video, we’ll use animations to sh..."
+host: www.youtube.com
+favicon: https://www.youtube.com/s/desktop/4be0098b/img/favicon_32x32.png
+image: https://i.ytimg.com/vi/5ZCvW1XSX_E/oardefault.jpg?sqp=-oaymwEdCJUDENAFSFWQAgHyq4qpAwwIARUAAIhCcAHAAQY=&rs=AOn4CLBR26-o6zY-vhoVqCeRCwHO4RyDVg&usqp=CCk
+```
+
+
+
 ## OWASP
 	Open Worldwide Application Security Project is "an online community that produces freely available articles, methodologies, documentation, tools, and technologies in the fields of IoT, system software and web application security.
 OWASP offers a dependency check tool that's compatible for various programming languages like Java (through maven) and Python (through pip). It goes through your project and its dependencies, and checks for known vulnerabilities.
@@ -174,6 +185,24 @@ A WSGI (Web Server Gateway Interface) compatible server is one that knows how to
 ## SSL/TSL 
 Secure Sockets Layer is the predecessor to TLS (Transport Layer Security). SSL has long been deprecated and isn't supported by modern browsers. However the name is interchangeably used with TLS, which is basically a new version of SSL. Because the technology was acquired by a new business, the name was changed to TLS. Think of SSL as a packet that contains the identity of the owners of a website and, most importantly, the public key that's used for the end-to-end encryption in the [[HTTP|HTTPS]] protocol (HTTP with encryption). These certificates are issued by a certificate authority. [More information](https://www.cloudflare.com/learning/ssl/what-is-an-ssl-certificate/) from the Cloudflare website.
 SSL/TSL belongs in the application layer of [[Networking#TCP/IP (Transmission Control Protocol)|TCP/IP protocol]].
+
+### The TLS Handshake
+Immediately after the TCP handshake completes, the browser and the server engage in what's called an TLS/SSL handshake in order to establish a secure connection. 
+The client sends over a list of encryption algorithm it supports.
+The server responds with an algorithm out of the list
+Then, the server sends a certificate. It contains the following:
+- the domain name
+- the server's public key
+- the identity certificate authority
+- the date range this is valid for
+- a hash of all this information, hashed by the certificate authority's private key
+The browser looks up the certificate authority's public key, decrypts the hash, and verifies it matches the content of the certificate. Once that checks, we've established the authenticity of the certificate, and we know the public key we received truly belongs to the server we're trying to connect to.
+Here's the thing. Asymmetric encryption is more computationally intensive than symmetric. So we turn to symmetric encryption.
+The browser creates a private key and encrypts it using the server's public key, and sends it over to the server. The server then decrypts the key using its private key. Now, both parties have this key, and both can encrypt and decrypt
+
+The certificate authority's role in all of this is to associate a server to its public key. It offers the ability to validate that relationship at anytime using asymmetric cryptography.
+
+> The CA's private key is only used to sign the certificate, which the browser verifies using the CA's public key. Once identity is verified, the browser uses the server's public key—found inside that certificate—to securely negotiate a temporary symmetric session key. That symmetric key is what actually encrypts the application data.
 
 ## Checksums
 Hashing algorithms take in the content of a file being sent over the internet and generate a string, which is sent along the file in the transport layer of [[Networking#TCP/IP (Transmission Control Protocol)|TCP/IP protocol]]. The receiver will use the same algorithm and file to generate its own checksum value. If the two values match, it is unlikely that the data was manipulated while in transport. But it's still not guaranteed.
@@ -380,7 +409,7 @@ There are two types *dynamic routing protocols* that are used for pathfinding in
 		- [[Networking#IS-IS]]
 - Exterior gateway protocols
 
-[Autonomous system](https://www.cloudflare.com/learning/network-layer/what-is-an-autonomous-system/) - the internet is a giant network of networks. Think of each of these smaller networks as a group of interfaces/nodes and routers that are grouped together under the same routing policy. For example, all the routers and nodes owned by an ISP would be an autonomous system. 
+[Autonomous system](https://www.cloudflare.com/learning/network-layer/what-is-an-autonomous-system/) - the internet is a giant network of networks. Think of each of these smaller networks as a group of interfaces/nodes and routers that are grouped together under the same __routing policy__. For example, all the routers and nodes owned by an ISP would be an autonomous system. 
 **Routing policy** - the list of IP addresses owned/controlled by an autonomous system (in other words,  the *IP address space* of the autonomous system, which is a range of numbers assigned/owned to that system) as well as other autonomous systems it connects to.
 
 

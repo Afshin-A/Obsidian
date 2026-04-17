@@ -13,8 +13,7 @@ select first_name, last_name, ex_age from executions where ex_age <= 25
 
 ### `LIKE` and wildcards
 ```sql
-SELECT first_name, last_name, ex_number FROM executions
-WHERE first_name = 'Raymond' AND last_name LIKE '%Landry%'
+SELECT first_name, last_name, ex_number FROM executions WHERE first_name = 'Raymond' AND last_name LIKE '%Landry%'
 ```
 
 ### `Count` 
@@ -26,12 +25,12 @@ SELECT COUNT(last_statement) FROM executions
 ### CASE WHEN
 Run if-else statement on each row, then return a value for each row
 ```sql
-select case when last_statement is null then 1 else 0 end
+select case when last_statement is null then 1 else 0 end 
 from executions 
 ```
 if `last_statement` is `null`, return 1 for that row, else return 0
 
-We can then call an aggregate function on the resulting table.
+We can then call an **aggregate** function on the resulting table.
 
 ## Aggregate and Scalar functions
 **Aggregate functions** are executed over a range of columns, and return a single value. Ex. `avg`, `count`, `min`, `max`
@@ -88,7 +87,7 @@ select count(ex_number) * 1.0 / count(distinct county) from executions
 
 ## Combining aggregate functions and case-when statement
 Let's say we want to count all rows that have some sort of property. First, we need to build modify the table. We use the case-when statement to change the value of each row, then we can call the aggregate an aggregate function on the modified table.   
-Here we find the ratio of the number of times the word (or variation of) 'innocent' is used in the last_statement column to all entries of the executions table
+Here we find the ratio of the number of times the word (or variation of) 'innocent' is used in the `last_statement` column to all entries of the executions table
 ```SQL
 SELECT 100. * COUNT(CASE WHEN
 			 last_statement LIKE '%innocent%'
@@ -205,11 +204,11 @@ GROUP BY county
 HAVING COUNT(*) >= 2
 ```
 
-First, the where clause creates a table where all ages are >= 50
-We then group the results by county 
-Then, aggregate function count is called on each group. The result is stored in a variable for each sub-group.
-The having clause filters the groups based on that variable. Any group with a count of less than 2 is eliminated.
-Finally, the SELECT clause creates the columns for each group. 
+1. The where clause creates a table where all ages are >= 50
+2. We group the results by county 
+3. We aggregate function `count` is called on each group. The result is stored in a variable for each sub-group.
+4. The having clause filters the groups based on that variable. Any group with a count of less than 2 is eliminated.
+5. Finally, the SELECT clause creates the columns for each group. 
 
 
 ```sql
@@ -250,7 +249,7 @@ We can sort the final results in a descending or ascending order. The default is
  
  
 # JOIN 
-It's often faster and safer to perform a join operation on two tables and then do the query as normal than performing two separate queries and then combining the results.
+It's often faster and safer to perform a join operation on two tables and then do the query as normal, than performing two separate queries and then combining the results.
 
 There are different types of join, and they all differ in how the handle mismatched rows. 
 - Suppose there that a row from table1 does not match any rows from table2. **Then inner** join will drop that row from the final table. 
@@ -458,3 +457,18 @@ PostgreSQL is ACID compliant:
 - **C**: Consistency. The database is always brought to a valid state. DBSM has strict data validation and integrity rules.
 - **I**: Isolation. Concurrent transactions do not interfere with each other.
 - **D**: Durability. Once an operation is successfully complete, changes are permanent.
+
+# SQL Order of execution
+
+1. From
+2. Join 
+3. On
+4. Where
+5. Group by
+6. Aggregate Functions
+7. Having
+8. Order By
+9. Limit
+10. Select
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/BHwzDmr6d7s?si=zgjkIWSOXHh8SZqA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>

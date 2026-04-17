@@ -1,13 +1,15 @@
-Graphs are a wide topic that include trees. All trees are graphs. But not all graphs are trees. 
+Graphs are a wide topic that include trees. 
+**All trees are graphs. But not all graphs are trees.** 
 
-How to represent a graph.
+## Ways to Represent a Graph:
+### Maps
 ```
 graph = {
 	node: [neighbors]
 }
 ```
 In a directed relationship like $a \to b$ , b is a neighbor of a, but not the other way around.
-
+### Adjacency List 
 # Traversal Algorithms
 Graph traversals are similar to trees. The two graph traversal algorithms are breath first and depth first. These work just like they do in trees. 
 

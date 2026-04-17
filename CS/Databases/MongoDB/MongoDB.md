@@ -1,5 +1,5 @@
 ## Notes on Databases
-DBMS – Databse Management System, is a program used to interact with the database. Examples include PostgreSQL.
+**DBMS** – Databse Management System, is a program used to interact with the database. Examples include PostgreSQL.
 
 ### Relational Databases (SQL)
 This database architecture uses **relations** (tables) to store data in an organized manner.
@@ -16,7 +16,7 @@ We can retrieve or manipulate data in a relational database via a **query** (a r
 ### Non-Relational Databases
 Not structured. There is no rigid structure that dictates what type the type must be or how it should be stored. For example, in SQL, all entries in a column must be the same type, as you can see from the `Name` entry from the table above. In NoSQL, the data can be of any type. You can have a strnig in one row and an ineger in the next. Thus, no rigid structure.
 
-NoSQL includes and is not only limited to SQL, so they're called **Not Only SQL** (NoSQL).
+**NoSQL** includes and is not only limited to SQL, so they're called **Not Only SQL** (NoSQL).
 NoSQL stands for **not only SQL**. NoSQL also includes SQL because of how useful they are. 
 SQL is a query language: relational (tables), rigid, structured.
 NoSQL is consisted of different types of flexible, expandable, distributed (servers holding data can be all around the world, clusters, instead of just one machine) DBMSs
@@ -24,21 +24,21 @@ NoSQL is consisted of different types of flexible, expandable, distributed (serv
 Also called **key-value stores**
 Basically a java map or a python dictionary
 ####  Column-based
-What is the average number of credits earned by all students? Going by the relational database above, we would have to go through each row and extract the value for Credits_Earned. That means unnecessarily reading names, degrees, and other unrelated fields. 
-What if, instead, we only consider the Credits_Earned column?
-Column-based databases shine when answering questions like this. They use columns that are stored in separate files. Apache Cassandra is a popular example.
-CQL - Cassandra Query Language
+What is the average number of credits earned by all students? Going by the relational database above, we would have to go through each row and extract the value for `Credits_Earned`. That means unnecessarily reading names, degrees, and other unrelated fields. 
+What if, instead, we only consider the `Credits_Earned` column?
+Column-based databases shine when answering questions like this. They use columns that are stored in separate files. Apache Cassandra is a popular example. Cassandra queries are written in CQL - Cassandra Query Language
+
 keyspace - a logical grouping of tables
 `describe keyspaces;`
 
-#### Document-Oriented Databses
+#### Document-Oriented Databases
 Also called **document stores**. **MongoDB** is a popular DBMS for document stores.
-These are a type of key-value databses. but the values are documents. the documents have metadata that define how data can be retrieved.
+These are a type of key-value databases. but the values are documents. the documents have metadata that define how data can be retrieved.
 These documents are stored as JSON objects and can contain complex data, including other documents.
 
 
 ### JSON
-Javascript object notation is a light way of storing and transfering data over the web. Every major programming language has modules for parsing JSON.
+JavaScript object notation is a light way of storing and transferring data over the web. Every major programming language has modules for parsing JSON.
 Example of JSON:
 ```json
 {  
@@ -64,7 +64,7 @@ Stands for Binary JSON, and is used in the MongoDB DBSM.
 MongoDB encrypts JSON into BSON, so it is not human readable.
 
 ### Schema 
-Schema is the organization and structure of a database as whole. For example, in a SQL database, it could be the organization of different tables.
+The schema of a database is like a blueprint that defines the organization and structure of a database as whole. For example, in a SQL database, it defines tables and their attributes (including data types and constraints)
 
 MongoDB documents can be 16 MB at most to prevent cluttering memory. MongoDB stores BSON objects directly into memory for speed, but this imposes limitations like document size.
 **PyMongo** - Python driver for MongoDB
@@ -77,7 +77,7 @@ Robo 3T (formely named Robomongo) is a GUI tool to visually view MongoDB databas
 It claims to be free and open source, but requires account registration and personal details. Would not allow download unless you accept their cookies. Two words: Shove off.
 
 
-DataStax DB, an online service that allows you to create NoSQL databases. It is built on Apache Cassandra and uses the Cassandra Query Language (CQL) to interact with the database.
+DataStax DB is an online service that allows you to create NoSQL databases. It is built on Apache Cassandra and uses the Cassandra Query Language (CQL) to interact with the database.
 The use of DataStax DBMS is optional; however, it allows us to explore all major NoSQL databse types.
 
 

@@ -1,10 +1,34 @@
 My Ryzen 7 5800H has 8 cores and 16 threads.
-A **core** is an actual, tangible, processing unit on the CPU. With 8 cores, the CPU could execute 8 tasks in parallel. Truly in parallel. That means we don't have to switch between tasks to give the illusion of parallelism.
-A **thread** is a sequence of instructions the operating system can manage independently. They are virtual streams of executions that get executed on a core.
+A **core** is an actual, tangible, processing unit on the CPU. With 8 cores, the CPU could execute 8 tasks in parallel—truly in parallel. That means we don't have to switch between tasks quickly in order to give the illusion of parallelism.
+A **thread** is a sequence of instructions the operating system can manage independently. Threads are virtual streams of instructions that get executed on a core.
 In my case, each core could handle 2 threads. Using a process called **Simultaneous Multithreading (SMT)**, the core can switch between executing threads to maximize its utilization. For example, when one thread is waiting for an I/O operation to complete, the core can switch to the other thread. This doesn't mean performance is increased by 2 times. It's more like in the range of 20 to 40% increase.
 
 
 In summary, cores provide the raw computation power, while threads increase utilization by reducing the idle time of the cores. 
+
+## What exactly is a thread?
+A thread is an **execution context**. An abstract container/environment that contains memory addresses  
+Every CPU core has a number of registers that hold important information immediately needed by the CPU. The most important of these are 
+- General purpose registers
+	- RAX—accumulator, contains the results of an arithmetical or logical operation
+	- RBX—base, used for top of a memory stack, to store math results, acts as a [[CPU Registers#RBX|non-volatile]] (callee-saved) register, and for other general data
+- Program counter—stores the RAM address for the next CPU instruction to run
+- Stack pointer—stores the address of the top of the current running thread's memory stack
+At any moment, the collective data stored in these memories are the context of a single thread. A thread *needs* these in order to function. 
+When we want to run another thread, we switch the context: we save the current context in a data structure called the **Thread Control Block (TCB)** in RAM, and load the context of the new thread.  
+
+
+Physically, a thread is just a set of values stored on a CPU core register.
+
+
+
+
+A process is an instance of an application.
+Threads live inside processes. A process can have multiple threads, but a thread operates in the scope of one process.
+This applies to operating systems as well, since they're a type of an application.
+
+## Why are threads expensive to create?
+
 
 # Producer-Consumer Design Pattern in Multithreaded Applications
 A producer thread pushes data onto a *blocking* queue. Consumer threads retrieve data from the queue.
@@ -44,7 +68,7 @@ Thread B is holding resource Y
 # Atomic Operations
 >**Atomic operations** are a sequence of operations that are executed as a single, indivisible unit, meaning they are either completed fully or not at all, with no intermediate state visible to other processes or threads. They are crucial for preventing *data races* in multi-threaded environments by ensuring that shared data is accessed and updated predictably, even when multiple threads try to access it simultaneously.
 
-A **lock/mutex** is a record—a "synchronization primitive"—that holds two things: the calling thread's identity (address, name, etc..) and the status of the thread (whether if it's locked or free). 
+A **lock/mutex** is a record—a "synchronization primitive"—that holds two things: the calling thread's identity (address, name, etc..) and the status of the thread (whether if it's free or locked). 
 The locks have methods for locking and unlocking threads. Threads will call these methods.
 
 If a thread attempts to access a critical section that's locked (already in use by another thread), the **operating system scheduler** places it in a waiting queue, where it goes into a blocked state. When the thread is done, it'll call the unlock method, which frees up the resource and calls upon the operating system to wake up another waiting thread.
@@ -54,9 +78,9 @@ If a thread attempts to access a critical section that's locked (already in use 
 A **critical section** the part of code that contains resources shared by multiple threads. This is of special interest to us because we need to take special measures to ensure the typical multithreading issue like race conditions, deadlocks, etc..
 
 
-Implementing true atomicity is not so simple we could implement it ourselves for reliable, high-performance concurrency. Instead, we have to rely on classes provided by the runtime, such as the `Interlocked` class in C#. They make use of low level OS kernel and hardware instructions to make this possible.
+Implementing true atomicity is not so simple that we could implement it ourselves for reliable, high-performance concurrency. Instead, we have to rely on tools provided by the runtime environment, such as the `Interlocked` class in C#. They make use of low level OS kernel and hardware instructions to make this possible.
 
-Something like the following is not thread safe because not even variable checking is atomic.
+Something like the following is not thread safe because *not even variable checking is atomic*.
 ```csharp
 bool isLocked = false;
 if (!isLocked) // Thread A checks the condition
