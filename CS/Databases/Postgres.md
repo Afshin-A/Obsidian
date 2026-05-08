@@ -427,3 +427,23 @@ image: https://i.ytimg.com/vi/ITcOiLSfVJQ/maxresdefault.jpg
 # Types of keys
 https://www.youtube.com/watch?v=eexceRsWt3g
 
+
+
+# policies
+https://www.google.com/search?client=firefox-b-1-d&q=policies+in+postgresql&zx=1777968296468
+
+```cardlink
+url: https://www.youtube.com/shorts/979b8HaOUWk
+title: "Database Hacked"
+description: "Shout out OC @chris.raroque I’ve seen this happen to SO many people (though his specific issue was slightly different than my example), so figured it was wor..."
+host: www.youtube.com
+favicon: https://www.youtube.com/s/desktop/1904e31a/img/favicon_32x32.png
+image: https://i.ytimg.com/vi/979b8HaOUWk/oar2.jpg?sqp=-oaymwEdCJUDENAFSFWQAgHyq4qpAwwIARUAAIhCcAHAAQY=&rs=AOn4CLAINKQUP-erqw7dnXuSToEBMFz5FQ&usqp=CCk
+```
+
+Row-level-security (RLS) policies
+
+
+**PgBouncer** is a connection pooler for PostgreSQL
+
+[[Bloom Filter]]

@@ -26,7 +26,7 @@ A node would have $N+1$ children
 ```tikz
 \usepackage{circuitikz}
 \begin{document}
-\begin{circuitikz}
+\begin{circuitikz}[scale=0.7]
 \tikzstyle{every node}=[font=\fontsize{18.2pt}{23.7pt}\selectfont]
 \draw  (12.5,14.5) rectangle (16.25,13.25);
 \node [font=\fontsize{18.2pt}{23.7pt}\selectfont, inner xsep=0.080cm, inner ysep=0.085cm, rounded corners=0.020cm] at (13.125,13.875) {12};
@@ -101,3 +101,8 @@ host: youtu.be
 favicon: https://www.youtube.com/s/desktop/af4a6a17/img/favicon_32x32.png
 image: https://i.ytimg.com/vi/ITcOiLSfVJQ/maxresdefault.jpg
 ```
+
+
+
+
+Show for all $n>1$ that from any ( $n+2$ )-element subset $A$ of the set $\{1,2, \ldots, 3 n\}$ one can choose two numbers whose difference is greater than $n$ but less than $2 n$.
