@@ -10,7 +10,7 @@ They are :
 >A feedback mechanism where a slow consumer signals an upstream producer to slow down or stop sending data, preventing overload, data loss, and system crashes
 
 
-We have to keep in mind that async/await adds overhead (via state machine, continuations); they're best for I/O and network operations—most of the time they do nothing but wait for a completion signal.
+We have to keep in mind that async/await adds overhead (via state machine, continuations); they're best for I/O and network operations—they spend most of the time doing nothing but wait for a completion signal.
 So you might think it makes better sense to use `BlockingCollection` with multithreading for CPU bound tasks, since async/await offer no benefit for CPU-bound tasks. 
 BUT, channels cover every scenario: 
 - For pure CPU-bound pipelines, channels can be used with synchronous functions.

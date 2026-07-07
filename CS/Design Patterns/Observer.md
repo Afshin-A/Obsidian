@@ -1,6 +1,6 @@
 This design pattern is used to update many objects without tight coupling.
 
-In short, it stores a list of observer objects. When a condition becomes true, it updates some field in all of those objects
+In short, it stores a list of observer objects. When a condition becomes true, it updates all observers, likely by updating some field in the objects.
 
 A **Subject** (publisher/observable) sends updates to the **Observers** (subscribers/receivers).
 It's called the subject because the observers are observing it.

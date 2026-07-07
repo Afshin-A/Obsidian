@@ -1,29 +1,29 @@
 My Ryzen 7 5800H has 8 cores and 16 threads.
 A **core** is an actual, tangible, processing unit on the CPU. With 8 cores, the CPU could execute 8 tasks in parallel—truly in parallel. That means we don't have to switch between tasks quickly in order to give the illusion of parallelism.
 A **thread** is a sequence of instructions the operating system can manage independently. Threads are virtual streams of instructions that get executed on a core.
-In my case, each core could handle 2 threads. Using a process called **Simultaneous Multithreading (SMT)**, the core can switch between executing threads to maximize its utilization. For example, when one thread is waiting for an I/O operation to complete, the core can switch to the other thread. This doesn't mean performance is increased by 2 times. It's more like in the range of 20 to 40% increase.
+In my case, each core could handle 2 threads. Using a process called **Simultaneous Multithreading (SMT)**, the core can switch between executing threads to maximize its utilization. For example, when one thread is waiting for an I/O operation to complete, the core can switch to the other thread. This doesn't mean performance is increased by 2 times. Actually, it's something in the range of 20 to 40% increase.
 
 
 In summary, cores provide the raw computation power, while threads increase utilization by reducing the idle time of the cores. 
 
 ## What exactly is a thread?
-A thread is an **execution context**. An abstract container/environment that contains memory addresses  
-Every CPU core has a number of registers that hold important information immediately needed by the CPU. The most important of these are 
+A thread is an **execution context**—an abstract container/environment that contains memory addresses  
+Every CPU core has a number of registers that hold important information immediately needed by the CPU. The most important of these are:
 - General purpose registers
 	- RAX—accumulator, contains the results of an arithmetical or logical operation
 	- RBX—base, used for top of a memory stack, to store math results, acts as a [[CPU Registers#RBX|non-volatile]] (callee-saved) register, and for other general data
 - Program counter—stores the RAM address for the next CPU instruction to run
 - Stack pointer—stores the address of the top of the current running thread's memory stack
-At any moment, the collective data stored in these memories are the context of a single thread. A thread *needs* these in order to function. 
+At any moment, the collective data stored in these memories are the *context* of a single thread. A thread needs these in order to function. 
 When we want to run another thread, we switch the context: we save the current context in a data structure called the **Thread Control Block (TCB)** in RAM, and load the context of the new thread.  
 
 
-Physically, a thread is just a set of values stored on a CPU core register.
+Physically, a thread is a data structure that contains snapshot of the values in CPU registers, in addition to other things (like metadata)
 
 
 
 
-A process is an instance of an application.
+A **process** is an instance of an application.
 Threads live inside processes. A process can have multiple threads, but a thread operates in the scope of one process.
 This applies to operating systems as well, since they're a type of an application.
 
@@ -35,46 +35,93 @@ A producer thread pushes data onto a *blocking* queue. Consumer threads retrieve
 When the producer queue is done, it sends a signal that no more data will be added. Consumers will continue to consume the data until there is nothing left. 
 ## How this pattern avoids race conditions:
 ### Synchronization 
-By **blocking**, we mean that only 1 thread can access the queue will be blocked, while the rest will be put to sleep by the operating system until it's their turn, and/or until it is safe to access the queue. For example, it is not safe when:
+The term **blocking** in blocking queue means that only 1 thread can access the queue at time, while the rest will be put to sleep by the operating system until it's their turn, and/or until it is safe to access the queue. For example, it is not safe when:
 - A consumer thread attempts to retrieve an item when the queue is empty, or 
 - The producer thread attempts to put an item in a fixed sized queue when that queue is full, or
 - Multiple consuming threads are attempting to access the same item in the queue, although there are ways around this using **fine grained locking**
-In this way,  threads don't have to waste resources to constantly check if it's safe to perform an operation, and there will be no race conditions. Instead, the operating system will put them to sleep and wake them up. This is called **synchronization**. 
+
+In this way, threads don't have to waste resources to constantly check if it's safe to perform an operation. Instead, to avoid race conditions, the operating system will put them to sleep and wake them up. This is called **synchronization**. 
 Synchronization is achieved via practicing thread-safety, which involves using synchronization primitives such as:
 - Locks
 - Mutex
 - Concurrent collections
 - etc..
 
-### Mutual Exclusion 
-Thread safe data structures have a *locking* mechanism so that when one thread is accessing a resource, no other threads can 
+
+> Multiple consumer threads may attempt to access the same queue simultaneously. If the queue is not designed for concurrent access, this can lead to race conditions where two threads try to remove or modify the same item at the same time.
+> 
+> One way to prevent this is by using synchronization mechanisms such as locks (mutexes). More advanced approaches may use fine-grained locking, lock-free algorithms, or concurrent data structures (like a **blocking queue**) to reduce contention and improve scalability.
+> 
+> Without synchronization, threads may waste CPU resources by repeatedly checking whether an operation is safe to perform (an anti-pattern known as busy waiting or spinning).
+> 
+> Instead, synchronization primitives can coordinate access to shared resources. When a thread cannot proceed, the operating system (or runtime scheduler) may block the thread, allowing another thread to run. The blocked thread is later awakened when the required condition becomes true.
+> 
+> This process of coordinating access to shared resources and ordering operations between threads is called **synchronization**. The operating system acts like a traffic coordinator, navigating threads around system resources to avoid collisions (race conditions).
+> 
+> Synchronization is typically achieved using thread-safe programming techniques and synchronization primitives such as:
+> - Mutexes
+> - Locks (often implemented using mutexes)
+> - Semaphores
+> - Condition variables
+> - Read-write locks
+> - Barriers
+> - Atomic operations
+> - Concurrent collections (thread-safe queues, maps, etc.)
+
+### Deadlocks
+You can't get a job unless you have experience, and you can't have experience unless you get a job. This is the concept of a **deadlock**.
+A similar situation can happen in threads: 
+Thread A is holding resource X, but thread B needs it.
+Thread B is holding resource Y, but thread A needs it.
+Both threads become permanently locked.
+
+#### Avoiding deadlocks
+In multithreading, deadlocks are created in all 4 of these conditions occur simultaneously:
+
+- **Mutual exclusion**—only one thread has access to a resource at a time. Thread safe data structures have a *locking* mechanism so that when one thread is accessing a resource, no other threads can 
+- **Hold and wait**—a thread is holding a resource, and it's waiting for more resources currently held by other threads.
+- **"No preemption"**—this is a rule that an operating system can use for some threads. It makes a running process uninterruptable by the OS kernel. So, for example, an infinite-loop task may lockup the entire system, and OS lacks the authority to pause it. However, it is still commonly used:
+	- It preserves data integrity—interruptions mid file writing can corrupt it. 
+	- It causes less overhead than context switching 
+	- Common in embedded and real-time systems. For example, a microwave only needs to do one important thing on time. It should not be interrupted.
+- **Circular wait**—happens when a thread need resources held by the next thread, and so on. The last thread needs resources needed by the first. This creates a metaphorical chain of threads.
+
+Even if one of these conditions is not met, a deadlock becomes impossible. 
 
 
-
-
-**Deadlocks**—
-You can't get a job unless you have experience, and you can't have experience unless you get a job. This is the concept of a deadlock.
-In multithreading, deadlocks are a side-effect of the following 4 conditions:
-- mutual exclusion - only one thread has access to a resource at a time
-- hold and wait - 
-- no preemption
-- circular wait
-- 
-
-this is a situation when two threads 
-Thread A is holding resource X
-Thread B is holding resource Y
 
 # Atomic Operations
 >**Atomic operations** are a sequence of operations that are executed as a single, indivisible unit, meaning they are either completed fully or not at all, with no intermediate state visible to other processes or threads. They are crucial for preventing *data races* in multi-threaded environments by ensuring that shared data is accessed and updated predictably, even when multiple threads try to access it simultaneously.
 
-A **lock/mutex** is a record—a "synchronization primitive"—that holds two things: the calling thread's identity (address, name, etc..) and the status of the thread (whether if it's free or locked). 
-The locks have methods for locking and unlocking threads. Threads will call these methods.
+Modern CPUs provide specialized, atomic instructions. An example is `COMPARE_AND_SWAP`
 
+`COMPARE_AND_SWAP`:
+1. Read a variable from memory
+2. Store a copy of the variable
+3. Perform calculations (manipulate data)
+4. Check if variable has been untouched by other threads
+5. If it untouched, update the variable
+6. Else, fail. Try again
+Steps 4-6 are atomic. Otherwise, we face the same problem again: how can we make sure another thread didn't change the variable while we were checking it? 
+
+Atomicity cannot be achieved by software alone. It must be physically enforced by the hardware.
+
+So how does a multi-core CPU prevent different cores from reading and data from the same memory RAM address?
+- We can lock the memory bus, so that no one (including all other cores on the processor) can access the RAM. This is terrible for performance because we're temporarily locking the entire system.
+- The modern approach is **Cache Coherency**. The CPU's cache controller. 
+
+[[RAM Controller, Memory Bus, and Memory Channel]]
+
+#### Locks
+A **lock/mutex**—sometimes called a "synchronization primitive"—is a variable in memory that holds the status of the thread: 0 means it's free, 1 means it's locked. It's an abstract concept, and some implementations use a record that also includes the calling thread's identity (address, name, etc..).
+~~The locks have methods for locking and unlocking threads. Threads will call these methods.~~
+Conceptually, we can think of locks as a guarding mechanism. Threads check the variable to ensure no other threads have control of a resource before making changes, preventing corrupted data
+It's like a traffic light at an intersection. It doesn't get passed into any low level system functions. 
+
+#### Operating system scheduler
 If a thread attempts to access a critical section that's locked (already in use by another thread), the **operating system scheduler** places it in a waiting queue, where it goes into a blocked state. When the thread is done, it'll call the unlock method, which frees up the resource and calls upon the operating system to wake up another waiting thread.
 
-**Operating system scheduler**—
-
+#### What is a critical section?
 A **critical section** the part of code that contains resources shared by multiple threads. This is of special interest to us because we need to take special measures to ensure the typical multithreading issue like race conditions, deadlocks, etc..
 
 
@@ -215,15 +262,5 @@ In C#, A `Task` is awaitable. It is a _promise of a future result_.
  In C#, a task is an async operation. It is a _promise of a future result_.
 
 Asynchronous just means that the current block is 
-
-
-
-
-
-
-I see.
-Although I'm disappointed, I'm thankful to have had the opportunity to speak with you and learn about your company. 
-I'd love to keep in touch and connect with you professionally on Linked In. If there are any openings in the future, I would love to interview again and visit the company site
-
 
 
