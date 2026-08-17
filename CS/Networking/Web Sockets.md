@@ -112,7 +112,7 @@ Every process has a descriptor table that automatically includes 3 file descript
 - Other data sources (like a network socket) will be added incrementally
 When we use pipes (`|`) in the terminal commands, we're essentially changing where the output descriptor point to. 
 
-Read more about the hierarchy of file descriptors in Unix systems [[Unix File Tables|here]]
+Read more about the hierarchy of file descriptors in Unix systems [[File Tables in Unix|here]]
 ### WebSocket Handlers
 So we know applications get access to the TCP socket. But the TCP socket doesn't know what HTTP is. It doesn't know what a WebSocket is. It only knows a continuous, unbroken stream of raw bytes. It is the job of the applications to translate this data to the application layer protocols. Every programming languages or frameworks offers its own WebSocket handler, which is responsible for reading the data bytes from the TCP socket, applying the WebSocket protocol rules, decoding the data, extracting the request payload, then calling some callback function from the business logic layer of the application.
 

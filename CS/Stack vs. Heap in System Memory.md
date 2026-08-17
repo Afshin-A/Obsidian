@@ -25,7 +25,7 @@ It is the programmer's responsibility to explicitly de-allocate memory from the 
 
 ==Actual objects are stored in the heap while their references are used in the stack.==
 
-**Memory fragmentation**. The heap is not a continuous block of memory. As we allocate and de-allocate memory, we might end up with many small empty blocks that are not big enough for a new object. It's like playing TenTrix, a variation of the game Tetris. There may be lots of empty blocks, but not enough space for new objects. 
+**Memory fragmentation**. The heap is not a continuous block of memory. As we allocate and de-allocate memory, we might end up with many small empty blocks that are not  big enough for a new object. It's like playing TenTrix, a variation of the game Tetris. There may be lots of empty blocks, but not enough space for new objects. 
 
 Other problems with heaps include 
 - Dangling pointers - pointers that point to freed memory

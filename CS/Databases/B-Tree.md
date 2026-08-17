@@ -1,10 +1,10 @@
 Integer comparison is significantly faster than memory de-referencing.
-The CPU uses digital circuits inside its ALU component to perform arithmetic and bitwise operations extremely fast (0.5 to 1 nanosecond). 
+The CPU uses digital circuits inside its ALU (arithmetic logic unit) component to perform arithmetic and bitwise operations extremely fast (0.5 to 1 nanosecond). 
 Memory access gets progressively slower from L1 to L2, and L3 caches, to RAM
 
+For a B-tree, we spend more time comparing adjacent elements kept in continuous arrays than traveling to child nodes. That makes a B-tree much faster than a traditional binary tree. 
 
-
-In Postgress Each block can hold up to 8 KB on disk
+In Postgres, each block can hold up to 8 KB on disk
 Data is loaded from disk into memory
 Without indexing, querying takes O(n)
 But we use B Trees to optimize querying to O(log(n))
@@ -20,9 +20,8 @@ image: https://i.ytimg.com/vi/K1a2Bk8NrYQ/maxresdefault.jpg
 ```
 
 
-A node is basically an array of size N. 
-A node would have $N+1$ children
-
+A node is basically an array of size N and it can have up to $N+1$ children
+The elements in each node are sorted.
 ```tikz
 \usepackage{circuitikz}
 \begin{document}
@@ -62,7 +61,7 @@ We can have any number of elements in that range. The minimum allowed is `Max//2
 
 
 
-An AVL tree was the first kind of balanced binary tree discovered. It works by storing a balance factor, which is the difference of the height of the left and right subtrees. If this balance factor is outside of the acceptable range of {-1, 0, 1}, we correct it by doing a tree rotation.
+An **AVL tree** was the first kind of balanced binary tree discovered. It works by storing a balance factor, which is the difference of the height of the left and right subtrees. If this balance factor is outside of the acceptable range of {-1, 0, 1}, we correct it by doing a tree rotation.
 ```cardlink
 url: https://youtu.be/q4fnJZr8ztY
 title: "Balanced binary search tree rotations"
@@ -83,7 +82,8 @@ aspectRatio: "56.25"
 From a YouTube comment from the *Understanding B-Trees*
 > most databases use a B+tree, which is different in that the values are stored only in the leaves; keys in upper nodes just point to lower nodes. When a node splits, you don’t move the middle value up, it stays in one leaf or the other. * B-trees I’ve looked at, like SQLite, don’t have a fixed number of keys in a node. In real usage, keys and/or values are variable size, like strings, and the nodes are fixed-size disk pages (often 4kb.) The number of keys or values that fit in a node is highly variable. So instead you keep adding to a node until its size in bytes overflows a page, and then split. Some nodes might have a hundred keys, some might have only four. It doesn’t matter; the algorithms still work.
 
-So what's a B+ tree? Is it just a modified B-tree where all the values are stored in the leaf nodes, and leaf nodes are connected via pointers? If that is true, then how can we route to the leaf nodes without values also being stored in the internal nodes? No. We need to distinguish between *keys* and *values*.
+# So what's a B+ tree?
+Is it just a modified B-tree where all the values are stored in the leaf nodes, and leaf nodes are connected via pointers? If that is true, then how can we route to the leaf nodes without values also being stored in the internal nodes? No. We need to distinguish between *keys* and *values*.
 The B+ tree lives on the database 
 
 Why is a B+ tree faster? If you look at a B+ tree as a data structure on memory RAM, it looks unnecessarily over engineered. But this design overcomes the bottleneck imposed by disk I/O. 

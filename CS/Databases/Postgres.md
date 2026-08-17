@@ -53,16 +53,58 @@ image: https://www.postgresql.org/media/img/about/press/elephant.png
 ```
 Naming convention for *page data* (`pd`) attributes commonly start with `pd_`, like `pd_checksum` and `pd_flags`. 
 
-If a row is too large to be stored in a page 1, Postgres stores that row separately in page 2 and leaves a pointer to page 2 in page 1. This mechanism is called **TOAST** (The Oversized-Attribute Storage Technique). TOAST compresses large data by default. If a row is larger than 8KB, Postgres will have to decompress the row and join it back into the query results, which will take extra time and processing power. So a *good practice is to avoid using generalized queries like `SELECT * from table` or `... WHERE large_text_column LIKE '%search_term%'`*  (because Postgres will go through TOASTed columns) and specifically query for columns that we do need. 
-But TOAST *can* make querying for other columns faster because there is fewer rows in a page to go through.
+# TOAST
+In Postgres, a single row (tuple) cannot span across multiple pages. In these cases, data is split across multiple pages and/or compressed. 
 
+
+If a row is too large to be stored in a *page 1*, Postgres stores that row separately in *page 2* and leaves a pointer to page 2 in page 1. This mechanism is called **TOAST** (The Oversized-Attribute Storage Technique). TOAST compresses large data by default. When querying, If a row is larger than 8KB, Postgres will have to decompress the row and join it back into original table, which will take extra time and processing power. So a *good practice is to avoid using generalized queries like `SELECT * from table` or `... WHERE large_text_column LIKE '%search_term%'`*  (because Postgres will go through TOASTed columns) and specifically query for columns that we do need. 
+
+To be more specific, TOAST works when a single row exceeds the `TOAST_TUPLE_THRESHOLD` (which typically 2 KB).
+
+But TOAST *can* make querying for other columns faster because there is fewer rows in a page to go through.
+EXTENDED storage strategy
+
+TOAST is only used for columns with certain data types. It doesn't work for any data type. For example, it doesn't work for integers or boolean values.
+When we define a table, Postgres assigns a **storage strategy** to each column (depending on its data type). These are the rules that TOAST practices if a row is too large.
+- Extended - default for most large data types like TXT, JSON. First does in-line compression. Moves data out-of-line to TOAST table if data is still too large.
+- Main - Prioritizes in line compression. Moves data to TOAST table as a last resort.
+- External - move data out-of-line to the TOAST table without compression. Good for data that is already compressed (like JPEG photos)
+- Plain - no compression and no TOASTing; large data will throw an error
+
+**moving out of line** means moving the large data into the **toast table**
+
+We can view or change these storage strategies using the `ALTER TABLE ... SET STORAGE` command
+
+```sql
+SELECT
+    c.relname,
+    c.reltoastrelid::regclass
+FROM pg_class c
+WHERE c.relname = 'documents';
+```
+
+
+
+
+
+- Single Quotes (`'`) are used for string literals like text and timestamps
+	- can escape single quotes like `$$Don't touch Setephens' laptop$$` and `'Don''t touch Setephens'' laptop'`
+- Double quotes (`"`) are used for identifiers like table names 
+
+`regclass` is a type in Postgres used to reference relations (tables, indices, etc..). It's basically an alias for their OIDs. You can use it to cast a table's name to its OID and vice versa. 
+
+There are two ways to cast types in Postgres:
+- using the `CAST` method: `SELECT CAST('123' AS integer);`
+- using shorthand: `SELECT '123'::integer;`
+
+# Rest of the document - need to reorganize headers
 As we mentioned, all updates and inserts to tables are not immediately written. That would be too slow. Instead, Postgres saves changes in a **Write-Ahead Logging (WAL)** file on disk and tells the user the change was made. But in practice, it will write the change to the disk later. This way, if the system crashes, it can retrieve changes made to the database. 
 
 Postgres is a relational database. The term **relation** comes from relational algebra, the foundation for relational databases and SQL. 
 In this branch of mathematics, a table is referred to as a **relation**. A row is called a **tuple**. And, a column is called an **attribute**.
 Postgres expands on the definition of a relation: any database object that behaves like a table (has columns and rows and can be queried) is considered a relation. It includes standard tables, indexes, **views**, **materialized views**.
 
-The **OID** is a unique, 32 bit unsigned integer assigned to Postgres **objects**. The first 14 bits are reserved for system objects, and the rest are available for user created objects. Every object has an OID.
+The **OID** is a unique, 32 bit unsigned integer assigned to **Postgres objects**. The first 14 bits are reserved for system objects, and the rest are available for user created objects. Every object has an OID.
 OID acts as a primary key in **system catalogs**.
 
 Postgres **objects** include: 
@@ -82,7 +124,7 @@ When we reach the end of the 32 bit number, we loop back to the start of the num
 
 **System catalogs** are internal tables that Postgres uses to keep track of tables, columns, data types, roles, and functions—the internal structure. A few examples are:
 - `pg_class` - keeps track of tables using OID as primary key. It has a column named `relfilenode`, which specifies the file name of the table on disk. When an object is created, `relfilenode` equals the value of OID. But as time goes on and objects move to different files, OID stays the same, but the value of `relfilenode` changes.
-- `pg_attribute` - keeps track of columns of a table. Each column is an object and gets its own OID. This table has a row named `attrelid` (attribute relation id) that stores the OID of the table the column belongs to (acts as a foreign key)
+- `pg_attribute` - keeps track of columns of a table. Each column is an object and gets its own OID. This table has a row named `attrelid` (attribute relation id) that stores the OID of the table the column belongs to (acts as a foreign key). It also *stores the storage strategies of each column in the table.*
 - `pg_type`
 - `pg_proc` stores functions
 Postgres uses its own system to run itself. Which is pretty neat from a design standpoint.
@@ -336,7 +378,7 @@ Instead, we use a technique called **consistent hashing**. We pick a range of nu
 **Virtual nodes** are used for the sole purpose of even data distribution.
 You can use more virtual nodes on the hash ring to represent the more powerful servers, increasing the odds traffic goes to it.
 
-In practice, this hash ring is implemented using a tree map, which uses a [[Tree Map]] underneath 
+In practice, this hash ring is implemented using a tree map, which uses a [[Red-Black Tree]] underneath 
 
 only a fraction of data gets repositioned.
 

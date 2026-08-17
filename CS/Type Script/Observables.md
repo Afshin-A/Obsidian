@@ -144,7 +144,7 @@ messageBus$.subscribe(
 The syntax here is a little different. Subject doesn't need to take in an observer function as argument. You can call the `next` method anywhere on it.
 
 #### `BehaviorSubject`
-They're used to manage the state of an application, like enforcing RBAC using JWT.
+They're used to manage the state of an application, like enforcing [[RBAC vs ABAC|RBAC]] using JWT.
 
 This is a type of a subject. Just like a subject, it uses the same process to emit the same type of value to all its subscribers. 
 You have to initialize it with a value and you have to define what type of values it can take:

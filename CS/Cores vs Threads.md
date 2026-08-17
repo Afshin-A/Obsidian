@@ -91,7 +91,9 @@ Even if one of these conditions is not met, a deadlock becomes impossible.
 
 
 # Atomic Operations
->**Atomic operations** are a sequence of operations that are executed as a single, indivisible unit, meaning they are either completed fully or not at all, with no intermediate state visible to other processes or threads. They are crucial for preventing *data races* in multi-threaded environments by ensuring that shared data is accessed and updated predictably, even when multiple threads try to access it simultaneously.
+>**Atomic operations** are a sequence of operations that are executed as a single, indivisible unit, meaning they are either completed fully or not at all, with no intermediate state visible to other processes or threads. They are crucial for preventing *[[Data Race Vs. Race Condition|data races]]* in multi-threaded environments by ensuring that shared data is accessed and updated predictably, even when multiple threads try to access it simultaneously.
+
+
 
 Modern CPUs provide specialized, atomic instructions. An example is `COMPARE_AND_SWAP`
 
@@ -255,11 +257,20 @@ In C#, A `Task` is awaitable. It is a _promise of a future result_.
 `Task.Run()` is different, however. Given a function (more specifically a delegate, which is a function pointer in C#), it will assign that function to a thread from the thread pool.
 
 
+# Process Vs Thread
+A process is "an independent execution environment." It has its own memory space, it is and it is managed by the operating system.
+A process has at least 1 thread. Threads can work together and share information as well as access the same data. In C#, a task is an async operation. It is a _promise of a future result_.
 
- Process Vs Thread
- A process is "an independent execution environment." It has its own memory space, it is and it is managed by the operating system.
- A process has at least 1 thread. Threads can work together and share information as well as access the same data.
- In C#, a task is an async operation. It is a _promise of a future result_.
+```cardlink
+url: https://www.youtube.com/shorts/JpD-IKdItRw?feature=share
+title: "OS Internals: Processes vs. Threads Memory Layout!"
+description: "Process vs thread is one of the most asked systems questions in interviews, and most answers skip the part that actually matters: what the kernel is doing un..."
+host: www.youtube.com
+favicon: https://www.youtube.com/s/desktop/2e7138bb/img/favicon_32x32.png
+image: https://i.ytimg.com/vi/JpD-IKdItRw/hq720.jpg?sqp=-oaymwEdCJUDENAFSFXyq4qpAw8IARUAAIhCcAHAAQbQAQE=&rs=AOn4CLDjIhvKIbdX4oA4DbzO23aAz9qdhg
+```
+
+
 
 Asynchronous just means that the current block is 
 
