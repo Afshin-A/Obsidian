@@ -71,22 +71,27 @@ When we define a table, Postgres assigns a **storage strategy** to each column (
 - External - move data out-of-line to the TOAST table without compression. Good for data that is already compressed (like JPEG photos)
 - Plain - no compression and no TOASTing; large data will throw an error
 
-**moving out of line** means moving the large data into the **toast table**
+**moving out of line** means moving the large data into the **toast table**. 
 
-We can view or change these storage strategies using the `ALTER TABLE ... SET STORAGE` command
+In Postgres, a **schema** (also known as a **namespace**) is a logical container  that organizes database objects like tables, views, indexes, functions, data types, and sequences. Just like we would use a folder to organize files on our desktop, we use schemas to group related parts of our database.
+The hierarchy goes like this:
+```
+Database cluster → Database → Schema → Database objects
+```
+The cluster is the server instance that can host multiple, separate, instances of the database application.
+But *schemas cannot be nested inside other schemas.*
+We can have two tables with the same name in the same database, as long as they exist in different schemas.
 
+We can view the storage strategies of a table using the following command:
 ```sql
 SELECT
     c.relname,
-    c.reltoastrelid::regclass
+    c.reltoastrelid::regclass # type casting
 FROM pg_class c
-WHERE c.relname = 'documents';
+WHERE c.relname = 'table_name';
 ```
-
-
-
-
-
+It is also possible to change the storage strategies for a table using SQL commands... `ALTER TABLE ... SET STORAGE` 
+##### A small explanation of this command
 - Single Quotes (`'`) are used for string literals like text and timestamps
 	- can escape single quotes like `$$Don't touch Setephens' laptop$$` and `'Don''t touch Setephens'' laptop'`
 - Double quotes (`"`) are used for identifiers like table names 
@@ -122,8 +127,8 @@ When we reach the end of the 32 bit number, we loop back to the start of the num
 ==OIDs for user objects is deprecated in modern Postgres ? ==
 
 
-**System catalogs** are internal tables that Postgres uses to keep track of tables, columns, data types, roles, and functions—the internal structure. A few examples are:
-- `pg_class` - keeps track of tables using OID as primary key. It has a column named `relfilenode`, which specifies the file name of the table on disk. When an object is created, `relfilenode` equals the value of OID. But as time goes on and objects move to different files, OID stays the same, but the value of `relfilenode` changes.
+**System catalogs** are internal tables that Postgres uses to keep track of tables, columns, data types, roles, and functions—in other words, the internal structure. A few examples are:
+- `pg_class` - keeps track of tables using their OID as primary key. It has a column named `relfilenode`, which specifies the file name of the table on disk. When an object is created, `relfilenode` equals the value of OID. But as time goes on and objects move to different files, OID stays the same, but the value of `relfilenode` changes.
 - `pg_attribute` - keeps track of columns of a table. Each column is an object and gets its own OID. This table has a row named `attrelid` (attribute relation id) that stores the OID of the table the column belongs to (acts as a foreign key). It also *stores the storage strategies of each column in the table.*
 - `pg_type`
 - `pg_proc` stores functions
@@ -434,7 +439,15 @@ host: youtu.be
 favicon: https://www.youtube.com/s/desktop/ab5c3a01/img/favicon_32x32.png
 image: https://i.ytimg.com/vi/L521gizea4s/maxresdefault.jpg
 ```
-
+h
+```embed
+title: "When to Shard Database vs Replicate? Database Scaling Explained."
+image: "https://i.ytimg.com/vi/1_xLXicErn0/hq720.jpg?sqp=-oaymwEoCJUDENAFSFryq4qpAxoIARUAAIhC0AEB2AEB4gEKCBgQAhgGOAFAAQ==&rs=AOn4CLC8e-n6pj5evbbxG3OU31d3VfmFyg"
+description: "Most database scaling mistakes come from treating replication and sharding as interchangeable. They solve different problems.I've seen teams throw sharding a..."
+url: "https://www.youtube.com/shorts/1_xLXicErn0?feature=share"
+favicon: ""
+aspectRatio: "177.77777777777777"
+```
 
 
 
@@ -489,3 +502,35 @@ Row-level-security (RLS) policies
 **PgBouncer** is a connection pooler for PostgreSQL
 
 [[Bloom Filter]]
+
+
+
+# Pessimistic and Optimistic Locking
+h
+```embed
+title: "Optimistic vs pessimistic (the one-sentence answer)"
+image: "https://i.ytimg.com/vi/7wBtFtkbn-Q/hq720.jpg?sqp=-oaymwEoCJUDENAFSFryq4qpAxoIARUAAIhC0AEB2AEB4gEKCBgQAhgGOAFAAQ==&rs=AOn4CLDNDC1gnRIJl3eEaNz_9GC8zbcZyQ"
+description: "Your interviewer asks: optimistic or pessimistic locking? There's a one-sentence answer that beats naming either one. #shorts"
+url: "https://www.youtube.com/shorts/7wBtFtkbn-Q?feature=share"
+favicon: ""
+aspectRatio: "177.77777777777777"
+```
+
+# Avoiding Deadlocks when using pessimistic locking
+
+A deadlock in a databases occurs when two or more transactions 
+Most modern databases automatically detect deadlocks and resolve it by dropping one transaction.
+
+```cardlink
+url: https://www.youtube.com/shorts/LWHBZnjIr-k?feature=share
+title: "Preventing deadlocks with pessimistic locking"
+description: "#shorts"
+host: www.youtube.com
+favicon: https://www.youtube.com/s/desktop/6f290082/img/favicon_32x32.png
+image: https://i.ytimg.com/vi/LWHBZnjIr-k/hq720.jpg?sqp=-oaymwEdCJUDENAFSFXyq4qpAw8IARUAAIhCcAHAAQbQAQE=&rs=AOn4CLBrkSoDEbmVmeHbNDTBkHrqQCz1Kg
+```
+
+# Isolation levels
+
+https://www.youtube.com/shorts/DUcxGJ4k7AU?feature=share
+

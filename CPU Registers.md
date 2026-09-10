@@ -32,7 +32,7 @@ An applications memory is divided into 2 main parts:
 
 
 
-Read more about [[Stack vs. Heap in System Memory]] 
+Read more about [[How Application Memory Works]] 
 
 Does every process get a memory segment, or does every thread?
 What is virtual memory?
