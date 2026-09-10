@@ -28,7 +28,8 @@ There are complementary packages that provide type information for Node and Expr
 @types/express
 ```
 
-Node.js doesn't work with TS; it works with JS. So, during development, we use a tool named `ts-node` to automate the process of converting TS to JS. `ts-node` compiles the TS code in memory, which is then directly executed by Node.js. It does this every time we run our application, which is a key part of its convenience during the development phase. It handles this compilation **just-in-time** (JIT).
+Node.js doesn't work with TS; it works with JS. So, during development, we use a tool named `ts-node` to automate the process of converting TS to JS. `ts-node` compiles the TS code in memory, which is then directly executed by Node.js. It does this every time we run our application, which is a key part of its convenience during the development phase. It handles this compilation **just-in-time** ( #JIT).
+
 The difference between this JIT process and a traditional compiler is that a traditional compiler, like `tsc`, compiles the code once and saves it to a `.js` file on disk. This pre-compiled `.js` file can be used for every subsequent program run, making it ideal for a production environment where startup speed and performance are critical.
 `ts-node` compiles only the relevant parts of the typescript code that are actually needed for the program to run, saves them in memory, and loads them into node.js. Hence it's good for constantly re-running in a testing environment, but not so much in production where we run the entire application just once.
 
