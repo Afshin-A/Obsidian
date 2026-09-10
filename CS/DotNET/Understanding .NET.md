@@ -27,6 +27,10 @@ The compiler creates assemblies, which are either .exe or .dll (dynamic linked l
 .NET languages compile to intermediate language. 
 .dll files contain IL, metadata, and assembly instructions, that is defined to run on the .net runtime environment.
 So you end up with *interoperable assemblies*. That means you can access and use these .dll files from other .NET programming languages. *.NET separates the language from the execution platform*. But just because we can use a .dll created by C# in F# or vice versa, doesn't mean we should, since some concepts don't map across different programming languages. In other words, the common runtime makes languages interoperable; it doesn't make the languages equivalent.
+<<<<<<< HEAD
+=======
+
+>>>>>>> 05a096901a3e26c36b6765df339812f01c04c162
 ### Libraries
 A **framework** provides you with utilities and libraries (pre-written classes, functions, etc.) that you need for common tasks, so you don't have to re-invent the wheel. It takes care of repetitive tasks under the hood and abstracts them out. For example, Express is a framework.
 
@@ -64,9 +68,24 @@ The compiler converts source code (C#, F#, MS Visual Basic) to **Common Intermed
 
 ### Entity Framework (EF) Core
 It's an ORM
+<<<<<<< HEAD
 ### UI Frameworks
 #### WPF
 Thoroughly discussed [[WPF|here]].
+=======
+
+### UI Frameworks
+#### WPF
+long-established framework for building **Windows desktop applications** with .net
+uses **XAML** to describe the UI
+Supports concepts such as:
+- XAML
+- data binding  
+- controls
+- graphics
+- MVVM
+
+>>>>>>> 05a096901a3e26c36b6765df339812f01c04c162
 #### WinUI
 newer UI technology for **Windows applications**
 Also known as Windows App SDK
@@ -109,6 +128,7 @@ JIT makes **adaptive optimizations** by continuously monitoring the application 
 
 
 # MVVM – Model–View–ViewModel
+<<<<<<< HEAD
 An architectural pattern for building UI applications. It's not exclusive to .NET, however it is standard practice for WPF.
 
 MVVM separates business logic from the UI. It divides the application into three parts: 
@@ -120,6 +140,20 @@ Without MVVM, application logic ends up the UI, tightly coupling the two. This i
 Similarly, application logic should be reusable; it should not be tailored to one specific view. This is why the view model exists: to bridge the UI to the backend.
 
 Not every view needs a view model, however. 
+=======
+An architectural pattern for building UI applications. It's not exclusive to .NET, however it is standard
+Divides the application to three parts. Each 
+View - the UI
+View model - acts as an intermediary between the UI and the underlying application. It's essentially a model of the View.
+Model - data
+
+Without MVVM, we would have to put the application logic in the UI, tightly coupling the two, which is bad practice.
+
+
+
+separation of logic from the UI
+
+>>>>>>> 05a096901a3e26c36b6765df339812f01c04c162
 
 
 # .NET Versions
