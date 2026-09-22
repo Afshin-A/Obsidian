@@ -275,3 +275,21 @@ image: https://i.ytimg.com/vi/JpD-IKdItRw/hq720.jpg?sqp=-oaymwEdCJUDENAFSFXyq4qp
 Asynchronous just means that the current block is 
 
 
+# Coroutines
+Standard functions execute from start to end, after which their state is popped from the call stack and execution flow returns to the caller.
+A **coroutine** is any function 
+
+cooperative multitasking/cooperative routines
+[What are coroutines?](https://www.reddit.com/r/learnprogramming/comments/or0bie/what_are_coroutines/)
+## Stackless 
+
+
+## Stackful 
+
+
+can the same function be executed by different threads? 
+But each thread has its own stack, right? So how is the state of a function represented across multiple stacks on various threads?
+
+does every thread have its own stack?
+What sort of threads get their own stack?
+Are there any types of threads that don't get their own stack? Protothreads. stackless coroutines (async/await tasks) some GPU threads

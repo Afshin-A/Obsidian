@@ -1,6 +1,9 @@
 # Application binary interface (ABI)
 
 An ABI includes a strict set of rules for how compiled binary code interacts with the operating system, the hardware, and *other compiled libraries*.
+
+If the other library was compiled using a different ABI, the processor might look in the memory, see gibberish where it should see a critical variable or memory address, and the app would crash.
+
 For example, the GCC compiler follows these rules when outputting a binary file (e.g. an executable like `.exe` on Windows or an elf file on Linux, and `.dll` library files). The operating system knows how to parse and the load CPU instructions into memory; the processor in turn knows how to load the instructions and variables into the correct registers. All key players in the system—the compiler, the OS, and the hardware—follow the same rules
 
 
