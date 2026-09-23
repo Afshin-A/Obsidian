@@ -229,6 +229,7 @@ Use case:
 
 
 # Asynchronous vs Multi-Threaded Applications
+#async
 I/O operations are typically asynchronous. An operation that would typically hold up the main application thread is handed off to the OS, which hands it off to the controller of the disk drive. It is this controller that actually draws the data from the disk, not another CPU thread. When it's complete, the OS will briefly create a thread just to do a callback on the original thread, telling it the results are ready.
 
 More accurately, the compiler creates a state machine for the async method. The await keywords become yield points in this state machine. 
@@ -277,7 +278,7 @@ Asynchronous just means that the current block is
 
 # Coroutines
 Standard functions execute from start to end, after which their state is popped from the call stack and execution flow returns to the caller.
-A **coroutine** is any function 
+A **coroutine** is any function that can pause its execution at a point and resume later. Their state is saved when they yield control back to the caller, and can be resumed later from the same yield point. 
 
 cooperative multitasking/cooperative routines
 [What are coroutines?](https://www.reddit.com/r/learnprogramming/comments/or0bie/what_are_coroutines/)

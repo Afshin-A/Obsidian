@@ -17,6 +17,8 @@ The call stack has a fixed, pre-defined size
 **Each thread gets its own call stack.** That's because each thread has its own functions with local variables, parameters, and return address. This keeps the data/state of threads private.
 However, **all threads share the heap memory space** in a process. As you know, a process can have multiple threads. More about threads [[Cores vs Threads|here]].
 
+Some threads like [[Cores vs Threads#Coroutines|coroutines]] don't get a call stack.
+
 Each process gets its own [[How Application Memory Works#Virtual Memory|virtual memory]]. 
 
 ## Heap
