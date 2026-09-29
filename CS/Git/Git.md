@@ -1,65 +1,73 @@
 # Branches
-Additional, short-lived branches are typically made when a new feature is being developed, when a bug is being fixed, or when we're experimenting to avoid fucking up the main branch. Once that feature is completed, reviewed and tested, it can be merged to the main branch. 
-##### Viewing Branches
+A good practice when developing a new feature is to create a separate git branch. This is done in order to avoid introducing bugs to the main code base. Once that feature is reviewed and thoroughly tested, it's merged to the main branch. 
+#### Viewing Branches
 To view a list of local branches, use
-```
+```bash
 git branch
 git branch -v //shows a verbose list with more details
 ```
-##### Comparing Branches
+#### Comparing Branches
 The `dif` command shows the changes made since the previous commit:
-```
+```bash
 git diff
 ```
 It can optionally take the name of a branch as argument to show the difference between that branch and the main branch:
-```
+```bash
 git diff branch-name
 ```
 
-When local and remote branches **diverge**, it means they've become inconsistent. There are local changes that haven't been pushed yet, or remote changes that haven't been pulled.
+When local and remote branches **diverge**, it means they've become inconsistent, most likely because there are local changes that haven't been pushed or remote changes that haven't been pulled yet.
 
-```
+```bash
 git log main..master
 ```
 This will show what commits are in the `master` branch but not in `main`.
-##### Creating Branches
-We can only create local branches. Remote branches are created when we push local branches online. To create a branch:
+#### Creating Branches
+We can only create local branches. Remote branches are created when we push local branches online.
+
+Creates a new branch, but doesn't switch your current branch
+```bash
+git branch new-branch-name
 ```
-git branch new-branch-name //creates a branch, but doesn't switch your current branch
+This will cause a branch-off at the current commit. But we can choose at which node (commit) we want to branch off by using that node's id in the `branch` command:
+```bash
+git branch new-branch-name commit-id
 ```
-This will cause a branch-off at the current commit. But we can choose at which node (commit) we want to branch off of our current branch by using that node's id in the `branch` command:
-```
-git branch new-branch-name-1 commit-id
-```
-##### Switching Branches
-To switch branches, use
-```
-git checkout -b new-branch-name //creates and switches to the new branch
-git switch new-branch-name //this command is exlusively used for switching branches. checkout has multiple uses.
+#### Switching Branches
+**Note:** You must commit or stash changes before switching to another branch or progress will be lost.
+
+There are two ways to switch between branches.
+1. `git checkout` has multiple uses. ==As we saw earlier, it's also used to create new branches. ???
+```bash
+git checkout -b other-branch
 ``` 
-**Tip:** When using the checkout command, press tab to autocomplete branch names  
-**Tip:** You must commit or stash changes before switching to another branch or progress would be lost.
-##### Renaming Branches
-To rename the HEAD branch:
+2. `git switch` is exclusively used for switching branches.
+```bash
+git switch other-branch
 ```
+
+**Tip:** When using the checkout command, press tab to autocomplete branch names  
+#### Renaming Branches
+To rename the current (HEAD) branch:
+```bash
 git branch -m new-name
 ```
 To rename another branch:
+```bash
+git branch -m branch-name new-name
 ```
-git branch -m branch-name new-name-for-that-branch
-```
-##### Deleting Branches
-To delete a branch:
-```
+#### Deleting Branches
+
+```bash
 git branch -d branch-name  
 ```
 
-### Branching Models
-Git doesn't enforce how many branches should be created or where. But there are common branching models projects follow.
+## Branching Models
+Git doesn't enforce how many branches should be created or where. Developers commonly follow a **branching models**, a set of rules and conventions for how to create, use, and merge branches in a repository
 #### GitHub Flow Workflow
-This is a simple model with one long-lasting, main branch, usually named `master` or `main`. This branch holds stable, tested code. There may be multiple (relatively) short-lived branches created (and they may exist at the same time) for developing features, but are merged to the main branch. ==When there's a change to the main branch, other branches need to pull from it to make sure they don't fall behind too much.== The more you fall behind, the bigger headache you will get when it's time to merge your branch to main and there are merging conflicts.
-#### Git Flow Workflow
-There are 2 main branches: main and develop. This model is similar to GitHub flow, but it adds another long-lasting branch, named "release", into which the product is released when the project hits a milestone. Before releasing, a temporary branch is created for bug fixes, and is then merged to the `release`, and by extension to the other branches. Releases are labeled as `V0.1.0`, `V0.1.1`, and so on.
+This is a simple model with one long-lasting, main branch (usually named `master` or `main`). This branch holds stable, tested code. There may be multiple (relatively) short-lived branches created (and they may exist at the same time) for developing features, but they're eventually merged to the main branch. ==When there's a change to the main branch, other branches need to pull from it to make sure they don't fall behind too much.== The more you fall behind, the bigger the headache it is to merge to main because pf merging conflicts.
+#### Gitflow Workflow
+There are 2 main branches: main and develop. This model is similar to [[Git#GitHub Flow Workflow|GitHub flow]], but it adds another long-lasting branch, named "release", into which the product is released when the project hits a milestone. Before releasing, a temporary branch is created for bug fixes, and is then merged to the `release`, and by extension to the other branches. Releases are labeled as `V0.1.0`, `V0.1.1`, and so on.
 A **hotfix** is a short lived branch created on the release branch to fix any issues after release. It gets merged back to release, then to the reset of the branches.
 
 <iframe width="532" height="298" src="https://www.youtube.com/embed/1SXpE08hvGs" title="The gitflow workflow - in less than 5 mins." frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
