@@ -66,13 +66,13 @@ A **hotfix** is a short lived branch created on the release branch to fix any is
 
 ## Merging Branches and Conflicts
 Merge conflict happens when the same file is modified at the same line in different ways, and git can't infer which changes to keep.
-Suppose you want to merge a branch `test` to the `main` branch. First, change to the branch `test`:
+Suppose you want to merge a branch `test` to the `main` branch. First, change to `main`
 ```
-git checkout test
+git checkout main
 ```
 Then, use the `merge` command to merge to `main`:
 ```
-git merge main
+git merge test
 ```
 If at this point there are merge conflicts, one helpful thing to do is to abort the merge:
 ```
