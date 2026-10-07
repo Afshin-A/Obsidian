@@ -1,3 +1,5 @@
+`git checkout` is a multi purpose tool for switching data. It's used to switch to another branch, a new branch, and even switch to the staging area or a previous commit.
+
 # Branches
 A good practice when developing a new feature is to create a separate git branch. This is done in order to avoid introducing bugs to the main code base. Once that feature is reviewed and thoroughly tested, it's merged to the main branch. 
 #### Viewing Branches
@@ -23,6 +25,8 @@ git log main..master
 ```
 This will show what commits are in the `master` branch but not in `main`.
 #### Creating Branches
+
+
 We can only create local branches. Remote branches are created when we push local branches online.
 
 Creates a new branch, but doesn't switch your current branch
@@ -46,7 +50,7 @@ git checkout -b other-branch
 git switch other-branch
 ```
 
-**Tip:** When using the checkout command, press tab to autocomplete branch names  
+**Tip:** When using the `checkout` command, press tab to autocomplete branch names  
 #### Renaming Branches
 To rename the current (HEAD) branch:
 ```bash
@@ -74,13 +78,13 @@ A **hotfix** is a short lived branch created on the release branch to fix any is
 
 ## Merging Branches and Conflicts
 Merge conflict happens when the same file is modified at the same line in different ways, and git can't infer which changes to keep.
-Suppose you want to merge a branch `test` to the `main` branch. First, change to `main`
+Suppose you want to merge a branch `test` to the `main` branch. First, change to the branch `test`:
 ```
-git checkout main
+git checkout test
 ```
 Then, use the `merge` command to merge to `main`:
 ```
-git merge test
+git merge main
 ```
 If at this point there are merge conflicts, one helpful thing to do is to abort the merge:
 ```
@@ -203,7 +207,7 @@ Any new or modified files must be tracked by git before they can be committed:
 git add FILENAME
 git add .
 ```
-These are added to what's called the **staging area**.
+These are added to what's called the **index/staging area**.
 
 There's a shortcut to simultaneously add and [[Git#Commit|commit]] **modified** files (**does not work with new files**).
 ```
@@ -214,6 +218,11 @@ We can even add specific patches in a file to the staging area:
 
 ```
 git add -p filename
+```
+
+Here we see another use for the checkout command.
+```
+git checkout -- .
 ```
 ### Unstaging Files
 Unstaging a file means removing it from the staging area.
@@ -258,6 +267,7 @@ This is a GitHub (or other git hosting website) feature, not git.
 You can configure a GitHub repository with roles, so that only owner and admins can push commits. Everyone else must submit a **pull request**. The proposed changes would then be reviewed and the request would either be accepted or rejected (until necessary changes are made).
 It's possible to fork a public repository, make changes, and submit a pull request for your changes to be merged with the repository.
   
+# Git Fetch
   
 
 # Cloning
@@ -273,3 +283,25 @@ git branch -a
 
 
 # https://marklodato.github.io/visual-git-guide/index-en.html
+
+
+# Understanding git logs
+
+
+```
+git log --oneline
+```
+
+
+# How to undo commits
+### If it's already been pushed
+First check commit history for the commit you want to reverse
+```
+git log --oneline
+```
+Then use `git revert` to undo that commit:
+```
+git revert abc1234
+```
+This method will not rewrite git history and it's specially useful in shared or public repositories. ==🔴how does it work exactly?==
+
