@@ -374,7 +374,7 @@ We need a *connection pooler* to manage incoming requests so no one server gets 
 ##### How do we distribute traffic? 
 There are 3 ways we could do this: 
 1. Range-based sharding—we assign a range of IDs to each shard. User IDs 0-1 million go to shard A, 1 to 2 millions to go B, and so on. The advantage of this is that *range queries become very easy* because we don't have to do multi-shard queries because the data is stored together. Imagine we're storing data from multiple sensors, and we're querying for time ranges.  Each sensor would get its own shard. We would use a **composite sharding key**, like `{shard, time}` for this case. 
-The downside is hotspots and difficult rebalancing. 
+The downside is **hotspots** and difficult rebalancing. 
 
 2. Directory-based sharding—we use a map to store, but this adds another layer between the backend and the database; it's a bottleneck, meaning if it goes down it the system fails; and, it adds delays because we now have to go through more logic.   
 3. **Consistent hashing**—This is the industry standard method for distributing data.
@@ -533,4 +533,27 @@ image: https://i.ytimg.com/vi/LWHBZnjIr-k/hq720.jpg?sqp=-oaymwEdCJUDENAFSFXyq4qp
 # Isolation levels
 
 https://www.youtube.com/shorts/DUcxGJ4k7AU?feature=share
+
+
+# Postgres Vs. SQLite
+
+```cardlink
+url: https://www.youtube.com/shorts/mBe1natz25k?t=51&feature=share
+title: "Why is PostgreSQL faster than SQLite?"
+description: "Why is Postgres slower than SQLite?#coding #programming #systemdesign"
+host: www.youtube.com
+favicon: https://www.youtube.com/s/desktop/d58ce706/img/favicon_32x32.png
+image: https://i.ytimg.com/vi/mBe1natz25k/oardefault.jpg?sqp=-oaymwEhCJUDENAFSFWQAgHyq4qpAxAIARUAAIhCcAHAAQa4AvMY&rs=AOn4CLC0RI_ik3Zs7y8wsHNmbqvf6OMQuQ&usqp=CCk
+```
+
+# The Celebrity Problem (Sharding downside)
+
+```cardlink
+url: https://www.youtube.com/shorts/IwnefaLZhGs?t=37&feature=share
+title: "The Celebrity Problem in Database Sharding 🔥"
+description: "The Celebrity Problem in Database Sharding 🔥A pop star with 40 million followers posts, and the one shard holding her data takes every single read.That over..."
+host: www.youtube.com
+favicon: https://www.youtube.com/s/desktop/d58ce706/img/favicon_32x32.png
+image: https://i.ytimg.com/vi/IwnefaLZhGs/sardefault.jpg?sqp=-oaymwEdCJUDENAFSFWQAgHyq4qpAwwIARUAAIhCcAHAAQY=&rs=AOn4CLCxE3QWtVYDcjnQXQauY89rksEyJQ
+```
 
