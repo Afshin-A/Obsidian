@@ -2,9 +2,14 @@
  > **MCP** (Model Context Protocol) is an open-source standard for connecting AI applications to external systems.
 
 There are 3 components in MCP:
-1. **Host**: An AI application that needs context
-2. **Client**: Created by the host as an intermediary between the host and an MCP server to maintain the connection
-3. **Server**: Provides the context
+1. **Host**: This is the AI application the user interacts with. It sends prompts to an underlying LLM and receives and processes the responses. It's the center of the application. It sits at the center and communicates with both the external LLM API provider and the MCP Server providing the tools.
+2. **Client**: This is a software component that lives inside the host. It's responsible to maintain a connection between the host and an MCP server. A host can have multiple clients. Each client handles connection to a different external data source. 
+3. **Server**: This is an isolated program that has the logic (data or functions) the host needs access to. It receives JSON-RPC requests from the Client, performs the requested action, and ==returns the context==? The server is unaware of the LLM. It simply exposes its functions and data schemas in a standardized format.
+The server can be local or remote on a separate machine (like an AWS cloud instance). Consequently, there are two methods of communication supported in MCP:
+- STDIO for local servers: Client spawns the Server as a child process on the exact same machine
+- HTTP for remote servers: Client sends JSON payloads via POST requests to the, and the Server pushes real-time updates back via an open **SSE stream**.
+
+
 
 For example, VS Code is an MCP host. It creates an MCP client object, which maintains a connection to the Claude MCP server. If it also wants to connect to another server (perhaps a local server that gives it context from the system's files), it would create another MCP client.
 
