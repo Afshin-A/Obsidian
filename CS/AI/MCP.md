@@ -7,7 +7,7 @@ There are 3 components in MCP:
 3. **Server**: This is an isolated program that has the logic (data or functions) the host needs access to. It receives JSON-RPC requests from the Client, performs the requested action, and ==returns the context==? The server is unaware of the LLM. It simply exposes its functions and data schemas in a standardized format.
 The server can be local or remote on a separate machine (like an AWS cloud instance). Consequently, there are two methods of communication supported in MCP:
 - STDIO for local servers: Client spawns the Server as a child process on the exact same machine
-- HTTP for remote servers: Client sends JSON payloads via POST requests to the, and the Server pushes real-time updates back via an open **SSE stream**.
+- HTTP for remote servers: Client sends JSON payloads via POST requests to the, and the Server pushes real-time updates back via an open [[Server-Sent Events (SSE)|SSE]].
 
 
 
