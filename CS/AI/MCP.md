@@ -61,3 +61,18 @@ The server responds with its own information and capabilities.
   }
 }
 ```
+`id` in the response matches the request.
+
+There are two types of errors that can happen:
+1. Protocol errors may happen because of an issue in the protocol, like if the client sends an incorrect JSON-RPC request, if the connection drops, etc..
+2. Tool errors happen if the actual tools the server is trying to use fails. The server will send a valid JSON-RPC response, and it also includes a field `"isError": true` followed by a string explaining the error, so the *AI can understand what went wrong and try again*. This is incredibly important for AI development.
+
+Since MCP is stateless, does the host need to send its entire context/history with every request? But the host only needs the result of a function; why was MCP statefull before?
+
+The host does not need to send the entire history to the server. It only extracts the parameters it needs for the function it needs to run. The server doesn't need to know why the AI chose to run the function. Whether the MCP protocol is stateless or not, it has to do with the protocol, not the contents of the payloads. 
+The server stores client information and configuration, and routes the client to the same backend server every time. This is fine for local servers or even small applications. But AI applications are becoming more complexed, and it's challenging to scale in microservice-scale applications that scale vertically. 
+
+The MCP capabilities break down to 3 different categories:
+1. Tools—executable functions the AI can autonomously choose to run. Client sends `tools/list` request to discover the tools, and a `tools/call` request to call them.
+2. Resources—read only sources that provide context to the AI. Examples are files, database records, API responses. These are application controlled; the host injects them into the LLM's prompt. Client sends `resources/list` request. 
+3. 
