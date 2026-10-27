@@ -74,5 +74,9 @@ The server stores client information and configuration, and routes the client to
 
 The MCP capabilities break down to 3 different categories:
 1. Tools—executable functions the AI can autonomously choose to run. Client sends `tools/list` request to discover the tools, and a `tools/call` request to call them.
-2. Resources—read only sources that provide context to the AI. Examples are files, database records, API responses. These are application controlled; the host injects them into the LLM's prompt. Client sends `resources/list` request. 
-3. 
+2. Resources—read only sources that provide context to the AI. Examples are files, database records, API responses. These are application controlled; the host injects them into the LLM's prompt. Client sends `resources/list` request. Server responds with the *URI* of the resources.
+3. prompts—instructions for the LLM in the form of reusable, dynamic templates that can take arguments 
+
+Resources and prompts are not necessarily static. While a resource could be a file, it could also point to a dynamic list like `social://comments/latest` where they change every few seconds. Prompts can actually accept arguments from the client or it could contain query results from a database before it's returned to the client. 
+
+https://share.google/aimode/DCATWJrDfoXgjoXlA
