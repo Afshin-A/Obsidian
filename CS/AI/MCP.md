@@ -94,7 +94,8 @@ The MCP capabilities break down to 3 different categories:
 }
 ```
 
+The server returns resource URI instead of their contents during discovery. This way, we keep traffic low and avoid massive payloads, while the application can request a specific resource using its URI later. 
 
 Resources and prompts *are not necessarily static*. While a resource could be a file, it could also point to a dynamic list like `social://comments/latest` where they change every few seconds. Prompts can actually accept arguments from the client or it could contain query results from a database before it's returned to the client. 
 
-
+Clients should cache the list of available tools, resources, and prompts. To prevent the AI from acting on stale data, the server sends JSON-RPC notifications when there are updates and the cache needs to be invalidated.
